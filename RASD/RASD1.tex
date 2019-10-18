@@ -37,10 +37,46 @@
 \subsubsection{}
 
 \subsection{Scope}
-\subsubsection{World Phenomena}
-\subsubsection{Shared Phenomena}
-\subsubsection{Machine Phenomena}
+SafeStreets is a service that aims to provide users with the possibility to notify authorities when traffic violations occur, and in particular parking violations. The application's goal is achieved by allowing users to share photo, position, date, time and type of violation and by
+enabling \textit{Authorities} to request them.
+\\\\Safestreets requires the users to create an account to access its services, the functionalities unlocked after registration depend on the type of account created.
+\\If a user creates an account as \textit{Citizen}, he/she must provide information about ID card on order to prove that he/she is a real person. Furthermore, he must provide an email with which he will be uniquely identified and a password.
+Once the account has been activated, user can finally start to report parking violation. The users can also see a summary of the streets with the highest frequency of violations.
+\\\\On the other hand, an officer will create an account as \textit{Authority} and he will need to provide his name, surname, work's Matricola, a password and as for \textit{Citizen}, will be uniquely identified by an email. Once the Matricola has been verified 
+and the account has been activated, the officer can retrieve the potential parking violations sent by \textit{Citizen} that have not been taken into account yet by other officers, analyze them and, if it is the right case, generate traffic tickets.
+\textit{Authorities} can also see a summary of the vehicles' license plate that commit the most violations.
+\\\\From this brief description of the functionalities we may extract the following goals for SafeStreets:
+\begin{itemize}
+    \item \textbf{[G1]}: allow users to be identified as a \textit{Citizen} or as \textit{Authority};
+    \item \textbf{[G2]}: allow \textit{Citizens} to report parking violations;
+    \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported;
+    \item \textbf{[G4]}: must provide a visualization of the streets with high frequency of violations and vehicles' license plate that commit the most violations;
+    \item \textbf{[G5]}: \textit{Authority} can retrieve traffic violantions' data inserted by \textit{Citizens}
+\end{itemize}
 
+
+\subsubsection{World Phenomena}
+The World Phenomena are the events that occur in the real word and are not affected by the Machine.
+\\We identify:
+\begin{itemize}
+    \item \textit{Citizen} sees a parking violation and wants to report it;
+    \item \textit{Authorities} want to know about some violations that have been occurred;
+    \item A parking violation occurs; 
+\end{itemize} 
+\subsubsection{Shared Phenomena}
+Shared phenomena are the events that can be controlled by the world and observed by the machine or controlled by the machine and observed by the world.
+\\For the first one we identify:
+
+\\\\For the second one we identify:
+
+\subsubsection{Machine Phenomena}
+The Machine Phenomena are the events that occur inside the machine and are not affected by the real world.
+\\We identify:
+\begin{itemize}
+    \item storing permanently collected data;
+    \item encryption of sensitive data;
+    \item retrieving data for a request; 
+\end{itemize} 
 \subsection{Definitions, acronyms, abbreviations}
 \subsubsection{Definitions}
 
@@ -51,7 +87,7 @@ Table with all acronyms used in document.
     \hline
     ACRONYM & COMPLETE NAME \\
     \hline
-    EXAMPLE & example of complete name  \\
+    GPS & Global Positioning System  \\
     \hline
 \end{tabular}
 \end{center}
