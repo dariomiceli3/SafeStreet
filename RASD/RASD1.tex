@@ -71,20 +71,22 @@ From this brief description of the functionalities we may extract the following 
 \end{itemize}
 
 \subsection{Scope}
+Here we will describe all the relevant phenomena that may occur. 
 
 \subsubsection{World Phenomena}
-The World Phenomena are the events that occur in the real word and are not affected by the Machine.
+Those are the events that may occur in the real word and are not affected by the Machine.
 \\We identify:
 \begin{itemize}
     \item \textit{Citizen} sees a parking violation and wants to report it;
     \item \textit{Authorities} want to know about some violations that have been occurred;
-    \item A parking violation occurs; 
+    \item A \textit{parking violation} occurs; 
 \end{itemize} 
+
 \subsubsection{Shared Phenomena}
-Shared phenomena are the events that can be controlled by the world and observed by the machine or controlled 
-by the machine and observed by the world. there are 2 types:
+Shared phenomena are the events based on the link beetween World Phenomena and Machine Phenomena.
+We can distinguish them in two types:
 \\
-controlled by the world observed by the machine:
+Controlled by the world observed by the machine:
 \begin{itemize}
     \item A Citizen take a photo of a violation;
     \item Users can enter data for registration/login;
@@ -105,7 +107,9 @@ The Machine Phenomena are the events that occur inside the machine and are not a
     \item encryption of sensitive data;
     \item retrieving data for a request; 
 \end{itemize} 
+
 \subsection{Definitions, acronyms, abbreviations}
+
 \subsubsection{Definitions}
 \begin{itemize}
     \item user: can be either citizen or authorities
@@ -128,30 +132,132 @@ Table with all acronyms used in document.
     \hline
     ID & Identity document \\
     \hline
+    S2B & Software to be \\
+    \hline
+    GDPR & General Data Protection Regulation \\
+    \hline 
 \end{tabular}
 \end{center}
 
 \subsubsection{Abbreviations}
 
 \subsection{Revision History}
+
 \subsection{Reference documents}
+
 \subsection{Document Structure}
+\begin{itemize}
+    \item \textbf{Chapter 2:}
+    \item \textbf{Chapter 3:}
+    \item \textbf{Chapter 4:}  
+\end{itemize}
 %%%%%%%%%% !CHAPTER 1 %%%%%%%%%%
 
 %%%%%%%%%% CHAPTER 2 %%%%%%%%%%
 \section{Overall Description}
+
 \subsection{Product perspective}
-\subsubsection{}
+This section aims to explain in more detail the World, Machine and Shared Phenomena described in the 
+previous Chapter. 
+\subsubsection{World Phenomena}
+\subsubsection{Machine Phenomena}
+\begin{itemize}
+    
+\item \textbf{Storing permanently collected data:}
+The system needs to store, in a secure way, all the data submitted.
+In order to achive this purpose and guarantee the best service
+the system needs to use a DBMS.
+
+\item \textbf{Encryption of sensitive data:}
+Personal user's data and all the data relative to the violations
+that can only be seen by authorities need to be encrypted in order
+to proctect it from non-allowed third parties. 
+
+\item \textbf{Retrieving data for a request:}
+System have to fullfill the data request from the users. Data 
+requests can be of two types, a Citizen request who want to see
+statistics of a certain city area or data request by Authorities
+who want to receive the violation reports collected by SafeStreet
+\end{itemize}
+
+\subsubsection{Shared Phenomena}
+Controlled by the Machine observed by the World
+\begin{itemize}
+    \item \textbf{A Citizen take a photo of a violation:}
+    Situation in which a Citizen spots a generic violation and wants
+    to report it through the application. Using the phone camera he
+    can take the photo of the violation.
+
+    \item \textbf{User can enter data for registration/login:}
+    A user decide to use the application and provides his personal 
+    in order to register if it's the first time he use the app, or to
+    identify himself.
+
+    \item \textbf{Users can request data:}
+    In this phenomena we make a distinction between Citizen and Authorities.
+    A Citizen or may want to see violation statistics 
+    of a certain area, or in the case of Authorities they can, request
+    violation statistics and additional informations 
+\end{itemize}
+
+Controlled by the World observed by the Machine
+\begin{itemize}
+    \item 
+\end{itemize}
 
 \subsection{Product functions}
 \subsubsection{}
 
 \subsection{User characteristics}
-\subsubsection{}
+Below we describe the convention used to identify the user of the application and the function that those 
+users are allow to perform.
+\begin{itemize}
+    \item \textbf{Guest:} A user that have donwload the application but is not 
+    registered yet. This type of user is not allowed to access 
+    the application functionalities.
+    \item \textbf{Citizen:} is a generic user app not related to authorities, a 
+    common Citizen that want to use the application. After the
+    registration process and the validation of the ID card provided
+    He can log in the application and use the functionalities:
+    - report a violation
+    - request informations about the statistics of a certain area.
+    \item \textbf{Authorities:} This user is associated to the local municipal
+    police district, any traffic warden, once registered with 
+    is matricola number and logged in have access to those 
+    functionalities:
+    - request informations about the statistics of a certain area.
+    - request all the violations reported from Citizens. 
+    \item \textbf{User:} can be both a Citizen or Authority type, in this document
+    this name is used when it's not necessary make a distinction 
+    between the two.
+\end{itemize}
 
 \subsection{Assumption and Dependencies Constraints}
-[D1] dalla foto si deve vedere la targa bene
-\subsubsection{}
+\subsubsection{Assumption}
+The following list present all the domain assumption made.
+\begin{itemize}
+    \item \textbf{[D1]}: Users can't make more than one account.
+    \item \textbf{[D2]}: The Citizen assumes all responsibility for misrepresentation.
+    \item \textbf{[D3]}: Citizens who use the application are evenly distributed in any city area.
+    \item \textbf{[D4]}: The ID card present by the Citizen during the registration is valid.
+    \item \textbf{[D5]}: All the violantions reported are valid.
+    \item \textbf{[D6]}: The S2B allows to take photos from the application.
+\end{itemize}
+
+\subsubsection{Dependencies}
+This list below represent all the dependencies that S2B need in order to work properly.
+\begin{itemize}
+    \item A internet connection.
+    \item A Photocamera (with a minimum precision of 3Mp ?(non so se va messo, algoritmo può non riconoscere low quality foto))
+    \item A GPS.
+    \item A Trusted external Storage for violantions data   
+\end{itemize}
+
+\subsubsection{Constraints}
+\begin{itemize}
+    \item The S2B must guarantee the European data protection GDPR for user's sensitive data.
+    \item The S2B will be used only in Italy due to personal data type like (fiscal code and police matricola).
+\end{itemize}
 %%%%%%%%%% !CHAPTER 2 %%%%%%%%%%
 
 %%%%%%%%%% CHAPTER 3 %%%%%%%%%%
