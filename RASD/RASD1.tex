@@ -162,9 +162,13 @@ previous Chapter.
 \subsubsection{World Phenomena}
 \begin{itemize}
     \item \textbf{Citizen sees a parking violation and wants to report it:}
-    
+    While the Citizen is quietly walking, he sees a parking violations like a double parking or a car
+    parked in the middle of bike lane so he logs in, takes a picture, inserts the type of violations
+    and sends it to the \textit{System}.  
     \item \textbf{Authorities want to know abount some violations that have been occurred:}
-    \item \textbf{A parking violations occurrs:}
+    An Authority logs in and retrieves all the violations that have been send by the Citizen 
+    \item \textbf{Parking violations occurrs:}
+    Someone in the city decides to not follow parking rules and does not park his car in a proper way   
 \end{itemize}
 \subsubsection{Machine Phenomena}
 \begin{itemize}
@@ -187,7 +191,7 @@ who want to receive the violation reports collected by SafeStreet
 \end{itemize}
 
 \subsubsection{Shared Phenomena}
-Controlled by the Machine observed by the World
+Controlled by the World observed by the Machine
 \begin{itemize}
     \item \textbf{A Citizen take a photo of a violation:}
     Situation in which a Citizen spots a generic violation and wants
@@ -206,9 +210,15 @@ Controlled by the Machine observed by the World
     violation statistics and additional informations 
 \end{itemize}
 
-Controlled by the World observed by the Machine
+Controlled by the Machine observed by the World
 \begin{itemize}
-    \item 
+    \item\textbf{Track position of the violation}
+    The \textit{System} can retrieve the position where the violation occurred by fetching it from GPS service
+    \item\textbf{Mark areas with an high rate of violations}
+    Once lots of violations occured, the \textit{System} mines the information that it has in order to highlight the areas with the highest frequency of violations
+    \item\textbf{System can fullfill data requests}
+    After processing a request, the \textit{System} will show to the user the result of the DBMS query in a proper way
+
 \end{itemize}
 
 \subsection{Product functions}
