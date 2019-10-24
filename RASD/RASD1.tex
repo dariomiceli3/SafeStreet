@@ -221,6 +221,22 @@ Controlled by the Machine observed by the World
 
 \end{itemize}
 
+\subsubsection{Class Diagram} 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{img/Class_Diagram.png}
+    \caption{Safestreets' Class diagram}
+\end{figure}
+
+\subsubsection{State Chart} 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/authorities_request_state_chart.png}
+    \caption{Authority request state chart}
+\end{figure}
+
 \subsection{Product functions}
 In this section are explained the functions associated to User.
 \begin{itemize}
@@ -289,7 +305,7 @@ This list below represent all the dependencies that S2B need in order to work pr
     \item A internet connection.
     \item A Photocamera (with a minimum precision of 3Mp ?(non so se va messo, algoritmo può non riconoscere low quality foto))
     \item A GPS.
-    \item A Trusted external Storage for violantions data   
+    \item A Trusted external Storage for violations data   
 \end{itemize}
 
 \subsubsection{Constraints}
@@ -315,19 +331,69 @@ As mobile applications, the main software interfaces are:
 \subsubsection {Communication Interfaces}
 \textbf{HTTPS protocol}: to safely communicate through the internet
 \subsection{Functional Requirements}
+\subsubsection{Use Case Diagrams}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/Use_case_Citizen.png}
+    \caption{Citizen Use Case Diagram}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/Use_case_Authority.png}
+    \caption{Authority Use Case Diagram}
+\end{figure}
 
 \subsection{Performance Requirements}
+In this section we discuss requirements for what regards performance. The System must be able to support up to
+1 million of registered users. This limitation is not posed by the front-end of the System, but rather by the 
+back-end part, specifically the DB. For the same reasons it must be able to handle up to 1 million of parking violations 
+sent by the \textit{Citizen}. In order to avoid any kind of saturation, every parking violation that has not been taken into account
+ by any \textit{Authority} for 30 days, must be automatically discarded. This operation does not update the information about
+ statistics.
+ \\Requests about statistics shall be processed in less than 5 seconds. Requests about parking violations, instead, shall be processed 
+ in less than 1 second.     
 
 \subsection{Design Constraints}
 \subsubsection{Standards compliance}
+The S2B  will use certain measures as:
+\begin{itemize}
+    \item Standard longitude and latitude measures for the position
+\end{itemize}
+For what concerns the privacy, the S2B is subject to GDPR, a regulation in EU law on data protection 
+and privacy for all individual citizens of UE  
+
 \subsubsection{Hardware limitations}
+In order to work properly the application must rely on hardwares that have certain requirements 
+such as:
+\begin{itemize}
+    \item GPS
+    \item internet connection (4G/3G/2G)
+    \item Photocamera with a minimum precision of 5Mp 
+\end{itemize}   
 
 \subsection{Software System Attributes}
 \subsubsection{Reliability}
+The system must be able to run continuously without any interruptions. In order to do that, it must be ensured 
+that the system is fault tolerant. To prevent downtime, one of the main goals of architecture design must be 
+ensuring graceful degradation of the System
 \subsubsection{Availability}
+SafeStreets does not present any critical functions so 99\% availability with 3.65 days/year
+as downtime shoud be good.  
 \subsubsection{Security}
+Security is a key aspect of SafeStreets because it is very important that the informations are never altered.
+The S2B must:
+\begin{enumerate}
+ \item use HTTPS to safely communicate with the Server and DBMS    
+ \item Hash the passwords so that they are not stored in clear in the DB
+ \item Encrypt sensitive data before storing it
+ \item digital sign the parking violation sent by Citizen and then hash it  
+\end{enumerate} 
 \subsubsection{Maintainability}
+In order to achieve maintainability some good practices must be followed to reduce coupling and avoid code duplication 
 \subsubsection{Portability}
+S2B, as it stated previously, will work both in Andorid and iOS and this ensures itself portability. For 
+the back-end part, it should be OS independent
 
 \section{Formal Analysis with Alloy}
 
