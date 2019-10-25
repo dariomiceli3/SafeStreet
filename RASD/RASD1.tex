@@ -67,7 +67,7 @@ From this brief description of the functionalities we may extract the following 
     \item \textbf{[G2]}: allow \textit{Citizens} to report parking violations;
     \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported;
     \item \textbf{[G4]}: must provide a visualization of the streets with high frequency of violations and vehicles' license plate that commit the most violations;
-    \item \textbf{[G5]}: \textit{Authority} can retrieve traffic violantions' data inserted by \textit{Citizens}
+    \item \textbf{[G5]}: \textit{Authority} can retrieve traffic violations' data inserted by \textit{Citizens}
 \end{itemize}
 
 \subsection{Scope}
@@ -295,7 +295,7 @@ The following list present all the domain assumption made.
     \item \textbf{[D2]}: The Citizen assumes all responsibility for misrepresentation.
     \item \textbf{[D3]}: Citizens who use the application are evenly distributed in any city area.
     \item \textbf{[D4]}: The ID card present by the Citizen during the registration is valid.
-    \item \textbf{[D5]}: All the violantions reported are valid.
+    \item \textbf{[D5]}: All the violations reported are valid.
     \item \textbf{[D6]}: The S2B allows to take photos from the application.
 \end{itemize}
 
@@ -330,6 +330,7 @@ As mobile applications, the main software interfaces are:
 \end{itemize}
 \subsubsection {Communication Interfaces}
 \textbf{HTTPS protocol}: to safely communicate through the internet
+
 \subsection{Functional Requirements}
 \subsubsection{Use Case Diagrams}
 \begin{figure}[h!]
@@ -343,6 +344,89 @@ As mobile applications, the main software interfaces are:
     \includegraphics[scale=0.5]{img/Use_case_Authority.png}
     \caption{Authority Use Case Diagram}
 \end{figure}
+
+\subsubsection{Scenarios}
+
+\subsubsection{Use Cases}
+
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC1 \\
+\hline
+\textbf{Description} & A \textit{Guest} creates a Citizen account \\
+\hline
+\textbf{Actors} & \textit{Guest} \\
+\hline
+\textbf{Precondition} & \textit{Guest}'s smartphone satisfies hardware limitations \\
+             & \textit{Guest} has downloaded the app from the store \\
+             & \textit{Guest} has not an account\\ 
+\hline
+\textbf{Flow of events} & 1. \textit{Guest} opens the app \\
+                        & 2. \textit{Guest} clicks the registration button \\
+                        & 3. \textit{System} asks which type of account he wants to create \\
+                        & 4. \textit{Guest} selects Citizen account \\
+                        & 5. \textit{System} shows the form \\
+                        & 6. \textit{Guest} fills the form with his personal data plus mail and password \\
+                        & 7. \textit{System} checks the validity of the data inserted \\
+                        & 8. \textit{System} sends confirmation email \\
+                        & 9. \textit{Guest} receives the email and clicks the URL to complete the registration \\  
+\hline
+\textbf{Postconditions} & \textit{System} has stored a new Citizen account  \\
+                        & \textit{Guest} can login as Citizen \\
+\hline
+\textbf{Exceptions} & \textit{Guest} inserts an email that has been used by another account \\
+                    & \textit{Guest} inserts a FC that has been inserted by another account \\
+                    & In these case \textit{System} shows user an error message and the flow of events  \\
+                    & restart from point 5 \\  
+\hline
+\end{tabular}
+\caption{\textit{Guest} creates a Citizen account}
+\end{center}
+\end{table}
+
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC2 \\
+\hline
+\textbf{Description} & A \textit{Guest} creates a Authority account \\
+\hline
+\textbf{Actors} & \textit{Guest} \\
+\hline
+\textbf{Precondition} & \textit{Authority}'s smartphone satisfies hardware limitations \\
+             & \textit{Guest} has downloaded the app from the store \\
+             & \textit{Guest} has not an account\\ 
+\hline
+\textbf{Flow of events} & 1. \textit{Guest} opens the app \\
+                        & 2. \textit{Guest} clicks the registration button \\
+                        & 3. \textit{System} asks which type of account he wants to create \\
+                        & 4. \textit{Guest} selects Authority account \\
+                        & 5. \textit{System} shows the form \\
+                        & 6. \textit{Guest} fills the form with his personal data plus P.IVA mail and password \\
+                        & 7. \textit{System} checks the validity of the data inserted \\
+                        & 8. \textit{System} sends confirmation email \\
+                        & 9. \textit{Guest} receives the email and clicks the URL to complete the registration \\  
+\hline
+\textbf{Postconditions} & \textit{System} has stored a new Authority account  \\
+                        & \textit{Guest} can login as Authority \\
+\hline
+\textbf{Exceptions} & \textit{Guest} inserts an email that has been used by another account \\
+                    & \textit{Guest} inserts a P.IVA that has been inserted by another account \\
+                    & In these case \textit{System} shows user an error message and the flow of events  \\
+                    & restart from point 5 \\  
+\hline
+\end{tabular}
+\caption{\textit{Guest} creates a Authority account}
+\end{center}
+\end{table}
+
+\subsubsection{Sequence Diagrams}
+\subsubsection{Goal Mapping on Requirements}
 
 \subsection{Performance Requirements}
 In this section we discuss requirements for what regards performance. The System must be able to support up to
