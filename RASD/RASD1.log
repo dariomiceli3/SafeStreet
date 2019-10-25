@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  19 OCT 2019 18:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  25 OCT 2019 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,6 +521,14 @@ Overfull \hbox (4.512pt too wide) in paragraph at lines 25--26
  [][] 
  []
 
+<img/login.png, id=3, 288.07625pt x 515.9275pt>
+File: img/login.png Graphic file (type png)
+<use img/login.png>
+Package pdftex.def Info: img/login.png  used on input line 30.
+(pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/logo.png>]
@@ -529,52 +537,106 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
-)
+ [1 <./img/login.png>])
 \tf@toc=\write3
 \openout3 = `RASD1.toc'.
 
- [1]
-Underfull \hbox (badness 10000) in paragraph at lines 42--65
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 47--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--65
+Underfull \hbox (badness 10000) in paragraph at lines 47--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--65
+Underfull \hbox (badness 10000) in paragraph at lines 47--70
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 71.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
- [2] [3] [4] [5]
-[6] (./RASD1.aux) ) 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 71.
+ [3] [4] [5]
+<img/Class_Diagram.png, id=33, 994.71625pt x 890.32625pt>
+File: img/Class_Diagram.png Graphic file (type png)
+<use img/Class_Diagram.png>
+Package pdftex.def Info: img/Class_Diagram.png  used on input line 240.
+(pdftex.def)             Requested size: 298.41718pt x 267.09993pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/authority_request.png, id=34, 608.2725pt x 322.20375pt>
+File: img/authority_request.png Graphic file (type png)
+<use img/authority_request.png>
+Package pdftex.def Info: img/authority_request.png  used on input line 248.
+(pdftex.def)             Requested size: 304.13551pt x 161.10147pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (8.74445pt too wide) in paragraph at lines 267--277
+\OT1/cmr/m/n/10 Safestreets en-ables Au-thor-ity to vi-su-al-ize statis-tics ab
+out un-safe ar-eas. SafeStreets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--277
+
+ []
+
+[6] [7 <./img/Class_Diagram.png> <./img/authority_request.png>] [8]
+<img/Use_case_Citizen.png, id=47, 556.0775pt x 393.47pt>
+File: img/Use_case_Citizen.png Graphic file (type png)
+<use img/Use_case_Citizen.png>
+Package pdftex.def Info: img/Use_case_Citizen.png  used on input line 351.
+(pdftex.def)             Requested size: 278.03807pt x 196.73451pt.
+<img/Use_case_Authority.png, id=48, 655.44875pt x 463.7325pt>
+File: img/Use_case_Authority.png Graphic file (type png)
+<use img/Use_case_Authority.png>
+Package pdftex.def Info: img/Use_case_Authority.png  used on input line 357.
+(pdftex.def)             Requested size: 327.72357pt x 231.86568pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (59.4571pt too wide) in paragraph at lines 368--399
+ [] 
+ []
+
+
+Overfull \hbox (61.7072pt too wide) in paragraph at lines 406--437
+ [] 
+ []
+
+[9 <./img/Use_case_Citizen.png>] [10] [11 <./img/Use_case_Authority.png>]
+[12] (./RASD1.aux) ) 
 Here is how much of TeX's memory you used:
- 2254 strings out of 494923
- 30501 string characters out of 6180743
- 95804 words of memory out of 5000000
- 5543 multiletter control sequences out of 15000+600000
+ 2281 strings out of 494923
+ 31133 string characters out of 6180743
+ 100804 words of memory out of 5000000
+ 5565 multiletter control sequences out of 15000+600000
  8907 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,6n,25p,272b,209s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on RASD1.pdf (7 pages, 174471 bytes).
+ 41i,7n,25p,272b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on RASD1.pdf (13 pages, 289070 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

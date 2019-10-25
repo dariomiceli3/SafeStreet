@@ -63,11 +63,18 @@ commit the most violations.
 \\
 From this brief description of the functionalities we may extract the following goals for SafeStreets:
 \begin{itemize}
-    \item \textbf{[G1]}: allow users to be identified as a \textit{Citizen} or as \textit{Authority};
-    \item \textbf{[G2]}: allow \textit{Citizens} to report parking violations;
+    \item \textbf{[G1]}: Allow users to be identified as a \textit{Citizen} or as \textit{Authority};
+    \item \textbf{[G2]}: Allow \textit{Citizens} to report parking violations;
     \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported;
-    \item \textbf{[G4]}: must provide a visualization of the streets with high frequency of violations and vehicles' license plate that commit the most violations;
-    \item \textbf{[G5]}: \textit{Authority} can retrieve traffic violations' data inserted by \textit{Citizens}
+    \item \textbf{[G4]}: Must provide a visualization of the areas with high frequency of violations;
+    \item \textbf{[G5]}: \textit{Authority} can retrieve vehicles that commit the most violations; 
+
+\end{itemize}
+Safestreets offers also some advanced functions in addition to the basic version.
+\begin{itemize}
+    \item \textbf{[G6]}: Must ensure the chain of custody of the information sent by \textit{Citizens};
+    \item \textbf{[G7]}: \textit{Authority} can retrieve traffic violantions' data inserted by \textit{Citizens};
+    \item \textbf{[G8]}: Build statistics with the information about issued tickets;
 \end{itemize}
 
 \subsection{Scope}
@@ -233,7 +240,7 @@ Controlled by the Machine observed by the World
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/authorities_request_state_chart.png}
+    \includegraphics[scale=0.5]{img/authority_request.png}
     \caption{Authority request state chart}
 \end{figure}
 
@@ -241,25 +248,27 @@ Controlled by the Machine observed by the World
 In this section are explained the functions associated to User.
 \begin{itemize}
  \item \textbf{Citizen functions:}
- \\\\\textbf{Report a violation}
+ \textbf{Report a violation}
  \\When a Citizen sees a parking violation occurs, he takes a picture of the vehicle paying attenction to focus on the 
  license plate, inputs the type of the violation and sends it. The System will provide to add the position retrieving 
  from GPS, to add the right time and date and to add the license plate obtained through the algorithm. 
-\\\\\textbf{Retrieve statistics about unsafe areas}
+\textbf{Retrieve statistics about unsafe areas}
 \\Safestreets enables Citizen to visualize statistics about unsafe areas. SafeStreets mines the informations it has and let 
 the Citizen retrieves the result through a clear interface containing significant plots, tables and charts. 
 
- \\\\\item \textbf{Authority functions:}
+\item \textbf{Authority functions:}
+
  
- \\\\\textbf{Retrieve statistics about unsafe areas}
- \\Safestreets enables Authority to visualize statistics about unsafe areas. SafeStreets mines the informations it has and let 
- the Authority retrieves the result through a clear interface containing significant plots, tables and charts. For istance 
- Authority can understand which are the vehicles that commit the most violations or who are the most egregious offenders.
-  
- \\\\\textbf{Request violations data for traffic tickets}
-\\SafeStreets enables Authority to retrieve all the parking violations sent by Citizens. For each parking violation Authority can
- accepts it or declines it. In the first case he can generates traffic ticket, in the second case he discard the informations about
- the parking violations. In both cases SafeStreets records response in order to build statistics.
+\textbf{Retrieve statistics about unsafe areas}
+\\Safestreets enables Authority to visualize statistics about unsafe areas. SafeStreets mines the informations it has and let 
+the Authority retrieves the result through a clear interface containing significant plots, tables and charts. For istance 
+Authority can understand which are the vehicles that commit the most violations or who are the most egregious offenders.
+\\
+\\
+\textbf{Request violations data for traffic tickets}
+SafeStreets enables Authority to retrieve all the parking violations sent by Citizens. For each parking violation Authority can
+accepts it or declines it. In the first case he can generates traffic ticket, in the second case he discard the informations about
+the parking violations. In both cases SafeStreets records response in order to build statistics.
 
 \end{itemize}
 
@@ -295,8 +304,7 @@ The following list present all the domain assumption made.
     \item \textbf{[D2]}: The Citizen assumes all responsibility for misrepresentation.
     \item \textbf{[D3]}: Citizens who use the application are evenly distributed in any city area.
     \item \textbf{[D4]}: The ID card present by the Citizen during the registration is valid.
-    \item \textbf{[D5]}: All the violations reported are valid.
-    \item \textbf{[D6]}: The S2B allows to take photos from the application.
+    \item \textbf{[D5]}: The S2B allows to take photos from the application.
 \end{itemize}
 
 \subsubsection{Dependencies}
@@ -346,6 +354,41 @@ As mobile applications, the main software interfaces are:
 \end{figure}
 
 \subsubsection{Scenarios}
+\begin{itemize}
+    \item \textbf{Scenario 1}:
+    Luca is walking towards work when outside, in the street of his , he sees that many cars are parked badly. 
+    Some of these are parked near the strips, obstructing the view of the pedestrian who must cross the strips. 
+    Luca tired of the situation that endangers him and many other citizens decides to report the incident to the police. 
+    With his smartphone he opens the SafeStreets application and after logging in, click on the report button to report the fact. 
+    Following the instructions of the luca application the necessary photo is taken, the plate is correctly recognized and 
+    Luca then confirms the various data taken automatically. After the report Luca goes to statistics and discovers that it 
+    is not the first time that the vehicle in question does not comply with the rules.
+
+    \item \textbf{Scenario 2}:
+    Luca is a disabled boy, he is perfectly able to drive the car but it is difficult for him to walk for long stretches. 
+    The area in which he works is very busy and it is really difficult to find parking nearby but fortunately there are parking 
+    spaces reserved for disabled people near the entrance of the building. One morning he finds the place occupied and looking 
+    better note that the machine does not have the certificate necessary to be able to park in the places reserved for the disabled. 
+    Thanks to Safestreet after logging in as a citizen, you can report this violation directly to the authorities by clicking on the report. 
+    Following the instructions take the necessary photos directly from the application that retrieves information such as location and a 
+    timestamp with date and time. The application tries to recognize the plaque from the photos and shows the result to Luca, who after 
+    confirming the correctness can confirm and officially send the violation.
+
+    \item \textbf{Scenario 3}:
+    Il comando della municipale del comune di milano vuole ottimizzare i pattugliamenti, mirando alle zone più problematiche della città. 
+    Questa sorveglianza mirata è fondamentale e porterebbe notevoli vantaggi tra cui: una potenziale riduzione di violazioni in queste aree 
+    e riduzione di pattugliamenti inutili in aree con minor numero di violazioni. Fortunatamente, avendo aderito all'iniziativa di SafeStreet, 
+    grazie al contributo dei cittadini possono utilizzare l'applicazione per ricevere queste statistiche direttamente da smartphone. Dopo essersi 
+    registrati come autorità ed effettuato il login possono accedere alle statistiche visualizzando quindi le aree con più violazioni e i veicoli 
+    di chi ha ricevuto più segnalazioni.
+
+    \item \textbf{Scenario 4}:
+    Andrea è un giovane vigile del comune di Milano. Ama mettere molta passione nel suo lavoro e per farlo si informa spesso verso le nuove tecnologie. 
+    Dopo aver scaricato SafeStreet ed essersi registrato come Autorità si interessa subito alla funzione per generare multe grazie ai report fatti 
+    dagli utenti. Dopo aver effettuato una richiesta viene visualizzata la schermata di riconoscimento in cui vengono mostrate le varie segnalazioni 
+    una per volta. Andrea può comodamente valutare, osservando la foto, se effettivamente si tratta di una violazione e in caso affermativo andrea ha 
+    tutti i dati necessari per poter generare una multa.
+\end{itemize}
 
 \subsubsection{Use Cases}
 
