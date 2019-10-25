@@ -73,7 +73,7 @@ From this brief description of the functionalities we may extract the following 
 Safestreets offers also some advanced functions in addition to the basic version.
 \begin{itemize}
     \item \textbf{[G6]}: Must ensure the chain of custody of the information sent by \textit{Citizens};
-    \item \textbf{[G7]}: \textit{Authority} can retrieve traffic violantions' data inserted by \textit{Citizens};
+    \item \textbf{[G7]}: \textit{Authority} can retrieve traffic violations' data inserted by \textit{Citizens};
     \item \textbf{[G8]}: Build statistics with the information about issued tickets;
 \end{itemize}
 
@@ -235,13 +235,19 @@ Controlled by the Machine observed by the World
     \includegraphics[scale=0.3]{img/Class_Diagram.png}
     \caption{Safestreets' Class diagram}
 \end{figure}
-
+\clearpage
 \subsubsection{State Chart} 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{img/authority_request.png}
     \caption{Authority request state chart}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/citizen_request.png}
+    \caption{Citizen request state chart}
 \end{figure}
 
 \subsection{Product functions}
@@ -346,7 +352,7 @@ As mobile applications, the main software interfaces are:
     \includegraphics[scale=0.5]{img/Use_case_Citizen.png}
     \caption{Citizen Use Case Diagram}
 \end{figure}
-
+\clearpage
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{img/Use_case_Authority.png}
@@ -391,7 +397,7 @@ As mobile applications, the main software interfaces are:
 \end{itemize}
 
 \subsubsection{Use Cases}
-
+\clearpage
 \begin{table}
     \begin{center}
     \centering
@@ -430,6 +436,8 @@ As mobile applications, the main software interfaces are:
 \end{center}
 \end{table}
 
+
+\clearpage
 \begin{table}
     \begin{center}
     \centering
@@ -465,6 +473,101 @@ As mobile applications, the main software interfaces are:
 \hline
 \end{tabular}
 \caption{\textit{Guest} creates a Authority account}
+\end{center}
+\end{table}
+
+\clearpage
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC3 \\
+\hline
+\textbf{Description} & A \textit{Citizen} logs in  \\
+\hline
+\textbf{Actors} & \textit{Citizen} \\
+\hline
+\textbf{Precondition} & \textit{Citizen} has already created the Citizen account \\
+\hline
+\textbf{Flow of events} & 1. \textit{Citizen} opens the app \\
+                        & 2. \textit{Citizen} clicks the login button  \\
+                        & 3. \textit{System} shows the form \\
+                        & 4. \textit{Citizen} inputs his credentials  \\
+                        & 5. \textit{System} checks the validity of the data inserted \\
+\hline
+\textbf{Postconditions} & \textit{Citizen} can use properly the app   \\
+\hline
+\textbf{Exceptions} & \textit{Citizen} inserts wrong credentials \\
+                    & In this case \textit{System} shows user an error message and the flow of events  \\
+                    & restart from point 3\\  
+\hline
+\end{tabular}
+\caption{\textit{Citizen} login}
+\end{center}
+\end{table}
+
+\clearpage
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC4 \\
+\hline
+\textbf{Description} & A \textit{Authority} logs in  \\
+\hline
+\textbf{Actors} & \textit{Authority} \\
+\hline
+\textbf{Precondition} & \textit{Authority} has already created the Authority account \\
+\hline
+\textbf{Flow of events} & 1. \textit{Authority} opens the app \\
+                        & 2. \textit{Authority} clicks the login button  \\
+                        & 3. \textit{Authority} clicks the login button for Authority \\
+                        & 4. \textit{System} shows the form \\
+                        & 5. \textit{Authority} inputs his credentials  \\
+                        & 6. \textit{System} checks the validity of the data inserted \\
+\hline
+\textbf{Postconditions} & \textit{Authority} can use properly the app   \\
+\hline
+\textbf{Exceptions} & \textit{Authority} inserts wrong credentials \\
+                    & In this case \textit{System} shows user an error message and the flow of events  \\
+                    & restart from point 4\\  
+\hline
+\end{tabular}
+\caption{\textit{Authority} login}
+\end{center}
+\end{table}
+
+\clearpage
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC5 \\
+\hline
+\textbf{Description} & A \textit{Citizen} report a parking violation  \\
+\hline
+\textbf{Actors} & \textit{Citizen} \\
+\hline
+\textbf{Precondition} & \textit{Citizen} has already logged in \\
+\hline
+\textbf{Flow of events} & 1. \textit{Citizen} clicks the report button \\
+                        & 2. \textit{System} opens the photocamera \\
+                        & 3. \textit{Citizen} takes a picture  \\
+                        & 4. \textit{System} shows the summary \\
+                        & 5. \textit{Citizen} inputs the type of violation \\
+                        & 6. \textit{Citizen} clicks the send button \\
+\hline
+\textbf{Postconditions} & \textit{System}'s DB stores the violation  \\
+\hline
+\textbf{Exceptions} & \textit{Citizen} takes a bad picture \\
+                    & In this case \textit{System} discards the picture and the flow of events  \\
+                    & restart from point 3\\  
+\hline
+\end{tabular}
+\caption{\textit{Citizen} reports a parking violation}
 \end{center}
 \end{table}
 
@@ -522,13 +625,14 @@ In order to achieve maintainability some good practices must be followed to redu
 S2B, as it stated previously, will work both in Andorid and iOS and this ensures itself portability. For 
 the back-end part, it should be OS independent
 
+
+
+%%%%%%%%%% !CHAPTER 3 %%%%%%%%%%
+
+
 \section{Formal Analysis with Alloy}
 
 \section{Efforts}
 
 
-
-
-%%%%%%%%%% !CHAPTER 3 %%%%%%%%%%
-    
 \end{document}
