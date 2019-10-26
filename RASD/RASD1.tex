@@ -232,21 +232,21 @@ Controlled by the Machine observed by the World
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.3]{img/Class_Diagram.png}
+    \includegraphics[scale=0.3]{img/class_diagram.png}
     \caption{Safestreets' Class diagram}
 \end{figure}
 \clearpage
-\subsubsection{State Chart} 
+\subsubsection{State Charts} 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/authority_request.png}
+    \includegraphics[scale=0.5]{img/state_charts/authority_request.png}
     \caption{Authority request state chart}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/citizen_request.png}
+    \includegraphics[scale=0.5]{img/state_charts/citizen_request.png}
     \caption{Citizen request state chart}
 \end{figure}
 
@@ -334,6 +334,65 @@ This list below represent all the dependencies that S2B need in order to work pr
 
 \subsection{External Interface Requirements}
 \subsubsection{User Interfaces}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/login.png}
+    \caption{photos}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/register_authority.png}
+    \caption{Register authority}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/register_citizen.png}
+    \caption{Register citizen}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/home_citizen.png}
+    \caption{Home citizen}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/home_authority.png}
+    \caption{Home authority}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/statistics_citizen.png}
+    \caption{statistics citizen}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/statistics_authority_vehicles.png}
+    \caption{statistics authority}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/statistics_authority_violations.png}
+    \caption{statistics authority}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/page_citizen.png}
+    \caption{Page citizen}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/mockups/page_authority.png}
+    \caption{Page authority}
+\end{figure}
 \subsubsection{Hardware Interfaces}
 The System does not offer any Hardware Interfaces
 \subsubsection{Software Interfaces}
@@ -349,51 +408,51 @@ As mobile applications, the main software interfaces are:
 \subsubsection{Use Case Diagrams}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/Use_case_Citizen.png}
+    \includegraphics[scale=0.5]{img/use_case_diagrams/citizen.png}
     \caption{Citizen Use Case Diagram}
 \end{figure}
 \clearpage
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/Use_case_Authority.png}
+    \includegraphics[scale=0.5]{img/use_case_diagrams/authority.png}
     \caption{Authority Use Case Diagram}
 \end{figure}
 
 \subsubsection{Scenarios}
 \begin{itemize}
     \item \textbf{Scenario 1}:
-    Luca is walking towards work when outside, in the street of his , he sees that many cars are parked badly. 
+    Luca is walking towards work when outside, in the street of his house, he sees that many cars are parked badly. 
     Some of these are parked near the strips, obstructing the view of the pedestrian who must cross the strips. 
-    Luca tired of the situation that endangers him and many other citizens decides to report the incident to the police. 
+    Luca tired of the situation, that endangers him and many other citizens, decides to report the incident. 
     With his smartphone he opens the SafeStreets application and after logging in, click on the report button to report the fact. 
-    Following the instructions of the luca application the necessary photo is taken, the plate is correctly recognized and 
-    Luca then confirms the various data taken automatically. After the report Luca goes to statistics and discovers that it 
-    is not the first time that the vehicle in question does not comply with the rules.
+    He take the photo by click on the report button in the application's home, then he receives the data retrieved, the plate is correctly 
+    recognized and, after inserted the type of violation, Luca clicks on confirm button.
 
     \item \textbf{Scenario 2}:
-    Luca is a disabled boy, he is perfectly able to drive the car but it is difficult for him to walk for long stretches. 
-    The area in which he works is very busy and it is really difficult to find parking nearby but fortunately there are parking 
+    Andrea is a disabled boy, he is perfectly able to drive the car but it is difficult for him to walk for long stretches. 
+    The area in which he works is very busy and it is very rare to find parking nearby, fortunately there are parking 
     spaces reserved for disabled people near the entrance of the building. One morning he finds the place occupied and looking 
-    better note that the machine does not have the certificate necessary to be able to park in the places reserved for the disabled. 
-    Thanks to Safestreet after logging in as a citizen, you can report this violation directly to the authorities by clicking on the report. 
-    Following the instructions take the necessary photos directly from the application that retrieves information such as location and a 
-    timestamp with date and time. The application tries to recognize the plaque from the photos and shows the result to Luca, who after 
-    confirming the correctness can confirm and officially send the violation.
+    better the machine parked he notece that lack of the certificate necessary for parking in the places reserved for the disabled. 
+    Thanks to Safestreet after logging in as a citizen, Andrea can report this violation directly to the authorities. 
+    Andrea can now take a photo directly from the application's home by click on report button. Safestreest retrieves information such as 
+    location and a timestamp with date and time. The application tries to recognize the plaque from the photos and shows the result to Luca, 
+    who after confirming the correctness can click on confirm button and officially send the violation.
 
     \item \textbf{Scenario 3}:
-    Il comando della municipale del comune di milano vuole ottimizzare i pattugliamenti, mirando alle zone più problematiche della città. 
-    Questa sorveglianza mirata è fondamentale e porterebbe notevoli vantaggi tra cui: una potenziale riduzione di violazioni in queste aree 
-    e riduzione di pattugliamenti inutili in aree con minor numero di violazioni. Fortunatamente, avendo aderito all'iniziativa di SafeStreet, 
-    grazie al contributo dei cittadini possono utilizzare l'applicazione per ricevere queste statistiche direttamente da smartphone. Dopo essersi 
-    registrati come autorità ed effettuato il login possono accedere alle statistiche visualizzando quindi le aree con più violazioni e i veicoli 
-    di chi ha ricevuto più segnalazioni.
+    The command of the municipal of the municipality of Milan wants to optimize his patrols, aiming at the most problematic areas of the city.
+    This targeted surveillance is essential and would bring significant benefits including: a potential reduction of violations in these areas
+    and reduction of unnecessary patrols in areas with fewer violations. Fortunately, having joined the SafeStreet initiative, thanks to the 
+    contribution of citizens, they can use the application to receive these statistics directly from smartphones. After having 
+    registered as an authority and logged in, they can access the violations statistics. From this page they can see not only a map with a general
+    perspective of the areas but also check for a specific location by moving the pointer on the map.  
 
     \item \textbf{Scenario 4}:
-    Andrea è un giovane vigile del comune di Milano. Ama mettere molta passione nel suo lavoro e per farlo si informa spesso verso le nuove tecnologie. 
-    Dopo aver scaricato SafeStreet ed essersi registrato come Autorità si interessa subito alla funzione per generare multe grazie ai report fatti 
-    dagli utenti. Dopo aver effettuato una richiesta viene visualizzata la schermata di riconoscimento in cui vengono mostrate le varie segnalazioni 
-    una per volta. Andrea può comodamente valutare, osservando la foto, se effettivamente si tratta di una violazione e in caso affermativo andrea ha 
-    tutti i dati necessari per poter generare una multa.
+    Maurizio is a young policeman from the city of Milan. He loves putting a lot of passion into his work and to do so he often learns about new 
+    technologies. After downloading SafeStreets and registering as an Authority, he immediately takes an interest in the function to generate fines 
+    thanks to the reports made by users. From the home of SafeStreets Maurizio clicks on retrieve violations button, then the application 
+    starts showing to him some violations, once a time with a photo and the related data. Maurizio then needs only to analyze the photo and
+    check if it's a valid violations or not. Once he decided he can generate a ticket for that violation and then by confirming clik on yes/no button
+    the next violation will be showed. Every answer provided allow SafeStreets to update statistics and give more precise information to users. 
 \end{itemize}
 
 \subsubsection{Use Cases}
@@ -646,7 +705,7 @@ As mobile applications, the main software interfaces are:
 \textbf{Flow of events} & 1. \textit{User} clicks the retrieve statistics button \\
                         & 2. \textit{System} shows summary of statistics \\
 \hline
-\textbf{Postconditions} & \textit{User} increases his knowledge about parking violations of his city  \\\
+\textbf{Postconditions} & \textit{User} increases his knowledge about parking violations of his city  \\
 \hline
 \textbf{Exceptions} & \\ 
 \hline
@@ -657,6 +716,36 @@ As mobile applications, the main software interfaces are:
 
 
 \subsubsection{Sequence Diagrams}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/accept_retrieve_violation.png}
+    \caption{Accept retrieve violation}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/discard_retrieve_violation.png}
+    \caption{Discard retrieve violation}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/login.png}
+    \caption{Login}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/report_violation.png}
+    \caption{Report violation}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/retrieve_statistics.png}
+    \caption{Retrieve statistics}
+\end{figure}
+
 
 \subsubsection{Goal Mapping on Requirements}
 
