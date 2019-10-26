@@ -547,7 +547,7 @@ As mobile applications, the main software interfaces are:
 \hline
 \textbf{ID} & UC5 \\
 \hline
-\textbf{Description} & A \textit{Citizen} report a parking violation  \\
+\textbf{Description} & A \textit{Citizen} reports a parking violation  \\
 \hline
 \textbf{Actors} & \textit{Citizen} \\
 \hline
@@ -571,7 +571,93 @@ As mobile applications, the main software interfaces are:
 \end{center}
 \end{table}
 
+\clearpage
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC6 \\
+\hline
+\textbf{Description} & A \textit{Authority} retrieves a legitimate parking violation  \\
+\hline
+\textbf{Actors} & \textit{Authority} \\
+\hline
+\textbf{Precondition} & \textit{Authority} has already logged in \\
+\hline
+\textbf{Flow of events} & 1. \textit{Authority} clicks the retrieve button \\
+                        & 2. \textit{System} shows summary of a parking violation \\
+                        & 3. \textit{Authority} checks that it is a real parking violations  \\
+                        & 4. \textit{Authority} clicks the ok button  \\
+\hline
+\textbf{Postconditions} &  \textit{Authority} generates a traffic and \textit{System} uploads \\ 
+                        & statistics \\
+\hline
+\textbf{Exceptions} & \\ 
+\hline
+\end{tabular}
+\caption{Legitimate parking violation retrieved by \textit{Authority} }
+\end{center}
+\end{table}
+
+\clearpage
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC7 \\
+\hline
+\textbf{Description} & A \textit{Authority} retrieves a  wrong parking violation  \\
+\hline
+\textbf{Actors} & \textit{Authority} \\
+\hline
+\textbf{Precondition} & \textit{Authority} has already logged in \\
+\hline
+\textbf{Flow of events} & 1. \textit{Authority} clicks the retrieve button \\
+                        & 2. \textit{System} shows summary of a parking violation \\
+                        & 3. \textit{Authority} checks that it is not a real parking violations \\
+                        & 4. \textit{Authority} clicks the discard button  \\
+\hline
+\textbf{Postconditions} & \textit{Authority} discards the picture and \textit{System} uploads   \\
+                        &  statistics \\
+\hline
+\textbf{Exceptions} & \\ 
+\hline
+\end{tabular}
+\caption{Wrong parking violation retrieved by \textit{Authority} }
+\end{center}
+\end{table}
+
+\clearpage
+\begin{table}
+    \begin{center}
+    \centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{ID} & UC8 \\
+\hline
+\textbf{Description} & A \textit{User} retrieves statistics  \\
+\hline
+\textbf{Actors} & \textit{Authority}, \textit{Citizen} \\
+\hline
+\textbf{Precondition} & \textit{User} has already logged in \\
+\hline
+\textbf{Flow of events} & 1. \textit{User} clicks the retrieve statistics button \\
+                        & 2. \textit{System} shows summary of statistics \\
+\hline
+\textbf{Postconditions} & \textit{User} increases his knowledge about parking violations of his city  \\\
+\hline
+\textbf{Exceptions} & \\ 
+\hline
+\end{tabular}
+\caption{statistics retrieved by \textit{User} }
+\end{center}
+\end{table}
+
+
 \subsubsection{Sequence Diagrams}
+
 \subsubsection{Goal Mapping on Requirements}
 
 \subsection{Performance Requirements}
