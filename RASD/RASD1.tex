@@ -5,7 +5,7 @@
 \usepackage[a4paper, top=4cm, bottom=4cm, left=4cm, right=4cm]{geometry}
 
 \title{
-    \textbf{\textit{SafeStreet}} \\
+    \textbf{\textit{SafeStreets}} \\
     \textbf{RASD document}}
 
 \date{Academic year: 2019 - 2020}
@@ -32,49 +32,48 @@
 \newpage
 %%%%%%%%%% CHAPTER 1 %%%%%%%%%%
 \section{Introduction}
-This is the RASD document for \textit{SafeStreet}, 
-it provides a general view about key aspects of the project. The purpose of this document is to formalize a description
-of the system's requirements both functional and non-funcional. In the following pages will be covered goals of the 
-application with respect to phenomena. This document is addressed to developers as a guideline to implement the requirements
-that follows.  
+This is the RASD document for \textit{SafeStreets}, that provides a general view about key aspects of the project. 
+The purpose of this document is to formalize a description of the system's requirements both functional and non-funcional. 
+In the following pages will be covered goals of the application with respect to phenomena. This document is addressed to 
+developers as a guideline to implement the requirements that follows and as an overview for stakeholders.
 
 \subsection{Purpose}
-SafeStreets is a service that aims to provide users with the possibility to notify authorities when traffic 
+\textit{SafeStreets} is a service that aims to provide \textit{Users} with the possibility to notify authorities when traffic 
 violations occur, and in particular parking violations. The application's goal is achieved by allowing users 
 to share photo, position, date, time and type of violation and by enabling \textit{Authorities} to request them.
 \\
 \\
-Safestreets requires the users to create an account to access its services, the functionalities unlocked after 
+Safestreets requires the \textit{Users} to create an account to access its services, the functionalities unlocked after 
 registration depend on the type of account created.
 \\
-If a user creates an account as \textit{Citizen}, he/she must provide information about ID card on order to prove 
+If a user creates an account as \textit{Citizen}, he/she must provide a fiscal code in order to prove 
 that he/she is a real person. Furthermore, he must provide an email with which he will be uniquely identified 
-and a password. Once the account has been activated, user can finally start to report parking violation. 
-The users can also see a summary of the streets with the highest frequency of violations.
+and a password. Once the account has been activated, user can finally start to report parking violations and can also see 
+a statistics of the streets with the highest frequency of violations.
 \\
 \\
 On the other hand, an officer will create an account as \textit{Authority} and he will need to provide his name, surname, 
 work's Matricola, a password and as for \textit{Citizen}, will be uniquely identified by an email. Once the Matricola 
 has been verified and the account has been activated, the officer can retrieve the potential parking violations 
 sent by \textit{Citizen} that have not been taken into account yet by other officers, analyze them and, if it is the 
-right case, generate traffic tickets. \textit{Authorities} can also see a summary of the vehicles' license plate that 
-commit the most violations.
+right case, generates traffic tickets. \textit{Authorities}, can see the same statistics of the \textit{Citizen} and can also see
+statistics about vehicles' license plate that commit the most violations.
 \\
 \\
-From this brief description of the functionalities we may extract the following goals for SafeStreets:
+From this brief description of the functionalities we may extract the following goals for \textit{SafeStreets}:
 \begin{itemize}
-    \item \textbf{[G1]}: Allow users to be identified as a \textit{Citizen} or as \textit{Authority};
+    \item \textbf{[G1]}: Allow \textit{Users} to be identified as a \textit{Citizen} or as \textit{Authority};
     \item \textbf{[G2]}: Allow \textit{Citizens} to report parking violations;
-    \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported;
-    \item \textbf{[G4]}: Must provide a visualization of the areas with high frequency of violations;
-    \item \textbf{[G5]}: \textit{Authority} can retrieve vehicles that commit the most violations; 
+    \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported for \textit{Users};
+    \item \textbf{[G4]}: Must provide a visualization of the areas with high frequency of violations to \textit{Users};
+    \item \textbf{[G5]}: Must provide a visualization of vehicles that commit the most violations to \textit{Authorities}; 
 
 \end{itemize}
 Safestreets offers also some advanced functions in addition to the basic version.
 \begin{itemize}
     \item \textbf{[G6]}: Must ensure the chain of custody of the information sent by \textit{Citizens};
-    \item \textbf{[G7]}: \textit{Authority} can retrieve traffic violations' data inserted by \textit{Citizens};
-    \item \textbf{[G8]}: Build statistics with the information about issued tickets;
+    \item \textbf{[G7]}: \textit{Authorities} can retrieve traffic violations' in order to generate traffic tickets;
+    \item \textbf{[G8]}: \textit{System} must build statistics with the informations about issued tickets;
 \end{itemize}
 
 \subsection{Scope}
@@ -85,7 +84,7 @@ Those are the events that may occur in the real word and are not affected by the
 \\We identify:
 \begin{itemize}
     \item \textit{Citizen} sees a parking violation and wants to report it;
-    \item \textit{Authorities} want to know about some violations that have been occurred;
+    \item \textit{Users} want to know about some violations that have been occurred;
     \item A \textit{parking violation} occurs; 
 \end{itemize} 
 
@@ -95,14 +94,14 @@ We can distinguish them in two types:
 \\
 Controlled by the world observed by the machine:
 \begin{itemize}
-    \item A Citizen take a photo of a violation;
-    \item Users can enter data for registration/login;
-    \item Users can request data;
+    \item A \textit{Citizen} reports a violation;
+    \item \textit{Users} can enter data for registration/login;
+    \item \textit{Users} can request data;
 \end{itemize}
 Controlled by the machine observed by the world:
 \begin{itemize}
-    \item track position of the violation;
-    \item mark areas with an high rate of violations;
+    \item Track position of the violation;
+    \item Mark areas with an high rate of violations;
     \item System can fullfill data requests;
 \end{itemize}
 
@@ -110,21 +109,21 @@ Controlled by the machine observed by the world:
 The Machine Phenomena are the events that occur inside the machine and are not affected by the real world.
 \\We identify:
 \begin{itemize}
-    \item storing permanently collected data;
-    \item encryption of sensitive data;
-    \item retrieving data for a request; 
+    \item Storing permanently collected data;
+    \item Encryption of sensitive data;
+    \item Retrieving data for a request; 
 \end{itemize} 
 
 \subsection{Definitions, acronyms, abbreviations}
 
 \subsubsection{Definitions}
 \begin{itemize}
-    \item user: can be either citizen or authorities
+    \item \textit{Users}: can be either \textit{Citizen} or \textit{Authority}
+    \item \textit{traffic violation}: generic violation that can occur in a street
+    \item \textit{parking violation}: a violation caused by a bad parking
+    \item \textit{violation}: general violation, identity both traffic or parking violation
+    \item \textit{unsafe areas}: areas with an high rate of violations
 \end{itemize}
-traffic violation: generic violation that can occur in a street
-parking violation: a violation caused by a bad parking
-violation: general violation, identity both traffic or parking violation
-unsafe areas: areas with an high rate of violations
 
 \subsubsection{Acronyms}
 Table with all acronyms used in document.
@@ -137,26 +136,45 @@ Table with all acronyms used in document.
     \hline
     GPS & global positioning systems \\
     \hline
-    ID & Identity document \\
-    \hline
     S2B & Software to be \\
     \hline
     GDPR & General Data Protection Regulation \\
     \hline 
+    FC & Fiscal code \\
+    \hline
 \end{tabular}
 \end{center}
 
 \subsubsection{Abbreviations}
+\begin{itemize}
+    \item \textbf{Gn}: n-th Goal
+    \item \textbf{Rn}: n-th Requirement 
+    \item \textbf{Dn}: n-th Domain Assumption
+    \item \textbf{Cn}: n-th Constraint 
+\end{itemize}
 
 \subsection{Revision History}
 
 \subsection{Reference documents}
+\begin{itemize}
+    \item ISO/IEC/IEEE 29148: https://www.iso.org/standard/45171.html
+    \item Specification Document: "SafeStreets Mandatory Project Assignement"
+    \item Diagrams: https://www.draw.io/
+    \item Mockups: https://www.figma.com/
+    \item Alloy Official Documentation: http://alloy.lcs.mit.edu/alloy/documentation.html
+\end{itemize}
 
 \subsection{Document Structure}
 \begin{itemize}
-    \item \textbf{Chapter 2:}
-    \item \textbf{Chapter 3:}
-    \item \textbf{Chapter 4:}  
+    \item \textbf{Chapter 2}: Presents an overall description of the system explaining in more datailed 
+    way Phenomena described in chapter 1. Provides some diagrams usefull to understand key aspects and 
+    general behavior of the system and possible type of \textit{Users} with respective functions that they are allowed to do. 
+    This chapter is also focused on defininng functional requirements such
+    as constraints, domain assumption and dependencies that will be covered later.    
+    \item \textbf{Chapter 3}: This chapter is intended for developers, dives deeper on the aspects of chapter 2 using 
+    use cases and sequence diagrams in order to clarify process and interaction between \textit{Users} and \textit{System}.
+    
+    \item \textbf{Chapter 4}:  
 \end{itemize}
 %%%%%%%%%% !CHAPTER 1 %%%%%%%%%%
 
@@ -194,7 +212,7 @@ to proctect it from non-allowed third parties.
 System have to fullfill the data request from the users. Data 
 requests can be of two types, a Citizen request who want to see
 statistics of a certain city area or data request by Authorities
-who want to receive the violation reports collected by SafeStreet
+who want to receive the violation reports collected by \textit{SafeStreets}
 \end{itemize}
 
 \subsubsection{Shared Phenomena}
@@ -433,7 +451,7 @@ As mobile applications, the main software interfaces are:
     The area in which he works is very busy and it is very rare to find parking nearby, fortunately there are parking 
     spaces reserved for disabled people near the entrance of the building. One morning he finds the place occupied and looking 
     better the machine parked he notece that lack of the certificate necessary for parking in the places reserved for the disabled. 
-    Thanks to Safestreet after logging in as a citizen, Andrea can report this violation directly to the authorities. 
+    Thanks to \textit{SafeStreets} after logging in as a citizen, Andrea can report this violation directly to the authorities. 
     Andrea can now take a photo directly from the application's home by click on report button. Safestreest retrieves information such as 
     location and a timestamp with date and time. The application tries to recognize the plaque from the photos and shows the result to Luca, 
     who after confirming the correctness can click on confirm button and officially send the violation.
@@ -441,7 +459,7 @@ As mobile applications, the main software interfaces are:
     \item \textbf{Scenario 3}:
     The command of the municipal of the municipality of Milan wants to optimize his patrols, aiming at the most problematic areas of the city.
     This targeted surveillance is essential and would bring significant benefits including: a potential reduction of violations in these areas
-    and reduction of unnecessary patrols in areas with fewer violations. Fortunately, having joined the SafeStreet initiative, thanks to the 
+    and reduction of unnecessary patrols in areas with fewer violations. Fortunately, having joined the \textit{SafeStreets} initiative, thanks to the 
     contribution of citizens, they can use the application to receive these statistics directly from smartphones. After having 
     registered as an authority and logged in, they can access the violations statistics. From this page they can see not only a map with a general
     perspective of the areas but also check for a specific location by moving the pointer on the map.  

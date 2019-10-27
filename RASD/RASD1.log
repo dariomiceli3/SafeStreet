@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  26 OCT 2019 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  27 OCT 2019 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,263 +524,265 @@ Overfull \hbox (4.512pt too wide) in paragraph at lines 25--26
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/logo.png>]
-(./RASD1.toc)
+(./RASD1.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+ [1])
 \tf@toc=\write3
 \openout3 = `RASD1.toc'.
 
- [1]
-Underfull \hbox (badness 10000) in paragraph at lines 42--65
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 41--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--65
+Underfull \hbox (badness 10000) in paragraph at lines 41--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--65
+Underfull \hbox (badness 10000) in paragraph at lines 41--64
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 65.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
- [2]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 132.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 132.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
  [3] [4]
-<img/class_diagram.png, id=28, 994.71625pt x 890.32625pt>
+Overfull \hbox (7.25395pt too wide) in paragraph at lines 164--165
+[]\OT1/cmr/m/n/10 Alloy Of-fi-cial Doc-u-men-ta-tion: http://alloy.lcs.mit.edu/
+alloy/documentation.html 
+ []
+
+[5] [6]
+<img/class_diagram.png, id=35, 994.71625pt x 890.32625pt>
 File: img/class_diagram.png Graphic file (type png)
 <use img/class_diagram.png>
-Package pdftex.def Info: img/class_diagram.png  used on input line 235.
+Package pdftex.def Info: img/class_diagram.png  used on input line 253.
 (pdftex.def)             Requested size: 298.41718pt x 267.09993pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5] [6 <./img/class_diagram.png>]
-<img/state_charts/authority_request.png, id=37, 608.2725pt x 322.20375pt>
+ [7 <./img/class_diagram.png>]
+<img/state_charts/authority_request.png, id=40, 608.2725pt x 322.20375pt>
 File: img/state_charts/authority_request.png Graphic file (type png)
 <use img/state_charts/authority_request.png>
 Package pdftex.def Info: img/state_charts/authority_request.png  used on input 
-line 243.
+line 261.
 (pdftex.def)             Requested size: 304.13551pt x 161.10147pt.
-<img/state_charts/citizen_request.png, id=38, 452.69125pt x 61.22874pt>
+<img/state_charts/citizen_request.png, id=41, 452.69125pt x 61.22874pt>
 File: img/state_charts/citizen_request.png Graphic file (type png)
 <use img/state_charts/citizen_request.png>
 Package pdftex.def Info: img/state_charts/citizen_request.png  used on input li
-ne 249.
+ne 267.
 (pdftex.def)             Requested size: 226.34506pt x 30.61429pt.
 
-Overfull \hbox (8.74445pt too wide) in paragraph at lines 268--278
+Overfull \hbox (8.74445pt too wide) in paragraph at lines 286--296
 \OT1/cmr/m/n/10 Safestreets en-ables Au-thor-ity to vi-su-al-ize statis-tics ab
 out un-safe ar-eas. SafeStreets
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--278
+Underfull \hbox (badness 10000) in paragraph at lines 286--296
 
  []
 
-[7
+[8
 
  <./img/state_charts/authority_request.png> <./img/state_charts/citizen_request
 .png>]
-<img/mockups/login.png, id=44, 288.07625pt x 515.9275pt>
+<img/mockups/login.png, id=47, 288.07625pt x 515.9275pt>
 File: img/mockups/login.png Graphic file (type png)
 <use img/mockups/login.png>
-Package pdftex.def Info: img/mockups/login.png  used on input line 339.
+Package pdftex.def Info: img/mockups/login.png  used on input line 357.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
- [8]
-<img/mockups/register_authority.png, id=48, 288.07625pt x 516.93124pt>
+ [9]
+<img/mockups/register_authority.png, id=51, 288.07625pt x 516.93124pt>
 File: img/mockups/register_authority.png Graphic file (type png)
 <use img/mockups/register_authority.png>
 Package pdftex.def Info: img/mockups/register_authority.png  used on input line
- 345.
+ 363.
 (pdftex.def)             Requested size: 144.03777pt x 258.46498pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/register_citizen.png, id=49, 288.07625pt x 515.9275pt>
+<img/mockups/register_citizen.png, id=52, 288.07625pt x 515.9275pt>
 File: img/mockups/register_citizen.png Graphic file (type png)
 <use img/mockups/register_citizen.png>
 Package pdftex.def Info: img/mockups/register_citizen.png  used on input line 3
-51.
+69.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/home_citizen.png, id=50, 288.07625pt x 515.9275pt>
+<img/mockups/home_citizen.png, id=53, 288.07625pt x 515.9275pt>
 File: img/mockups/home_citizen.png Graphic file (type png)
 <use img/mockups/home_citizen.png>
-Package pdftex.def Info: img/mockups/home_citizen.png  used on input line 357.
+Package pdftex.def Info: img/mockups/home_citizen.png  used on input line 375.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/home_authority.png, id=51, 288.07625pt x 515.9275pt>
+<img/mockups/home_authority.png, id=54, 288.07625pt x 515.9275pt>
 File: img/mockups/home_authority.png Graphic file (type png)
 <use img/mockups/home_authority.png>
-Package pdftex.def Info: img/mockups/home_authority.png  used on input line 363
+Package pdftex.def Info: img/mockups/home_authority.png  used on input line 381
 .
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/statistics_citizen.png, id=52, 288.07625pt x 515.9275pt>
+<img/mockups/statistics_citizen.png, id=55, 288.07625pt x 515.9275pt>
 File: img/mockups/statistics_citizen.png Graphic file (type png)
 <use img/mockups/statistics_citizen.png>
 Package pdftex.def Info: img/mockups/statistics_citizen.png  used on input line
- 369.
+ 387.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/statistics_authority_vehicles.png, id=53, 288.07625pt x 515.9275pt
+<img/mockups/statistics_authority_vehicles.png, id=56, 288.07625pt x 515.9275pt
 >
 File: img/mockups/statistics_authority_vehicles.png Graphic file (type png)
 <use img/mockups/statistics_authority_vehicles.png>
 Package pdftex.def Info: img/mockups/statistics_authority_vehicles.png  used on
- input line 375.
+ input line 393.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/statistics_authority_violations.png, id=54, 288.07625pt x 515.9275
+<img/mockups/statistics_authority_violations.png, id=57, 288.07625pt x 515.9275
 pt>
 File: img/mockups/statistics_authority_violations.png Graphic file (type png)
 <use img/mockups/statistics_authority_violations.png>
 Package pdftex.def Info: img/mockups/statistics_authority_violations.png  used 
-on input line 381.
+on input line 399.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/page_citizen.png, id=55, 288.07625pt x 515.9275pt>
+<img/mockups/page_citizen.png, id=58, 288.07625pt x 515.9275pt>
 File: img/mockups/page_citizen.png Graphic file (type png)
 <use img/mockups/page_citizen.png>
-Package pdftex.def Info: img/mockups/page_citizen.png  used on input line 387.
+Package pdftex.def Info: img/mockups/page_citizen.png  used on input line 405.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/page_authority.png, id=56, 288.07625pt x 515.9275pt>
+<img/mockups/page_authority.png, id=59, 288.07625pt x 515.9275pt>
 File: img/mockups/page_authority.png Graphic file (type png)
 <use img/mockups/page_authority.png>
-Package pdftex.def Info: img/mockups/page_authority.png  used on input line 393
+Package pdftex.def Info: img/mockups/page_authority.png  used on input line 411
 .
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/use_case_diagrams/citizen.png, id=57, 556.0775pt x 393.47pt>
+<img/use_case_diagrams/citizen.png, id=60, 556.0775pt x 393.47pt>
 File: img/use_case_diagrams/citizen.png Graphic file (type png)
 <use img/use_case_diagrams/citizen.png>
 Package pdftex.def Info: img/use_case_diagrams/citizen.png  used on input line 
-411.
+429.
 (pdftex.def)             Requested size: 278.03807pt x 196.73451pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9 <./img/mockups/login.png>] [10 <./img/mockups/register_authority.png> <./img
-/mockups/register_citizen.png>] [11 <./img/mockups/home_citizen.png> <./img/moc
-kups/home_authority.png>] [12 <./img/mockups/statistics_citizen.png> <./img/moc
-kups/statistics_authority_vehicles.png>] [13 <./img/mockups/statistics_authorit
-y_violations.png> <./img/mockups/page_citizen.png>] [14 <./img/mockups/page_aut
-hority.png> <./img/use_case_diagrams/citizen.png>]
-<img/use_case_diagrams/authority.png, id=88, 655.44875pt x 463.7325pt>
+[10 <./img/mockups/login.png>] [11 <./img/mockups/register_authority.png> <./im
+g/mockups/register_citizen.png>] [12 <./img/mockups/home_citizen.png> <./img/mo
+ckups/home_authority.png>] [13 <./img/mockups/statistics_citizen.png> <./img/mo
+ckups/statistics_authority_vehicles.png>] [14 <./img/mockups/statistics_authori
+ty_violations.png> <./img/mockups/page_citizen.png>] [15 <./img/mockups/page_au
+thority.png> <./img/use_case_diagrams/citizen.png>]
+<img/use_case_diagrams/authority.png, id=91, 655.44875pt x 463.7325pt>
 File: img/use_case_diagrams/authority.png Graphic file (type png)
 <use img/use_case_diagrams/authority.png>
 Package pdftex.def Info: img/use_case_diagrams/authority.png  used on input lin
-e 417.
+e 435.
 (pdftex.def)             Requested size: 327.72357pt x 231.86568pt.
- [15
+ [16
 
- <./img/use_case_diagrams/authority.png>] [16]
-Overfull \hbox (59.4571pt too wide) in paragraph at lines 463--494
- [] 
- []
-
-[17]
-Overfull \hbox (61.7072pt too wide) in paragraph at lines 503--534
+ <./img/use_case_diagrams/authority.png>] [17]
+Overfull \hbox (59.4571pt too wide) in paragraph at lines 481--512
  [] 
  []
 
 [18]
-Overfull \hbox (38.18936pt too wide) in paragraph at lines 542--565
+Overfull \hbox (61.7072pt too wide) in paragraph at lines 521--552
  [] 
  []
 
 [19]
-Overfull \hbox (38.18936pt too wide) in paragraph at lines 573--597
+Overfull \hbox (38.18936pt too wide) in paragraph at lines 560--583
  [] 
  []
 
 [20]
-Overfull \hbox (1.02269pt too wide) in paragraph at lines 605--629
+Overfull \hbox (38.18936pt too wide) in paragraph at lines 591--615
  [] 
  []
 
-[21] [22] [23]
-Overfull \hbox (11.55995pt too wide) in paragraph at lines 695--713
+[21]
+Overfull \hbox (1.02269pt too wide) in paragraph at lines 623--647
  [] 
  []
 
-<img/sequence_diagrams/accept_retrieve_violation.png, id=118, 452.69125pt x 504
+[22] [23] [24]
+Overfull \hbox (11.55995pt too wide) in paragraph at lines 713--731
+ [] 
+ []
+
+<img/sequence_diagrams/accept_retrieve_violation.png, id=122, 452.69125pt x 504
 .88625pt>
 File: img/sequence_diagrams/accept_retrieve_violation.png Graphic file (type pn
 g)
 <use img/sequence_diagrams/accept_retrieve_violation.png>
 Package pdftex.def Info: img/sequence_diagrams/accept_retrieve_violation.png  u
-sed on input line 721.
+sed on input line 739.
 (pdftex.def)             Requested size: 226.34506pt x 252.44249pt.
-<img/sequence_diagrams/discard_retrieve_violation.png, id=119, 352.31625pt x 50
+<img/sequence_diagrams/discard_retrieve_violation.png, id=123, 352.31625pt x 50
 3.8825pt>
 File: img/sequence_diagrams/discard_retrieve_violation.png Graphic file (type p
 ng)
 <use img/sequence_diagrams/discard_retrieve_violation.png>
 Package pdftex.def Info: img/sequence_diagrams/discard_retrieve_violation.png  
-used on input line 727.
+used on input line 745.
 (pdftex.def)             Requested size: 176.15768pt x 251.94063pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/sequence_diagrams/login.png, id=120, 693.59125pt x 885.3075pt>
+<img/sequence_diagrams/login.png, id=124, 693.59125pt x 885.3075pt>
 File: img/sequence_diagrams/login.png Graphic file (type png)
 <use img/sequence_diagrams/login.png>
-Package pdftex.def Info: img/sequence_diagrams/login.png  used on input line 73
-3.
+Package pdftex.def Info: img/sequence_diagrams/login.png  used on input line 75
+1.
 (pdftex.def)             Requested size: 346.79477pt x 442.65266pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/sequence_diagrams/report_violation.png, id=121, 429.605pt x 492.84125pt>
+<img/sequence_diagrams/report_violation.png, id=125, 429.605pt x 492.84125pt>
 File: img/sequence_diagrams/report_violation.png Graphic file (type png)
 <use img/sequence_diagrams/report_violation.png>
 Package pdftex.def Info: img/sequence_diagrams/report_violation.png  used on in
-put line 739.
+put line 757.
 (pdftex.def)             Requested size: 214.80197pt x 246.42001pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/sequence_diagrams/retrieve_statistics.png, id=122, 392.46625pt x 414.54875
+<img/sequence_diagrams/retrieve_statistics.png, id=126, 392.46625pt x 414.54875
 pt>
 File: img/sequence_diagrams/retrieve_statistics.png Graphic file (type png)
 <use img/sequence_diagrams/retrieve_statistics.png>
 Package pdftex.def Info: img/sequence_diagrams/retrieve_statistics.png  used on
- input line 745.
+ input line 763.
 (pdftex.def)             Requested size: 196.23264pt x 207.27386pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24
+[25
 
 
 
@@ -789,14 +791,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
- <./img/sequence_diagrams/accept_retrieve_violation.png>] [25 <./img/sequence_d
-iagrams/discard_retrieve_violation.png>] [26 <./img/sequence_diagrams/login.png
->] [27 <./img/sequence_diagrams/report_violation.png> <./img/sequence_diagrams/
-retrieve_statistics.png>] [28] (./RASD1.aux) ) 
+ <./img/sequence_diagrams/accept_retrieve_violation.png>] [26 <./img/sequence_d
+iagrams/discard_retrieve_violation.png>] [27 <./img/sequence_diagrams/login.png
+>] [28 <./img/sequence_diagrams/report_violation.png> <./img/sequence_diagrams/
+retrieve_statistics.png>] [29] (./RASD1.aux) ) 
 Here is how much of TeX's memory you used:
  2359 strings out of 494923
  34214 string characters out of 6180743
- 93804 words of memory out of 5000000
+ 96805 words of memory out of 5000000
  5625 multiletter control sequences out of 15000+600000
  8907 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -809,10 +811,10 @@ blic/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb>
-Output written on RASD1.pdf (29 pages, 922083 bytes).
+Output written on RASD1.pdf (30 pages, 926716 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 171 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
