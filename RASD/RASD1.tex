@@ -146,6 +146,8 @@ Table with all acronyms used in document.
     \hline 
     FC & Fiscal code \\
     \hline
+    UC & Use Case \\
+    \hline
 \end{tabular}
 \end{center}
 
@@ -155,6 +157,7 @@ Table with all acronyms used in document.
     \item \textbf{Rn}: n-th Requirement 
     \item \textbf{Dn}: n-th Domain Assumption
     \item \textbf{Cn}: n-th Constraint 
+    \item \textbf{UCn}: n-th Use Case
 \end{itemize}
 
 \subsection{Revision History}
@@ -376,15 +379,28 @@ application. Both \textit{Authorities} and \textit{Citizens} can log in from thi
 distinction because they have to provide only email \& password. If \textit{User} hasn't been registered
 already in SafeStreets can go to regisiter page by click on register button and the \textit{System} will
 show the default register for \textit{Citizen}.
-
+\\
+\\
+\\
+\\
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/mockups/login.png}
     \caption{Login or Register page}
 \end{figure}
 
-\paragraph{Registration page}
+\clearpage
 
+\paragraph{Registration page}
+le pagine di registration chiedono per entrambi gli utenti i dati base mail pass nome cognome e a seconda 
+del tipo FC o matricola. La pagina di default che viene mostrata se dal login si clicca su register è quella del 
+citizen, se ci si vuole registrare come authoriy si può cliccare sul bottone reegistrati come autorita. Dalla pagina 
+citizen si può andare nella pagina aut cliccando sul bottone aut, viceversa dalla pagina authority si potrà
+andare sulla pagina registrazione utente cliccando sul bottone register citizen. 
+\\
+\\
+\\
+\\
 \begin{figure}[H]
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=0.9\linewidth]{img/mockups/register_authority.png} 
@@ -396,52 +412,148 @@ show the default register for \textit{Citizen}.
         \caption{Register for \textit{Citizens}}
         \label{fig:subim2}
     \end{subfigure}
-    
     \caption{Registration pages}
     \label{fig:image2}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.5]{img/mockups/home_citizen.png}
-    \caption{Home citizen}
+\clearpage
+
+\paragraph{Home pages}
+\begin{itemize}
+    \item \textbf{Citizen}: la home page mostra al cittadino una barra in alto con alcuni dati di interesse, tra coupling
+    nome e cognome codice fiscale e il numero totale di violazioni riportate. Sotto l'applicazione mostra la fotocamera che
+    è sempre attiva e pronta per scattare se viene inquadrata una targa cliccando il tasto report altrimenti non sarà 
+    possibile scattare la foto. Il bottone di report al di sotto, scatterà la foto e reindirizzerà il citizen nella
+    pagina di conferma e inserimento dati. Gli ultimi due bottoni in basso permettono di accedere alle statistiche o
+    alle proprie impostazioni dell'account.
+    \item \textbf{Authority}: Per gli autority la home invece mostra comunque una barra con informazioni quali nome cognome
+    e matricola ma a differenza del Citizen mostra il numero di violazioni controllate e di quelle confermate., al di sotto
+    il bottone retrieve violations permette di accedere alla pagina di valutazione violazioni, mentre i due bottoni di sotto
+    servono per accedere alle statistiche che nel caso dell'authority possono riguardare statistics di violazioni e statistics
+    di vehicles. è inoltre presente il bottone per accedere alle proprie impostazioni.
+\end{itemize}
+
+\begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=0.9\linewidth]{img/mockups/home_authority.png} 
+        \caption{Home page for \textit{Authorities}}
+        \label{fig:subim1}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=0.9\linewidth]{img/mockups/home_citizen.png}
+        \caption{Home page for \textit{Citizens}}
+        \label{fig:subim2}
+    \end{subfigure}
+    \caption{Home pages}
+    \label{fig:image2}
 \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.5]{img/mockups/home_authority.png}
-    \caption{Home authority}
+\clearpage
+
+\paragraph{Settings}
+This two pages below represents the settings page in which the \textit{Citizen} and \textit{Authority} can change their 
+personal data or visualize it. Only some informations can be modified, those who can't be modified are showed with 
+grey color.
+\\
+\\
+\\
+\\
+\begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=0.9\linewidth]{img/mockups/settings_authority.png} 
+        \caption{Settings for Authorities}
+        \label{fig:subim1}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=0.9\linewidth]{img/mockups/settings_citizen.png}
+        \caption{Settings for Citizens}
+        \label{fig:subim2}
+    \end{subfigure}
+    \caption{Settings Pages}
+    \label{fig:image2}
 \end{figure}
 
-\begin{figure}[h!]
+\clearpage
+
+\paragraph{Statistics for Citizens}
+In questa pagine sono disposte le statistiche utili per il citizen vi sono principalmente 3 grafici il primo rigurda learns
+violazioni accadute durante un determinato anno e divise per mese a seconda della posizione specificata nella mappa di sotto
+la quale permette di visualizzare le aree con maggior freqeuenza di violazioni e permette di spostare il cursore di posizione
+per avere dettagli in una determinata zona. in the botton grahp possiamo il citizen può vedere invece un grafico che mostra
+le commit che ha fatto nell'ultimo anno di violazioni.
+\\
+\\
+\\
+\\
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/mockups/statistics_citizen.png}
     \caption{statistics citizen}
 \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.5]{img/mockups/statistics_authority_vehicles.png}
-    \caption{statistics authority}
+\clearpage
+
+\paragraph{Statistics for Authorities}
+\begin{itemize}
+    \item \textbf{Violation's statistics}: I primi due grafici hanno la stessa funzione e sono identici a quelli del
+    citizen lo stesso per la modalitaà di funzionamento. non è presente ovviamente il grafico delle violazioni riportate
+    ma vi è un bottone per ricevere via mail tali statistiche.
+    \item \textbf{Vehicles statistics}: In questa pagine sono invece mostrate le statistiche dei veicoli, nella prima parties
+    è possibile cercare una determinata targa, e se questa ha commesso violazioni si può osservare l'andamento delle violation
+    commesse durente i mesi dell'anno selezionato. al di sotto vi è una lista delle targhe dei most egrgious offenders 
+    con la possibilità di ricevere le suddette targhe via mail. Cliccando su una targa tra queste nel grafico di sotto 
+    appariranno mostrate le violazioni commesse durante i vari mesi.
+\end{itemize}
+
+\begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=0.9\linewidth]{img/mockups/statistics_authority_violations.png} 
+        \caption{Violations Statistics}
+        \label{fig:subim1}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=0.9\linewidth]{img/mockups/statistics_authority_vehicles.png}
+        \caption{Vehicle Statistics}
+        \label{fig:subim2}
+    \end{subfigure}
+    \caption{Statistics for \textit{Authorities}}
+    \label{fig:image2}
 \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.5]{img/mockups/statistics_authority_violations.png}
-    \caption{statistics authority}
-\end{figure}
+\clearpage
 
-\begin{figure}[h!]
+\paragraph{Violation's report Citizen}
+Below we can see the page that is displayed when a \textit{Citizen} clicks on the report button taking a photo of a
+violation. In this page is showed the photo taken and some metadata retrivied automatically by the \textit{System} like
+date, time, position and the license plate that is read by the algorithm. \textit{Citizen} can change the license plate
+if the algorithm doesn't read it properly he can also choose the type of violation. And the confirm button, if no error
+occurs, will send the data collected to the \textit{System}.
+\\
+\\
+\\
+\\
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/mockups/page_citizen.png}
     \caption{Page citizen}
 \end{figure}
 
-\begin{figure}[h!]
+\clearpage
+
+\paragraph{Violation's check page for Authority}
+In this page showed below the \textit{Authority} can confirm the violations reported by \textit{Citizen} and they can
+generate traffic tickets from the data. In the page are showed the photo and the data necessary for the traffic ticket.
+The \textit{Authority} can also receive thi data by clicking on the button in the bottom.
+\\
+\\
+\\
+\\ 
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/mockups/page_authority.png}
     \caption{Page authority}
 \end{figure}
+
 \subsubsection{Hardware Interfaces}
 The System does not offer any Hardware Interfaces
 \subsubsection{Software Interfaces}
@@ -450,9 +562,10 @@ As mobile applications, the main software interfaces are:
     \item iOs
     \item Android
 \end{itemize}
-\subsubsection {Communication Interfaces}
+\subsubsection{Communication Interfaces}
 \textbf{HTTPS protocol}: to safely communicate through the internet
 
+\clearpage
 \subsection{Functional Requirements}
 \subsubsection{Use Case Diagrams}
 \begin{figure}[h!]
@@ -513,7 +626,7 @@ As mobile applications, the main software interfaces are:
 \hline
 \textbf{ID} & UC1 \\
 \hline
-\textbf{Description} & A \textit{Guest} creates a Citizen account \\
+\textbf{Description} & A \textit{Guest} creates a \textit{Citizen} account \\
 \hline
 \textbf{Actors} & \textit{Guest} \\
 \hline
@@ -523,21 +636,20 @@ As mobile applications, the main software interfaces are:
 \hline
 \textbf{Flow of events} & 1. \textit{Guest} opens the app \\
                         & 2. \textit{Guest} clicks the registration button \\
-                        & 3. \textit{System} asks which type of account he wants to create \\
-                        & 4. \textit{Guest} selects Citizen account \\
-                        & 5. \textit{System} shows the form \\
-                        & 6. \textit{Guest} fills the form with his personal data plus mail and password \\
-                        & 7. \textit{System} checks the validity of the data inserted \\
-                        & 8. \textit{System} sends confirmation email \\
-                        & 9. \textit{Guest} receives the email and clicks the URL to complete the registration \\  
+                        & 3. \textit{System} shows the \textit{Citizen} registration form \\
+                        & 4. \textit{Guest} fills the form with his personal data plus mail and password \\
+                        & 5. \textit{System} checks the validity of the data inserted \\
+                        & 6. \textit{System} sends confirmation email \\
+                        & 7. \textit{Guest} receives the email and clicks the URL to complete the registration \\  
 \hline
-\textbf{Postconditions} & \textit{System} has stored a new Citizen account  \\
-                        & \textit{Guest} can login as Citizen \\
+\textbf{Postconditions} & \textit{System} has stored a new \textit{Citizen} account  \\
+                        & \textit{Guest} can login as \textit{Citizen} \\
 \hline
 \textbf{Exceptions} & \textit{Guest} inserts an email that has been used by another account \\
                     & \textit{Guest} inserts a FC that has been inserted by another account \\
+                    & \textit{Guest} inserts an invalid FC \\
                     & In these case \textit{System} shows user an error message and the flow of events  \\
-                    & restart from point 5 \\  
+                    & restart from point 3 \\  
 \hline
 \end{tabular}
 \caption{\textit{Guest} creates a Citizen account}
@@ -553,7 +665,7 @@ As mobile applications, the main software interfaces are:
 \hline
 \textbf{ID} & UC2 \\
 \hline
-\textbf{Description} & A \textit{Guest} creates a Authority account \\
+\textbf{Description} & A \textit{Guest} creates an \textit{Authority} account \\
 \hline
 \textbf{Actors} & \textit{Guest} \\
 \hline
@@ -563,19 +675,20 @@ As mobile applications, the main software interfaces are:
 \hline
 \textbf{Flow of events} & 1. \textit{Guest} opens the app \\
                         & 2. \textit{Guest} clicks the registration button \\
-                        & 3. \textit{System} asks which type of account he wants to create \\
-                        & 4. \textit{Guest} selects Authority account \\
-                        & 5. \textit{System} shows the form \\
-                        & 6. \textit{Guest} fills the form with his personal data plus P.IVA mail and password \\
+                        & 3. \textit{System} shows the \textit{Citizen} registration form \\
+                        & 4. \textit{Guest} clicks on register for \textit{Authority} button \\
+                        & 5. \textit{System} shows the \textit{Authority} registration form \\
+                        & 6. \textit{Guest} fills the form with his personal data plus Matricola, mail and password \\
                         & 7. \textit{System} checks the validity of the data inserted \\
                         & 8. \textit{System} sends confirmation email \\
                         & 9. \textit{Guest} receives the email and clicks the URL to complete the registration \\  
 \hline
-\textbf{Postconditions} & \textit{System} has stored a new Authority account  \\
-                        & \textit{Guest} can login as Authority \\
+\textbf{Postconditions} & \textit{System} has stored a new \textit{Authority} account  \\
+                        & \textit{Guest} can login as \textit{Authority} \\
 \hline
 \textbf{Exceptions} & \textit{Guest} inserts an email that has been used by another account \\
-                    & \textit{Guest} inserts a P.IVA that has been inserted by another account \\
+                    & \textit{Guest} inserts a Matricola that has been inserted by another account \\
+                    & \textit{Guest} inserts an invalid Matricola \\
                     & In these case \textit{System} shows user an error message and the flow of events  \\
                     & restart from point 5 \\  
 \hline
@@ -592,30 +705,31 @@ As mobile applications, the main software interfaces are:
 \hline
 \textbf{ID} & UC3 \\
 \hline
-\textbf{Description} & A \textit{Citizen} logs in  \\
+\textbf{Description} & A \textit{User} logs in  \\
 \hline
-\textbf{Actors} & \textit{Citizen} \\
+\textbf{Actors} & \textit{Citizen}, \textit{Authority}\\
 \hline
-\textbf{Precondition} & \textit{Citizen} has already created the Citizen account \\
+\textbf{Precondition} & \textit{User} has already created the account \\
 \hline
-\textbf{Flow of events} & 1. \textit{Citizen} opens the app \\
-                        & 2. \textit{Citizen} clicks the login button  \\
+\textbf{Flow of events} & 1. \textit{User} opens the app \\
+                        & 2. \textit{User} clicks the login button  \\
                         & 3. \textit{System} shows the form \\
-                        & 4. \textit{Citizen} inputs his credentials  \\
+                        & 4. \textit{User} inputs his credentials  \\
                         & 5. \textit{System} checks the validity of the data inserted \\
 \hline
-\textbf{Postconditions} & \textit{Citizen} can use properly the app   \\
+\textbf{Postconditions} & \textit{User} can use properly the app   \\
 \hline
-\textbf{Exceptions} & \textit{Citizen} inserts wrong credentials \\
+\textbf{Exceptions} & \textit{User} inserts wrong credentials \\
                     & In this case \textit{System} shows user an error message and the flow of events  \\
                     & restart from point 3\\  
 \hline
 \end{tabular}
-\caption{\textit{Citizen} login}
+\caption{\textit{User} login}
 \end{center}
 \end{table}
 
 \clearpage
+
 \begin{table}
     \begin{center}
     \centering
@@ -623,56 +737,23 @@ As mobile applications, the main software interfaces are:
 \hline
 \textbf{ID} & UC4 \\
 \hline
-\textbf{Description} & A \textit{Authority} logs in  \\
-\hline
-\textbf{Actors} & \textit{Authority} \\
-\hline
-\textbf{Precondition} & \textit{Authority} has already created the Authority account \\
-\hline
-\textbf{Flow of events} & 1. \textit{Authority} opens the app \\
-                        & 2. \textit{Authority} clicks the login button  \\
-                        & 3. \textit{Authority} clicks the login button for Authority \\
-                        & 4. \textit{System} shows the form \\
-                        & 5. \textit{Authority} inputs his credentials  \\
-                        & 6. \textit{System} checks the validity of the data inserted \\
-\hline
-\textbf{Postconditions} & \textit{Authority} can use properly the app   \\
-\hline
-\textbf{Exceptions} & \textit{Authority} inserts wrong credentials \\
-                    & In this case \textit{System} shows user an error message and the flow of events  \\
-                    & restart from point 4\\  
-\hline
-\end{tabular}
-\caption{\textit{Authority} login}
-\end{center}
-\end{table}
-
-\clearpage
-\begin{table}
-    \begin{center}
-    \centering
-\begin{tabular}{ | l | l |}
-\hline
-\textbf{ID} & UC5 \\
-\hline
 \textbf{Description} & A \textit{Citizen} reports a parking violation  \\
 \hline
 \textbf{Actors} & \textit{Citizen} \\
 \hline
 \textbf{Precondition} & \textit{Citizen} has already logged in \\
 \hline
-\textbf{Flow of events} & 1. \textit{Citizen} clicks the report button \\
-                        & 2. \textit{System} opens the photocamera \\
-                        & 3. \textit{Citizen} takes a picture  \\
-                        & 4. \textit{System} shows the summary \\
-                        & 5. \textit{Citizen} inputs the type of violation \\
-                        & 6. \textit{Citizen} clicks the send button \\
+\textbf{Flow of events} & 1. \textit{System} opens the photocamera \\
+                        & 2. \textit{Citizen} clicks the report button \\
+                        & 3. \textit{System} shows the report info page for \textit{Citizens} \\
+                        & 4. \textit{Citizen} inputs the type of violation \\
+                        & 5. \textit{Citizen} clicks the send button \\
 \hline
 \textbf{Postconditions} & \textit{System}'s DB stores the violation  \\
 \hline
 \textbf{Exceptions} & \textit{Citizen} takes a bad picture \\
                     & In this case \textit{System} discards the picture and the flow of events  \\
-                    & restart from point 3\\  
+                    & restart from point 1\\  
 \hline
 \end{tabular}
 \caption{\textit{Citizen} reports a parking violation}
@@ -685,7 +766,7 @@ As mobile applications, the main software interfaces are:
     \centering
 \begin{tabular}{ | l | l |}
 \hline
-\textbf{ID} & UC6 \\
+\textbf{ID} & UC5 \\
 \hline
 \textbf{Description} & A \textit{Authority} retrieves a legitimate parking violation  \\
 \hline
@@ -694,11 +775,11 @@ As mobile applications, the main software interfaces are:
 \textbf{Precondition} & \textit{Authority} has already logged in \\
 \hline
 \textbf{Flow of events} & 1. \textit{Authority} clicks the retrieve button \\
-                        & 2. \textit{System} shows summary of a parking violation \\
+                        & 2. \textit{System} shows the report info page for \textit{Authorities} \\
                         & 3. \textit{Authority} checks that it is a real parking violations  \\
-                        & 4. \textit{Authority} clicks the ok button  \\
+                        & 4. \textit{Authority} clicks the YES button  \\
 \hline
-\textbf{Postconditions} &  \textit{Authority} generates a traffic and \textit{System} uploads \\ 
+\textbf{Postconditions} &  \textit{Authority} generates a traffic ticket and \textit{System} uploads \\ 
                         & statistics \\
 \hline
 \textbf{Exceptions} & \\ 
@@ -714,18 +795,18 @@ As mobile applications, the main software interfaces are:
     \centering
 \begin{tabular}{ | l | l |}
 \hline
-\textbf{ID} & UC7 \\
+\textbf{ID} & UC6 \\
 \hline
-\textbf{Description} & A \textit{Authority} retrieves a  wrong parking violation  \\
+\textbf{Description} & A \textit{Authority} retrieves a wrong parking violation  \\
 \hline
 \textbf{Actors} & \textit{Authority} \\
 \hline
 \textbf{Precondition} & \textit{Authority} has already logged in \\
 \hline
 \textbf{Flow of events} & 1. \textit{Authority} clicks the retrieve button \\
-                        & 2. \textit{System} shows summary of a parking violation \\
+                        & 2. \textit{System} shows the report info page for \textit{Authorities} \\
                         & 3. \textit{Authority} checks that it is not a real parking violations \\
-                        & 4. \textit{Authority} clicks the discard button  \\
+                        & 4. \textit{Authority} clicks the NO button  \\
 \hline
 \textbf{Postconditions} & \textit{Authority} discards the picture and \textit{System} uploads   \\
                         &  statistics \\
@@ -743,7 +824,7 @@ As mobile applications, the main software interfaces are:
     \centering
 \begin{tabular}{ | l | l |}
 \hline
-\textbf{ID} & UC8 \\
+\textbf{ID} & UC7 \\
 \hline
 \textbf{Description} & A \textit{User} retrieves statistics  \\
 \hline
@@ -765,31 +846,31 @@ As mobile applications, the main software interfaces are:
 
 
 \subsubsection{Sequence Diagrams}
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/accept_retrieve_violation.png}
     \caption{Accept retrieve violation}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/discard_retrieve_violation.png}
     \caption{Discard retrieve violation}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/login.png}
     \caption{Login}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/report_violation.png}
     \caption{Report violation}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/retrieve_statistics.png}
     \caption{Retrieve statistics}
@@ -800,11 +881,11 @@ As mobile applications, the main software interfaces are:
 
 \subsection{Performance Requirements}
 In this section we discuss requirements for what regards performance. The System must be able to support up to
-1 million of registered users. This limitation is not posed by the front-end of the System, but rather by the 
-back-end part, specifically the DB. For the same reasons it must be able to handle up to 1 million of parking violations 
+5 million of registered users. This limitation is not posed by the front-end of the System, but rather by the 
+back-end part, specifically the DB. For the same reasons it must be able to handle up to 5 million of parking violations 
 sent by the \textit{Citizen}. In order to avoid any kind of saturation, every parking violation that has not been taken into account
- by any \textit{Authority} for 30 days, must be automatically discarded. This operation does not update the information about
- statistics.
+by any \textit{Authority} for 30 days, must be automatically discarded. This operation does not update the information about 
+statistics.
  \\Requests about statistics shall be processed in less than 5 seconds. Requests about parking violations, instead, shall be processed 
  in less than 1 second.     
 
@@ -833,7 +914,7 @@ that the system is fault tolerant. To prevent downtime, one of the main goals of
 ensuring graceful degradation of the System
 \subsubsection{Availability}
 SafeStreets does not present any critical functions so 99\% availability with 3.65 days/year
-as downtime shoud be good.  
+as downtime should be good.  
 \subsubsection{Security}
 Security is a key aspect of SafeStreets because it is very important that the informations are never altered.
 The S2B must:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  27 OCT 2019 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  28 OCT 2019 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,7 +475,53 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen130
 \Gm@layoutvoffset=\dimen131
 \Gm@dimlist=\toks21
-) (./RASD1.aux)
+) (./RASD1.aux
+
+LaTeX Warning: Label `fig:subim1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subim1' multiply defined.
+
+
+LaTeX Warning: Label `fig:subim2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subim2' multiply defined.
+
+
+LaTeX Warning: Label `fig:image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:subim1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subim1' multiply defined.
+
+
+LaTeX Warning: Label `fig:subim2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subim2' multiply defined.
+
+
+LaTeX Warning: Label `fig:image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:subim1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subim1' multiply defined.
+
+
+LaTeX Warning: Label `fig:subim2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subim2' multiply defined.
+
+
+LaTeX Warning: Label `fig:image2' multiply defined.
+
+)
 \openout1 = `RASD1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -490,8 +536,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count98
 \scratchdimen=\dimen132
@@ -645,7 +690,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
  [3] [4]
-Overfull \hbox (7.25395pt too wide) in paragraph at lines 168--169
+Overfull \hbox (7.25395pt too wide) in paragraph at lines 171--172
 []\OT1/cmr/m/n/10 Alloy Of-fi-cial Doc-u-men-ta-tion: http://alloy.lcs.mit.edu/
 alloy/documentation.html 
  []
@@ -654,279 +699,412 @@ alloy/documentation.html
 <img/class_diagram.png, id=35, 994.71625pt x 890.32625pt>
 File: img/class_diagram.png Graphic file (type png)
 <use img/class_diagram.png>
-Package pdftex.def Info: img/class_diagram.png  used on input line 254.
+Package pdftex.def Info: img/class_diagram.png  used on input line 257.
 (pdftex.def)             Requested size: 298.41718pt x 267.09993pt.
- [7 <./img/class_diagram.png>]
-<img/state_charts/authority_request.png, id=40, 608.2725pt x 322.20375pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7] [8 <./img/class_diagram.png>]
+<img/state_charts/authority_request.png, id=43, 608.2725pt x 322.20375pt>
 File: img/state_charts/authority_request.png Graphic file (type png)
 <use img/state_charts/authority_request.png>
 Package pdftex.def Info: img/state_charts/authority_request.png  used on input 
-line 262.
+line 265.
 (pdftex.def)             Requested size: 304.13551pt x 161.10147pt.
-<img/state_charts/citizen_request.png, id=41, 452.69125pt x 61.22874pt>
+<img/state_charts/citizen_request.png, id=44, 452.69125pt x 61.22874pt>
 File: img/state_charts/citizen_request.png Graphic file (type png)
 <use img/state_charts/citizen_request.png>
 Package pdftex.def Info: img/state_charts/citizen_request.png  used on input li
-ne 268.
+ne 271.
 (pdftex.def)             Requested size: 226.34506pt x 30.61429pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--289
+Underfull \hbox (badness 10000) in paragraph at lines 278--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--289
+Underfull \hbox (badness 10000) in paragraph at lines 278--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--310
+Underfull \hbox (badness 10000) in paragraph at lines 293--313
 
  []
 
 
-Overfull \hbox (7.01534pt too wide) in paragraph at lines 290--310
+Overfull \hbox (7.01534pt too wide) in paragraph at lines 293--313
 \OT1/cmr/m/it/10 Safestreets \OT1/cmr/m/n/10 en-ables \OT1/cmr/m/it/10 Au-thor-
 ity \OT1/cmr/m/n/10 to vi-su-al-ize statis-tics about un-safe ar-eas. \OT1/cmr/
 m/it/10 SafeStreets
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--310
+Underfull \hbox (badness 10000) in paragraph at lines 293--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--310
+Underfull \hbox (badness 10000) in paragraph at lines 293--313
 
  []
 
-[8
+[9
 
  <./img/state_charts/authority_request.png> <./img/state_charts/citizen_request
-.png>] [9] [10]
-<img/mockups/login.png, id=53, 288.07625pt x 515.9275pt>
+.png>] [10] [11]
+<img/mockups/login.png, id=56, 288.07625pt x 515.9275pt>
 File: img/mockups/login.png Graphic file (type png)
 <use img/mockups/login.png>
-Package pdftex.def Info: img/mockups/login.png  used on input line 382.
+Package pdftex.def Info: img/mockups/login.png  used on input line 388.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
-<img/mockups/register_authority.png, id=54, 288.07625pt x 516.93124pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--390
+
+ []
+
+[12
+
+ <./img/mockups/login.png>]
+<img/mockups/register_authority.png, id=62, 288.07625pt x 516.93124pt>
 File: img/mockups/register_authority.png Graphic file (type png)
 <use img/mockups/register_authority.png>
 Package pdftex.def Info: img/mockups/register_authority.png  used on input line
- 405.
+ 406.
 (pdftex.def)             Requested size: 166.4475pt x 298.6845pt.
-<img/mockups/register_citizen.png, id=55, 288.07625pt x 515.9275pt>
+<img/mockups/register_citizen.png, id=63, 288.07625pt x 515.9275pt>
 File: img/mockups/register_citizen.png Graphic file (type png)
 <use img/mockups/register_citizen.png>
 Package pdftex.def Info: img/mockups/register_citizen.png  used on input line 4
-10.
+11.
 (pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 404--414
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 405--415
 []$[]$ $[]$ 
  []
 
-[11
 
- <./img/mockups/login.png>]
-<img/mockups/home_citizen.png, id=60, 288.07625pt x 515.9275pt>
-File: img/mockups/home_citizen.png Graphic file (type png)
-<use img/mockups/home_citizen.png>
-Package pdftex.def Info: img/mockups/home_citizen.png  used on input line 421.
-(pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
+Underfull \hbox (badness 10000) in paragraph at lines 395--417
+
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 395--417
 
-<img/mockups/home_authority.png, id=61, 288.07625pt x 515.9275pt>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--417
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--417
+
+ []
+
+[13
+
+ <./img/mockups/register_authority.png> <./img/mockups/register_citizen.png>]
+<img/mockups/home_authority.png, id=71, 288.07625pt x 515.9275pt>
 File: img/mockups/home_authority.png Graphic file (type png)
 <use img/mockups/home_authority.png>
-Package pdftex.def Info: img/mockups/home_authority.png  used on input line 427
+Package pdftex.def Info: img/mockups/home_authority.png  used on input line 438
 .
-(pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
+(pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
+<img/mockups/home_citizen.png, id=72, 288.07625pt x 515.9275pt>
+File: img/mockups/home_citizen.png Graphic file (type png)
+<use img/mockups/home_citizen.png>
+Package pdftex.def Info: img/mockups/home_citizen.png  used on input line 443.
+(pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 437--447
+[]$[]$ $[]$ 
+ []
 
-<img/mockups/statistics_citizen.png, id=62, 288.07625pt x 515.9275pt>
+[14
+
+ <./img/mockups/home_authority.png> <./img/mockups/home_citizen.png>]
+<img/mockups/settings_authority.png, id=78, 288.07625pt x 515.9275pt>
+File: img/mockups/settings_authority.png Graphic file (type png)
+<use img/mockups/settings_authority.png>
+Package pdftex.def Info: img/mockups/settings_authority.png  used on input line
+ 463.
+(pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
+<img/mockups/settings_citizen.png, id=79, 288.07625pt x 515.9275pt>
+File: img/mockups/settings_citizen.png Graphic file (type png)
+<use img/mockups/settings_citizen.png>
+Package pdftex.def Info: img/mockups/settings_citizen.png  used on input line 4
+68.
+(pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 462--472
+[]$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--474
+
+ []
+
+[15
+
+ <./img/mockups/settings_authority.png> <./img/mockups/settings_citizen.png>]
+<img/mockups/statistics_citizen.png, id=85, 288.07625pt x 515.9275pt>
 File: img/mockups/statistics_citizen.png Graphic file (type png)
 <use img/mockups/statistics_citizen.png>
 Package pdftex.def Info: img/mockups/statistics_citizen.png  used on input line
- 433.
+ 490.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 479--492
 
-<img/mockups/statistics_authority_vehicles.png, id=63, 288.07625pt x 515.9275pt
->
-File: img/mockups/statistics_authority_vehicles.png Graphic file (type png)
-<use img/mockups/statistics_authority_vehicles.png>
-Package pdftex.def Info: img/mockups/statistics_authority_vehicles.png  used on
- input line 439.
-(pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
+ []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/mockups/statistics_authority_violations.png, id=64, 288.07625pt x 515.9275
+Underfull \hbox (badness 10000) in paragraph at lines 479--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--492
+
+ []
+
+[16
+
+ <./img/mockups/statistics_citizen.png>]
+<img/mockups/statistics_authority_violations.png, id=90, 288.07625pt x 515.9275
 pt>
 File: img/mockups/statistics_authority_violations.png Graphic file (type png)
 <use img/mockups/statistics_authority_violations.png>
 Package pdftex.def Info: img/mockups/statistics_authority_violations.png  used 
-on input line 445.
-(pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
+on input line 510.
+(pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
+<img/mockups/statistics_authority_vehicles.png, id=91, 288.07625pt x 515.9275pt
+>
+File: img/mockups/statistics_authority_vehicles.png Graphic file (type png)
+<use img/mockups/statistics_authority_vehicles.png>
+Package pdftex.def Info: img/mockups/statistics_authority_vehicles.png  used on
+ input line 515.
+(pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 509--519
+[]$[]$ $[]$ 
+ []
 
-<img/mockups/page_citizen.png, id=65, 288.07625pt x 515.9275pt>
+[17
+
+ <./img/mockups/statistics_authority_violations.png> <./img/mockups/statistics_
+authority_vehicles.png>]
+<img/mockups/page_citizen.png, id=97, 288.07625pt x 515.9275pt>
 File: img/mockups/page_citizen.png Graphic file (type png)
 <use img/mockups/page_citizen.png>
-Package pdftex.def Info: img/mockups/page_citizen.png  used on input line 451.
+Package pdftex.def Info: img/mockups/page_citizen.png  used on input line 537.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 526--539
 
-<img/mockups/page_authority.png, id=66, 288.07625pt x 515.9275pt>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--539
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--539
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--539
+
+ []
+
+[18
+
+ <./img/mockups/page_citizen.png>]
+<img/mockups/page_authority.png, id=103, 288.07625pt x 515.9275pt>
 File: img/mockups/page_authority.png Graphic file (type png)
 <use img/mockups/page_authority.png>
-Package pdftex.def Info: img/mockups/page_authority.png  used on input line 457
+Package pdftex.def Info: img/mockups/page_authority.png  used on input line 553
 .
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 544--555
 
-<img/use_case_diagrams/citizen.png, id=67, 556.0775pt x 393.47pt>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--555
+
+ []
+
+[19
+
+ <./img/mockups/page_authority.png>]
+<img/use_case_diagrams/citizen.png, id=108, 556.0775pt x 393.47pt>
 File: img/use_case_diagrams/citizen.png Graphic file (type png)
 <use img/use_case_diagrams/citizen.png>
 Package pdftex.def Info: img/use_case_diagrams/citizen.png  used on input line 
-475.
+573.
 (pdftex.def)             Requested size: 278.03807pt x 196.73451pt.
+ [20
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[12 <./img/mockups/register_authority.png> <./img/mockups/register_citizen.png>
-] [13 <./img/mockups/home_citizen.png> <./img/mockups/home_authority.png>]
-[14 <./img/mockups/statistics_citizen.png> <./img/mockups/statistics_authority_
-vehicles.png>] [15 <./img/mockups/statistics_authority_violations.png> <./img/m
-ockups/page_citizen.png>] [16 <./img/mockups/page_authority.png> <./img/use_cas
-e_diagrams/citizen.png>]
-<img/use_case_diagrams/authority.png, id=95, 655.44875pt x 463.7325pt>
+ <./img/use_case_diagrams/citizen.png>]
+<img/use_case_diagrams/authority.png, id=113, 655.44875pt x 463.7325pt>
 File: img/use_case_diagrams/authority.png Graphic file (type png)
 <use img/use_case_diagrams/authority.png>
 Package pdftex.def Info: img/use_case_diagrams/authority.png  used on input lin
-e 481.
+e 579.
 (pdftex.def)             Requested size: 327.72357pt x 231.86568pt.
- [17
+ [21
 
- <./img/use_case_diagrams/authority.png>] [18]
-Overfull \hbox (59.4571pt too wide) in paragraph at lines 527--558
+ <./img/use_case_diagrams/authority.png>] [22]
+Overfull \hbox (59.4571pt too wide) in paragraph at lines 625--655
  [] 
  []
 
-[19]
-Overfull \hbox (61.7072pt too wide) in paragraph at lines 567--598
+[23]
+Overfull \hbox (80.20728pt too wide) in paragraph at lines 664--696
  [] 
  []
 
-[20]
-Overfull \hbox (38.18936pt too wide) in paragraph at lines 606--629
+[24]
+Overfull \hbox (38.18936pt too wide) in paragraph at lines 704--727
  [] 
  []
 
-[21]
-Overfull \hbox (38.18936pt too wide) in paragraph at lines 637--661
+[25]
+Overfull \hbox (1.02269pt too wide) in paragraph at lines 736--759
  [] 
  []
 
-[22]
-Overfull \hbox (1.02269pt too wide) in paragraph at lines 669--693
+[26] [27] [28]
+Overfull \hbox (11.55995pt too wide) in paragraph at lines 825--843
  [] 
  []
 
-[23] [24] [25]
-Overfull \hbox (11.55995pt too wide) in paragraph at lines 759--777
- [] 
- []
-
-<img/sequence_diagrams/accept_retrieve_violation.png, id=126, 452.69125pt x 504
+<img/sequence_diagrams/accept_retrieve_violation.png, id=140, 452.69125pt x 504
 .88625pt>
 File: img/sequence_diagrams/accept_retrieve_violation.png Graphic file (type pn
 g)
 <use img/sequence_diagrams/accept_retrieve_violation.png>
 Package pdftex.def Info: img/sequence_diagrams/accept_retrieve_violation.png  u
-sed on input line 785.
+sed on input line 851.
 (pdftex.def)             Requested size: 226.34506pt x 252.44249pt.
-<img/sequence_diagrams/discard_retrieve_violation.png, id=127, 352.31625pt x 50
+<img/sequence_diagrams/discard_retrieve_violation.png, id=141, 352.31625pt x 50
 3.8825pt>
 File: img/sequence_diagrams/discard_retrieve_violation.png Graphic file (type p
 ng)
 <use img/sequence_diagrams/discard_retrieve_violation.png>
 Package pdftex.def Info: img/sequence_diagrams/discard_retrieve_violation.png  
-used on input line 791.
+used on input line 857.
 (pdftex.def)             Requested size: 176.15768pt x 251.94063pt.
+[29
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/sequence_diagrams/login.png, id=128, 693.59125pt x 885.3075pt>
+
+
+
+
+
+ <./img/sequence_diagrams/accept_retrieve_violation.png>]
+<img/sequence_diagrams/login.png, id=146, 693.59125pt x 885.3075pt>
 File: img/sequence_diagrams/login.png Graphic file (type png)
 <use img/sequence_diagrams/login.png>
-Package pdftex.def Info: img/sequence_diagrams/login.png  used on input line 79
-7.
+Package pdftex.def Info: img/sequence_diagrams/login.png  used on input line 86
+3.
 (pdftex.def)             Requested size: 346.79477pt x 442.65266pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/sequence_diagrams/report_violation.png, id=129, 429.605pt x 492.84125pt>
+ [30 <./img/sequence_diagrams/discard_retrieve_violation.png>]
+<img/sequence_diagrams/report_violation.png, id=152, 429.605pt x 492.84125pt>
 File: img/sequence_diagrams/report_violation.png Graphic file (type png)
 <use img/sequence_diagrams/report_violation.png>
 Package pdftex.def Info: img/sequence_diagrams/report_violation.png  used on in
-put line 803.
+put line 869.
 (pdftex.def)             Requested size: 214.80197pt x 246.42001pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/sequence_diagrams/retrieve_statistics.png, id=130, 392.46625pt x 414.54875
+ [31 <./img/sequence_diagrams/login.png>]
+<img/sequence_diagrams/retrieve_statistics.png, id=157, 392.46625pt x 414.54875
 pt>
 File: img/sequence_diagrams/retrieve_statistics.png Graphic file (type png)
 <use img/sequence_diagrams/retrieve_statistics.png>
 Package pdftex.def Info: img/sequence_diagrams/retrieve_statistics.png  used on
- input line 809.
+ input line 875.
 (pdftex.def)             Requested size: 196.23264pt x 207.27386pt.
+ [32 <./img/sequence_diagrams/report_violation.png> <./img/sequence_diagrams/re
+trieve_statistics.png>] [33] [34] (./RASD1.aux)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: There were multiply-defined labels.
 
-[26
-
-
-
-
-
-
-
-
- <./img/sequence_diagrams/accept_retrieve_violation.png>] [27 <./img/sequence_d
-iagrams/discard_retrieve_violation.png>] [28 <./img/sequence_diagrams/login.png
->] [29 <./img/sequence_diagrams/report_violation.png> <./img/sequence_diagrams/
-retrieve_statistics.png>] [30] (./RASD1.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 4335 strings out of 494923
- 67676 string characters out of 6180743
- 131847 words of memory out of 5000000
- 7548 multiletter control sequences out of 15000+600000
- 9206 words of font info for 32 fonts, out of 8000000 for 9000
+ 4350 strings out of 494923
+ 68063 string characters out of 6180743
+ 131886 words of memory out of 5000000
+ 7560 multiletter control sequences out of 15000+600000
+ 9551 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 59i,7n,94p,281b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on RASD1.pdf (31 pages, 939082 bytes).
+ 59i,8n,94p,281b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti9.pfb>
+Output written on RASD1.pdf (35 pages, 1003582 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 200 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
