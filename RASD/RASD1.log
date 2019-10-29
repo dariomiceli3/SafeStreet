@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  28 OCT 2019 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.1)  29 OCT 2019 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -825,16 +825,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 395--417
 <img/mockups/home_authority.png, id=71, 288.07625pt x 515.9275pt>
 File: img/mockups/home_authority.png Graphic file (type png)
 <use img/mockups/home_authority.png>
-Package pdftex.def Info: img/mockups/home_authority.png  used on input line 438
+Package pdftex.def Info: img/mockups/home_authority.png  used on input line 440
 .
 (pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 <img/mockups/home_citizen.png, id=72, 288.07625pt x 515.9275pt>
 File: img/mockups/home_citizen.png Graphic file (type png)
 <use img/mockups/home_citizen.png>
-Package pdftex.def Info: img/mockups/home_citizen.png  used on input line 443.
+Package pdftex.def Info: img/mockups/home_citizen.png  used on input line 445.
 (pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 437--447
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 439--449
 []$[]$ $[]$ 
  []
 
@@ -845,36 +845,36 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 437--447
 File: img/mockups/settings_authority.png Graphic file (type png)
 <use img/mockups/settings_authority.png>
 Package pdftex.def Info: img/mockups/settings_authority.png  used on input line
- 463.
+ 465.
 (pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 <img/mockups/settings_citizen.png, id=79, 288.07625pt x 515.9275pt>
 File: img/mockups/settings_citizen.png Graphic file (type png)
 <use img/mockups/settings_citizen.png>
 Package pdftex.def Info: img/mockups/settings_citizen.png  used on input line 4
-68.
+70.
 (pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 462--472
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 464--474
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--474
+Underfull \hbox (badness 10000) in paragraph at lines 456--476
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--474
+Underfull \hbox (badness 10000) in paragraph at lines 456--476
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--474
+Underfull \hbox (badness 10000) in paragraph at lines 456--476
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--474
+Underfull \hbox (badness 10000) in paragraph at lines 456--476
 
  []
 
@@ -885,25 +885,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--474
 File: img/mockups/statistics_citizen.png Graphic file (type png)
 <use img/mockups/statistics_citizen.png>
 Package pdftex.def Info: img/mockups/statistics_citizen.png  used on input line
- 490.
+ 492.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--492
+Underfull \hbox (badness 10000) in paragraph at lines 481--494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--492
+Underfull \hbox (badness 10000) in paragraph at lines 481--494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--492
+Underfull \hbox (badness 10000) in paragraph at lines 481--494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--492
+Underfull \hbox (badness 10000) in paragraph at lines 481--494
 
  []
 
@@ -915,17 +915,17 @@ pt>
 File: img/mockups/statistics_authority_violations.png Graphic file (type png)
 <use img/mockups/statistics_authority_violations.png>
 Package pdftex.def Info: img/mockups/statistics_authority_violations.png  used 
-on input line 510.
+on input line 512.
 (pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 <img/mockups/statistics_authority_vehicles.png, id=91, 288.07625pt x 515.9275pt
 >
 File: img/mockups/statistics_authority_vehicles.png Graphic file (type png)
 <use img/mockups/statistics_authority_vehicles.png>
 Package pdftex.def Info: img/mockups/statistics_authority_vehicles.png  used on
- input line 515.
+ input line 517.
 (pdftex.def)             Requested size: 166.4475pt x 298.10452pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 509--519
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 511--521
 []$[]$ $[]$ 
  []
 
@@ -936,25 +936,25 @@ authority_vehicles.png>]
 <img/mockups/page_citizen.png, id=97, 288.07625pt x 515.9275pt>
 File: img/mockups/page_citizen.png Graphic file (type png)
 <use img/mockups/page_citizen.png>
-Package pdftex.def Info: img/mockups/page_citizen.png  used on input line 537.
+Package pdftex.def Info: img/mockups/page_citizen.png  used on input line 539.
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--539
+Underfull \hbox (badness 10000) in paragraph at lines 528--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--539
+Underfull \hbox (badness 10000) in paragraph at lines 528--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--539
+Underfull \hbox (badness 10000) in paragraph at lines 528--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--539
+Underfull \hbox (badness 10000) in paragraph at lines 528--541
 
  []
 
@@ -964,26 +964,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 526--539
 <img/mockups/page_authority.png, id=103, 288.07625pt x 515.9275pt>
 File: img/mockups/page_authority.png Graphic file (type png)
 <use img/mockups/page_authority.png>
-Package pdftex.def Info: img/mockups/page_authority.png  used on input line 553
+Package pdftex.def Info: img/mockups/page_authority.png  used on input line 555
 .
 (pdftex.def)             Requested size: 144.03777pt x 257.96312pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--555
+Underfull \hbox (badness 10000) in paragraph at lines 546--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--555
+Underfull \hbox (badness 10000) in paragraph at lines 546--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--555
+Underfull \hbox (badness 10000) in paragraph at lines 546--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--555
+Underfull \hbox (badness 10000) in paragraph at lines 546--557
 
  []
 
@@ -994,7 +994,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 544--555
 File: img/use_case_diagrams/citizen.png Graphic file (type png)
 <use img/use_case_diagrams/citizen.png>
 Package pdftex.def Info: img/use_case_diagrams/citizen.png  used on input line 
-573.
+575.
 (pdftex.def)             Requested size: 278.03807pt x 196.73451pt.
  [20
 
@@ -1003,51 +1003,41 @@ Package pdftex.def Info: img/use_case_diagrams/citizen.png  used on input line
 File: img/use_case_diagrams/authority.png Graphic file (type png)
 <use img/use_case_diagrams/authority.png>
 Package pdftex.def Info: img/use_case_diagrams/authority.png  used on input lin
-e 579.
+e 581.
 (pdftex.def)             Requested size: 327.72357pt x 231.86568pt.
  [21
 
  <./img/use_case_diagrams/authority.png>] [22]
-Overfull \hbox (59.4571pt too wide) in paragraph at lines 625--655
+Overfull \hbox (59.4571pt too wide) in paragraph at lines 627--657
  [] 
  []
 
 [23]
-Overfull \hbox (80.20728pt too wide) in paragraph at lines 664--696
+Overfull \hbox (80.20728pt too wide) in paragraph at lines 666--698
  [] 
  []
 
 [24]
-Overfull \hbox (38.18936pt too wide) in paragraph at lines 704--727
+Overfull \hbox (38.18936pt too wide) in paragraph at lines 706--729
  [] 
  []
 
 [25]
-Overfull \hbox (1.02269pt too wide) in paragraph at lines 736--759
+Overfull \hbox (1.02269pt too wide) in paragraph at lines 738--761
  [] 
  []
 
 [26] [27] [28]
-Overfull \hbox (11.55995pt too wide) in paragraph at lines 825--843
+Overfull \hbox (11.55995pt too wide) in paragraph at lines 827--845
  [] 
  []
 
-<img/sequence_diagrams/accept_retrieve_violation.png, id=140, 452.69125pt x 504
-.88625pt>
-File: img/sequence_diagrams/accept_retrieve_violation.png Graphic file (type pn
-g)
-<use img/sequence_diagrams/accept_retrieve_violation.png>
-Package pdftex.def Info: img/sequence_diagrams/accept_retrieve_violation.png  u
-sed on input line 851.
-(pdftex.def)             Requested size: 226.34506pt x 252.44249pt.
-<img/sequence_diagrams/discard_retrieve_violation.png, id=141, 352.31625pt x 50
-3.8825pt>
-File: img/sequence_diagrams/discard_retrieve_violation.png Graphic file (type p
-ng)
-<use img/sequence_diagrams/discard_retrieve_violation.png>
-Package pdftex.def Info: img/sequence_diagrams/discard_retrieve_violation.png  
-used on input line 857.
-(pdftex.def)             Requested size: 176.15768pt x 251.94063pt.
+<img/sequence_diagrams/login.png, id=140, 703.62875pt x 885.3075pt>
+File: img/sequence_diagrams/login.png Graphic file (type png)
+<use img/sequence_diagrams/login.png>
+Package pdftex.def Info: img/sequence_diagrams/login.png  used on input line 85
+6.
+(pdftex.def)             Requested size: 351.8135pt x 442.65266pt.
 [29
 
 
@@ -1056,39 +1046,68 @@ used on input line 857.
 
 
 
- <./img/sequence_diagrams/accept_retrieve_violation.png>]
-<img/sequence_diagrams/login.png, id=146, 693.59125pt x 885.3075pt>
-File: img/sequence_diagrams/login.png Graphic file (type png)
-<use img/sequence_diagrams/login.png>
-Package pdftex.def Info: img/sequence_diagrams/login.png  used on input line 86
-3.
-(pdftex.def)             Requested size: 346.79477pt x 442.65266pt.
- [30 <./img/sequence_diagrams/discard_retrieve_violation.png>]
-<img/sequence_diagrams/report_violation.png, id=152, 429.605pt x 492.84125pt>
+]
+<img/sequence_diagrams/register_citizen.png, id=144, 422.57875pt x 583.17876pt>
+
+File: img/sequence_diagrams/register_citizen.png Graphic file (type png)
+<use img/sequence_diagrams/register_citizen.png>
+Package pdftex.def Info: img/sequence_diagrams/register_citizen.png  used on in
+put line 865.
+(pdftex.def)             Requested size: 211.28885pt x 291.58867pt.
+ [30 <./img/sequence_diagrams/login.png>]
+<img/sequence_diagrams/register_authority.png, id=150, 422.57875pt x 645.41125p
+t>
+File: img/sequence_diagrams/register_authority.png Graphic file (type png)
+<use img/sequence_diagrams/register_authority.png>
+Package pdftex.def Info: img/sequence_diagrams/register_authority.png  used on 
+input line 876.
+(pdftex.def)             Requested size: 211.28885pt x 322.70483pt.
+ [31 <./img/sequence_diagrams/register_citizen.png>]
+<img/sequence_diagrams/accept_retrieve_violation.png, id=155, 452.69125pt x 503
+.8825pt>
+File: img/sequence_diagrams/accept_retrieve_violation.png Graphic file (type pn
+g)
+<use img/sequence_diagrams/accept_retrieve_violation.png>
+Package pdftex.def Info: img/sequence_diagrams/accept_retrieve_violation.png  u
+sed on input line 886.
+(pdftex.def)             Requested size: 226.34506pt x 251.94063pt.
+ [32 <./img/sequence_diagrams/register_authority.png>]
+<img/sequence_diagrams/discard_retrieve_violation.png, id=160, 352.31625pt x 50
+3.8825pt>
+File: img/sequence_diagrams/discard_retrieve_violation.png Graphic file (type p
+ng)
+<use img/sequence_diagrams/discard_retrieve_violation.png>
+Package pdftex.def Info: img/sequence_diagrams/discard_retrieve_violation.png  
+used on input line 892.
+(pdftex.def)             Requested size: 176.15768pt x 251.94063pt.
+<img/sequence_diagrams/report_violation.png, id=161, 429.605pt x 492.84125pt>
 File: img/sequence_diagrams/report_violation.png Graphic file (type png)
 <use img/sequence_diagrams/report_violation.png>
 Package pdftex.def Info: img/sequence_diagrams/report_violation.png  used on in
-put line 869.
+put line 898.
 (pdftex.def)             Requested size: 214.80197pt x 246.42001pt.
- [31 <./img/sequence_diagrams/login.png>]
-<img/sequence_diagrams/retrieve_statistics.png, id=157, 392.46625pt x 414.54875
+
+[33 <./img/sequence_diagrams/accept_retrieve_violation.png> <./img/sequence_dia
+grams/discard_retrieve_violation.png>]
+<img/sequence_diagrams/retrieve_statistics.png, id=167, 392.46625pt x 414.54875
 pt>
 File: img/sequence_diagrams/retrieve_statistics.png Graphic file (type png)
 <use img/sequence_diagrams/retrieve_statistics.png>
 Package pdftex.def Info: img/sequence_diagrams/retrieve_statistics.png  used on
- input line 875.
+ input line 907.
 (pdftex.def)             Requested size: 196.23264pt x 207.27386pt.
- [32 <./img/sequence_diagrams/report_violation.png> <./img/sequence_diagrams/re
-trieve_statistics.png>] [33] [34] (./RASD1.aux)
+ [34 <./img/sequence_diagrams/report_violation.png> <./img/sequence_diagrams/re
+trieve_statistics.png>] [35] [36]
+(./RASD1.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4350 strings out of 494923
- 68063 string characters out of 6180743
+ 4358 strings out of 494923
+ 68453 string characters out of 6180743
  131886 words of memory out of 5000000
- 7560 multiletter control sequences out of 15000+600000
+ 7568 multiletter control sequences out of 15000+600000
  9551 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  59i,8n,94p,281b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1101,10 +1120,10 @@ st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmti9.pfb>
-Output written on RASD1.pdf (35 pages, 1003582 bytes).
+Output written on RASD1.pdf (37 pages, 1030347 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 213 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 

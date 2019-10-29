@@ -43,16 +43,21 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Scenarios}{21}
 \contentsline {subsubsection}{\numberline {3.2.3}Use Cases}{22}
 \contentsline {subsubsection}{\numberline {3.2.4}Sequence Diagrams}{29}
-\contentsline {subsubsection}{\numberline {3.2.5}Goal Mapping on Requirements}{32}
-\contentsline {subsection}{\numberline {3.3}Performance Requirements}{32}
-\contentsline {subsection}{\numberline {3.4}Design Constraints}{33}
-\contentsline {subsubsection}{\numberline {3.4.1}Standards compliance}{33}
-\contentsline {subsubsection}{\numberline {3.4.2}Hardware limitations}{33}
-\contentsline {subsection}{\numberline {3.5}Software System Attributes}{33}
-\contentsline {subsubsection}{\numberline {3.5.1}Reliability}{33}
-\contentsline {subsubsection}{\numberline {3.5.2}Availability}{33}
-\contentsline {subsubsection}{\numberline {3.5.3}Security}{33}
-\contentsline {subsubsection}{\numberline {3.5.4}Maintainability}{34}
-\contentsline {subsubsection}{\numberline {3.5.5}Portability}{34}
-\contentsline {section}{\numberline {4}Formal Analysis with Alloy}{34}
-\contentsline {section}{\numberline {5}Efforts}{34}
+\contentsline {paragraph}{Login}{29}
+\contentsline {paragraph}{Register Citizen}{30}
+\contentsline {paragraph}{Register Authority}{31}
+\contentsline {paragraph}{Retrieve Violation}{32}
+\contentsline {paragraph}{Retrieve statistics}{34}
+\contentsline {subsubsection}{\numberline {3.2.5}Goal Mapping on Requirements}{35}
+\contentsline {subsection}{\numberline {3.3}Performance Requirements}{35}
+\contentsline {subsection}{\numberline {3.4}Design Constraints}{35}
+\contentsline {subsubsection}{\numberline {3.4.1}Standards compliance}{35}
+\contentsline {subsubsection}{\numberline {3.4.2}Hardware limitations}{35}
+\contentsline {subsection}{\numberline {3.5}Software System Attributes}{35}
+\contentsline {subsubsection}{\numberline {3.5.1}Reliability}{35}
+\contentsline {subsubsection}{\numberline {3.5.2}Availability}{35}
+\contentsline {subsubsection}{\numberline {3.5.3}Security}{36}
+\contentsline {subsubsection}{\numberline {3.5.4}Maintainability}{36}
+\contentsline {subsubsection}{\numberline {3.5.5}Portability}{36}
+\contentsline {section}{\numberline {4}Formal Analysis with Alloy}{36}
+\contentsline {section}{\numberline {5}Efforts}{36}

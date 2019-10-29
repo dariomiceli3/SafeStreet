@@ -857,6 +857,26 @@ are both \textit{Citizen} and \textit{Authority}.
     \caption{Login}
 \end{figure}
 
+\paragraph{Register Citizen}
+This sequence diagram shows how registration process occur in \textit{Citizen} case, the first steps are mandatory to reach
+the register page, then until the user inserts valid credentials the \textit{System} don't allow him to go next.  
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/register_citizen.png}
+    \caption{Register for \textit{Citizen}}
+\end{figure}
+
+\paragraph{Register Authority}
+Thi sequence diagram represents the same case as above but referred to \textit{Authorities}, so is necessary another
+step in order to reach the regster form. Then like in the previous case it's possible to complete correctly the registration
+only by inserting valid credentials.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/register_authority.png}
+    \caption{Register for \textit{Authority}}
+\end{figure}
+
 \paragraph{Retrieve Violation}
 The following diagram shows how an \textit{Authority} can retrieve violations. Two cases are considered: in the 
 first case the violation is legitimate, he accepts it and generates traffic ticket. In the second case the violation
@@ -872,7 +892,6 @@ is wrong so he discards it.
     \includegraphics[scale=0.5]{img/sequence_diagrams/discard_retrieve_violation.png}
     \caption{Discard retrieve violation}
 \end{figure}
-
 
 \begin{figure}[H]
     \centering
