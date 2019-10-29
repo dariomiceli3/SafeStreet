@@ -392,11 +392,11 @@ show the default register for \textit{Citizen}.
 \clearpage
 
 \paragraph{Registration page}
-le pagine di registration chiedono per entrambi gli utenti i dati base mail pass nome cognome e a seconda 
-del tipo FC o matricola. La pagina di default che viene mostrata se dal login si clicca su register è quella del 
-citizen, se ci si vuole registrare come authoriy si può cliccare sul bottone reegistrati come autorita. Dalla pagina 
-citizen si può andare nella pagina aut cliccando sul bottone aut, viceversa dalla pagina authority si potrà
-andare sulla pagina registrazione utente cliccando sul bottone register citizen. 
+Registration pages ask \textit{Guests} to input name, surname, email and a password. If the \textit{Guest} is a \textit{Citizen}
+he must also input his Fiscal Code otherwise if he is a \textit{Authority} he must input his Matricola. The default page that the 
+\textit{System} shows when the register button is clicked is the \textit{Citizen} registration page. If the \textit{Guest} wants
+to register him as \textit{Authority} he must click the "Register as Authority" button. From this page it is possible
+to return in the \textit{Citizen} registration page by clicking the "Register as Citizen" button.   
 \\
 \\
 \\
@@ -420,17 +420,19 @@ andare sulla pagina registrazione utente cliccando sul bottone register citizen.
 
 \paragraph{Home pages}
 \begin{itemize}
-    \item \textbf{Citizen}: la home page mostra al cittadino una barra in alto con alcuni dati di interesse, tra coupling
-    nome e cognome codice fiscale e il numero totale di violazioni riportate. Sotto l'applicazione mostra la fotocamera che
-    è sempre attiva e pronta per scattare se viene inquadrata una targa cliccando il tasto report altrimenti non sarà 
-    possibile scattare la foto. Il bottone di report al di sotto, scatterà la foto e reindirizzerà il citizen nella
-    pagina di conferma e inserimento dati. Gli ultimi due bottoni in basso permettono di accedere alle statistiche o
-    alle proprie impostazioni dell'account.
-    \item \textbf{Authority}: Per gli autority la home invece mostra comunque una barra con informazioni quali nome cognome
-    e matricola ma a differenza del Citizen mostra il numero di violazioni controllate e di quelle confermate., al di sotto
-    il bottone retrieve violations permette di accedere alla pagina di valutazione violazioni, mentre i due bottoni di sotto
-    servono per accedere alle statistiche che nel caso dell'authority possono riguardare statistics di violazioni e statistics
-    di vehicles. è inoltre presente il bottone per accedere alle proprie impostazioni.
+    \item \textbf{Citizen}: Home page shows a bar at the top of screen with some data such as name, surname, FC and 
+    the number of violations reported. In the center of screen \textit{System} shows the open photocamera ready to take
+    a picture by clicking the report button. It is possible to take a picture only if a license plate is framed with the 
+    photocamera. Once the report button is clicked, a picture is taken and the \textit{Citizen} is redirected to the 
+    \textit{Citizen} report info page. The two button at the bottom allow \textit{Citizen} to access statistics and 
+    account's settings.
+
+    \item \textbf{Authority}: Home page shows a bar at the top of screen with some data such as name, surname, Matricola,  
+    the number of violations checked and the number of violation confirmed. In the center of screen there are 3 buttons:
+    Retrieve Violation, Statistics, Vehicles statistics. The first one allow \textit{Authority} to access \textit{Authority} 
+    report info page, the second one allow to access violation statistics and the last one allow to access vehicles 
+    statistics. It is also present the settings button to access account's settings.  
+
 \end{itemize}
 
 \begin{figure}[H]
@@ -712,16 +714,16 @@ As mobile applications, the main software interfaces are:
 \textbf{Precondition} & \textit{User} has already created the account \\
 \hline
 \textbf{Flow of events} & 1. \textit{User} opens the app \\
-                        & 2. \textit{User} clicks the login button  \\
-                        & 3. \textit{System} shows the form \\
-                        & 4. \textit{User} inputs his credentials  \\
+                        & 2. \textit{System} shows login/register interface \\
+                        & 3. \textit{User} inputs his credentials \\
+                        & 4. \textit{User} clicks login button  \\
                         & 5. \textit{System} checks the validity of the data inserted \\
 \hline
 \textbf{Postconditions} & \textit{User} can use properly the app   \\
 \hline
 \textbf{Exceptions} & \textit{User} inserts wrong credentials \\
                     & In this case \textit{System} shows user an error message and the flow of events  \\
-                    & restart from point 3\\  
+                    & restart from point 2\\  
 \hline
 \end{tabular}
 \caption{\textit{User} login}
@@ -846,6 +848,19 @@ As mobile applications, the main software interfaces are:
 
 
 \subsubsection{Sequence Diagrams}
+\paragraph{Login}
+The following diagram shows how a generic \textit{User} can login into the application. The actors involved
+are both \textit{Citizen} and \textit{Authority}.  
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/sequence_diagrams/login.png}
+    \caption{Login}
+\end{figure}
+
+\paragraph{Retrieve Violation}
+The following diagram shows how an \textit{Authority} can retrieve violations. Two cases are considered: in the 
+first case the violation is legitimate, he accepts it and generates traffic ticket. In the second case the violation
+is wrong so he discards it. 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/accept_retrieve_violation.png}
@@ -858,11 +873,6 @@ As mobile applications, the main software interfaces are:
     \caption{Discard retrieve violation}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/sequence_diagrams/login.png}
-    \caption{Login}
-\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -870,6 +880,9 @@ As mobile applications, the main software interfaces are:
     \caption{Report violation}
 \end{figure}
 
+\paragraph{Retrieve statistics}
+The following diagram shows how a generic \textit{User} can retrieve statistics. The actors involved
+are both \textit{Citizen} and \textit{Authority}.  
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/retrieve_statistics.png}
