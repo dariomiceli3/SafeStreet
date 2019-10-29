@@ -66,9 +66,9 @@ statistics about vehicles' license plate that commit the most violations.
 \\
 From this brief description of the functionalities we may extract the following goals for \textit{SafeStreets}:
 \begin{itemize}
-    \item \textbf{[G1]}: Allow \textit{Users} to be identified as a \textit{Citizen} or as \textit{Authority};
+    \item \textbf{[G1]}: Allow \textit{Guest} to be registered as a \textit{Citizen} or as \textit{Authority};
     \item \textbf{[G2]}: Allow \textit{Citizens} to report parking violations;
-    \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported for \textit{Users};
+    \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported;
     \item \textbf{[G4]}: Must provide a visualization of the areas with high frequency of violations to \textit{Users};
     \item \textbf{[G5]}: Must provide a visualization of vehicles that commit the most violations to \textit{Authorities}; 
 
@@ -341,11 +341,10 @@ The following list present all the domain assumption made.
     \item \textbf{[D2]}: The personal informations provided by \textit{User} are valid and belongs to the him. 
     \item \textbf{[D3]}: The \textit{Citizen} assumes all responsibility for misrepresentation on a violation report.
     \item \textbf{[D4]}: \textit{Citizen} who use the application are evenly distributed in any city area.
-    \item \textbf{[D5]}: The Matricola provided by \textit{Authority} is valid and related to him.
-    \item \textbf{[D6]}: Position data as an accuracy of 10 meters.
-    \item \textbf{[D7]}: The \textit{System} can access internet whenewer needs it.
-    \item \textbf{[D8]}: Permission to access GPS data is always allowed.
-    \item \textbf{[D9]}: Permission to take a photo is always allowed. 
+    \item \textbf{[D5]}: Position data as an accuracy of 10 meters.
+    \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+    \item \textbf{[D7]}: Permission to access GPS data is always allowed.
+    \item \textbf{[D8]}: Permission to take a photo is always allowed. 
 \end{itemize}
 
 \subsubsection{Dependencies}
@@ -478,11 +477,14 @@ grey color.
 \clearpage
 
 \paragraph{Statistics for Citizens}
-In questa pagine sono disposte le statistiche utili per il citizen vi sono principalmente 3 grafici il primo rigurda learns
-violazioni accadute durante un determinato anno e divise per mese a seconda della posizione specificata nella mappa di sotto
-la quale permette di visualizzare le aree con maggior freqeuenza di violazioni e permette di spostare il cursore di posizione
-per avere dettagli in una determinata zona. in the botton grahp possiamo il citizen può vedere invece un grafico che mostra
-le commit che ha fatto nell'ultimo anno di violazioni.
+In the page below we can see usefull statistics for \textit{Citizen}, there are 3 graphs that summarize all the interesting
+informations. The first one shows the violations during a specific year, that can be changed in the filters below. 
+The button 'type' can filter the violation's type to show only the type of interest, like 'double-parked' for instance. 
+those statistics are dislpayed with the violations number per month in the position selected. Below the map displays
+a more generic view of the violations in a city by highlithing the zone with a color graduation that represent the most
+dangerous zone. The more darker the more violations occur in that area, by changing the position in the map by clicking 
+in a certain point the graph above will update the statistics for that area.  In the last gaph there is a perspective of 
+the violations reported by \textit{Citizen} during a certain year that can be changed.
 \\
 \\
 \\
@@ -497,14 +499,17 @@ le commit che ha fatto nell'ultimo anno di violazioni.
 
 \paragraph{Statistics for Authorities}
 \begin{itemize}
-    \item \textbf{Violation's statistics}: I primi due grafici hanno la stessa funzione e sono identici a quelli del
-    citizen lo stesso per la modalitaà di funzionamento. non è presente ovviamente il grafico delle violazioni riportate
-    ma vi è un bottone per ricevere via mail tali statistiche.
-    \item \textbf{Vehicles statistics}: In questa pagine sono invece mostrate le statistiche dei veicoli, nella prima parties
-    è possibile cercare una determinata targa, e se questa ha commesso violazioni si può osservare l'andamento delle violation
-    commesse durente i mesi dell'anno selezionato. al di sotto vi è una lista delle targhe dei most egrgious offenders 
-    con la possibilità di ricevere le suddette targhe via mail. Cliccando su una targa tra queste nel grafico di sotto 
-    appariranno mostrate le violazioni commesse durante i vari mesi.
+    \item \textbf{Violations statistics}: The first two graph have the same function and are equale as the 
+    two for \textit{Citizen}. The violations reported graph isn't present because \textit{Authority} can't 
+    report a violation. In the bottom page there is a button for receive violation's statistics via mail.
+    \item \textbf{Vehicles statistics}: In that page, that can only be seen by \textit{Authority} are showed 
+    the statistics of the most egregious offender's vehicles. In the first part is possible to search for a 
+    specific license plate, and if the vehicle related has commited some violations the stats will be displayed 
+    below, divided per months and visualized by year, that can be changed.  Below are listed the license plate 
+    of the most egregious offenders in a certain area selected at the top with the two buttons on the 
+    right \textit{Authorities} can receive those data via specified mail. By clicking on a license plate 
+    the bottom graph will be updated with the data relative to that, divided per month and visualized by year, 
+    that can be changed with the button on the right.
 \end{itemize}
 
 \begin{figure}[H]
@@ -910,6 +915,76 @@ are both \textit{Citizen} and \textit{Authority}.
 
 
 \subsubsection{Goal Mapping on Requirements}
+For each goal now will be described below the requirements:
+\begin{itemize}
+    \item \textbf{[G1]}: Allow \textit{Guests} to be registered as a \textit{Citizen} or as \textit{Authority};
+    \begin{itemize}
+        \item \textbf{[R1]}: The Fiscal code provided by the \textit{Citizen} has to be valid.
+        \item \textbf{[R2]}: The Matricola provided by \textit{Authority} has to be valid.
+        \item \textbf{[R3]}: Account can be created if and only if \textit{User} provides unique email and password.
+        \item \textbf{[R4]}: The \textit{System} allow \textit{Guest} to create \textit{Citizen} or \textit{Authority} account.
+        \item \textbf{[D1]}: \textit{Users} can't make more than one account.
+        \item \textbf{[D2]}: The personal informations provided by \textit{User} are valid and belongs to the him. 
+    \end{itemize}
+
+    \item \textbf{[G2]}: Allow \textit{Citizens} to report parking violations;
+    \begin{itemize}
+        \item \textbf{[R5]}: The \textit{Citizen} has to take the violation's photo with the application. 
+        \item \textbf{[R6]}: The \textit{System} allows \textit{Citizen} to input some violation's data.
+        \item \textbf{[R7]}: The photo taken must be recognizable by the \textit{System}.  
+        \item \textbf{[R8]}: The \textit{Citizen} has to be able to discard the photo taken.
+        \item \textbf{[R9]}: The \textit{System} has to be able to attach the correct date, time and position to the report.
+        \item \textbf{[R10]}: The \textit{Citizen} can't change date, time and position in the report.
+        \item \textbf{[R11]}: The violation reported must be a legitimate violation.
+        \item \textbf{[D3]}: The \textit{Citizen} assumes all responsibility for misrepresentation on a violation report.
+        \item \textbf{[D4]}: \textit{Citizen} who use the application are evenly distributed in any city area.
+        \item \textbf{[D5]}: Position data has an accuracy of 10 meters.
+        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[D7]}: Permission to access GPS data is always allowed.
+        \item \textbf{[D8]}: Permission to take a photo is always allowed. 
+    \end{itemize}
+
+    \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported;
+    \begin{itemize}
+        \item \textbf{[R12]}: \textit{Citizen} can change the license plate if it isn't recognised properly.
+        \item \textbf{[R13]}: \textit{Citizen} has to be able to choose the correct type of violation.
+        \item \textbf{[D3]}: The \textit{Citizen} assumes all responsibility for misrepresentation on a violation report.
+    \end{itemize}
+
+    \item \textbf{[G4]}: Must provide a visualization of the areas with high frequency of violations to \textit{Users};
+    \begin{itemize}
+        \item \textbf{[R14]}: \textit{Users} can change the area of visualization.
+        \item \textbf{[D5]}: Position data as an accuracy of 10 meters.
+        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[D7]}: Permission to access GPS data is always allowed.
+    \end{itemize}
+
+    \item \textbf{[G5]}: Must provide a visualization of vehicles that commit the most violations to \textit{Authorities}; 
+    \begin{itemize}
+        \item \textbf{[R15]}: \textit{User} has to be registere as \textit{Authority} to visualize those statistics. 
+        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[D7]}: Permission to access GPS data is always allowed.
+    \end{itemize}
+
+    \item \textbf{[G6]}: Must ensure the chain of custody of the information sent by \textit{Citizens};
+    \begin{itemize}
+        \item \textbf{[R16]}: Violations sent must be digitally signed and hashed.
+        \item \textbf{[R17]}: The \textit{System} must use HTTPS to safely communicate.
+        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+    \end{itemize}
+
+    \item \textbf{[G7]}: \textit{Authorities} can retrieve traffic violations in order to generate traffic tickets;
+    \begin{itemize}
+        \item \textbf{[R18]}: The violation retrieved can only be seen by the \textit{Authority} that retrieves it.
+        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+    \end{itemize}
+
+    \item \textbf{[G8]}: \textit{System} must build statistics with the informations about issued tickets;
+    \begin{itemize}
+        \item \textbf{[R19]}: The \textit{System} must update the statistics with the most recent data.
+        \item \textbf{[D4]}: \textit{Citizen} who use the application are evenly distributed in any city area.
+    \end{itemize}
+\end{itemize}
 
 \subsection{Performance Requirements}
 In this section we discuss requirements for what regards performance. The System must be able to support up to
