@@ -1,3 +1,5 @@
+
+
 sig FiscalCode {}
 sig Matricola {}
 sig Email {}
@@ -109,5 +111,43 @@ fact TypeViolation {
 --All latitude have to be associated to a Position
 --fact 
 
+
+-- indicate the report status, 
+-- Pending: if no Authority checks this report 
+-- Yes: if it's evaluated as an effective violation
+-- No: if it isn't evaluated as an effective violation  
+abstract sig Status {}
+sig Pending extends Status {}
+sig Yes extends Status {}
+sig No extends Status {}
+
+abstract sig Report {
+    violation: one Violation,
+    status: one Status
+}
+
+-- Citizen that sends the violation
+sig SendedReport extends Report {
+    sender: one Citizen
+}
+
+-- receiver is the Authority that confirms the violation
+sig RetrievedReport extends Report {
+    receiver: one Authority
+}
+
+-- a report can't be evaluated by two different authorities
+fact NoTwoRetriviedReportsCheckedByOneAuthority {
+    no disj rr1, rr2: RetrievedReport | (rr1.receiver != rr2.receiver) &&
+                                        (rr1.violation = rr2.violation)
+}
+
+
+-- cannot exists two reports made by the same Citizen with the same violation
+fact NoSameReport {
+    no disj r1, r2: SendedReport | (r1.sender = r2.sender) && (r1.violation = r2.violation)
+}
+
 pred show {}
+
 run show for 5

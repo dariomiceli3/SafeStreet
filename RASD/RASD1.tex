@@ -1,8 +1,11 @@
 \documentclass{article}
 
 \usepackage[export]{adjustbox}
+\usepackage{listings}
 \usepackage{subcaption}
 \usepackage{wrapfig}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{alloy-style}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -169,6 +172,7 @@ Table with all acronyms used in document.
     \item Diagrams: https://www.draw.io/
     \item Mockups: https://www.figma.com/
     \item Alloy Official Documentation: http://alloy.lcs.mit.edu/alloy/documentation.html
+    \item Alloy code highlithing for Latex: https://github.com/Angtrim/alloy-latex-highlighting
 \end{itemize}
 
 \subsection{Document Structure}
@@ -1043,6 +1047,9 @@ the back-end part, it should be OS independent
 
 
 \section{Formal Analysis with Alloy}
+
+\lstinputlisting[language=alloy]{safestreets.als}
+
 
 \section{Efforts}
 

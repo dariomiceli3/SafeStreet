@@ -1,63 +1,63 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {subsection}{\numberline {1.1}Purpose}{3}
-\contentsline {subsection}{\numberline {1.2}Scope}{4}
-\contentsline {subsubsection}{\numberline {1.2.1}World Phenomena}{4}
-\contentsline {subsubsection}{\numberline {1.2.2}Shared Phenomena}{4}
-\contentsline {subsubsection}{\numberline {1.2.3}Machine Phenomena}{4}
-\contentsline {subsection}{\numberline {1.3}Definitions, acronyms, abbreviations}{5}
-\contentsline {subsubsection}{\numberline {1.3.1}Definitions}{5}
-\contentsline {subsubsection}{\numberline {1.3.2}Acronyms}{5}
-\contentsline {subsubsection}{\numberline {1.3.3}Abbreviations}{5}
-\contentsline {subsection}{\numberline {1.4}Revision History}{5}
-\contentsline {subsection}{\numberline {1.5}Reference documents}{5}
-\contentsline {subsection}{\numberline {1.6}Document Structure}{6}
-\contentsline {section}{\numberline {2}Overall Description}{6}
-\contentsline {subsection}{\numberline {2.1}Product perspective}{6}
-\contentsline {subsubsection}{\numberline {2.1.1}World Phenomena}{6}
-\contentsline {subsubsection}{\numberline {2.1.2}Machine Phenomena}{6}
-\contentsline {subsubsection}{\numberline {2.1.3}Shared Phenomena}{7}
-\contentsline {subsubsection}{\numberline {2.1.4}Class Diagram}{7}
-\contentsline {subsubsection}{\numberline {2.1.5}State Charts}{9}
-\contentsline {subsection}{\numberline {2.2}Product functions}{9}
-\contentsline {subsection}{\numberline {2.3}User characteristics}{10}
-\contentsline {subsection}{\numberline {2.4}Assumption and Dependencies Constraints}{10}
-\contentsline {subsubsection}{\numberline {2.4.1}Domain Assumption}{10}
-\contentsline {subsubsection}{\numberline {2.4.2}Dependencies}{11}
-\contentsline {subsubsection}{\numberline {2.4.3}Constraints}{11}
-\contentsline {section}{\numberline {3}Specific Requirements}{12}
-\contentsline {subsection}{\numberline {3.1}External Interface Requirements}{12}
-\contentsline {subsubsection}{\numberline {3.1.1}User Interfaces}{12}
-\contentsline {paragraph}{Login or register page}{12}
-\contentsline {paragraph}{Registration page}{13}
-\contentsline {paragraph}{Home pages}{14}
-\contentsline {paragraph}{Settings}{15}
-\contentsline {paragraph}{Statistics for Citizens}{16}
-\contentsline {paragraph}{Statistics for Authorities}{17}
-\contentsline {paragraph}{Violation's report Citizen}{18}
-\contentsline {paragraph}{Violation's check page for Authority}{19}
-\contentsline {subsubsection}{\numberline {3.1.2}Hardware Interfaces}{19}
-\contentsline {subsubsection}{\numberline {3.1.3}Software Interfaces}{19}
-\contentsline {subsubsection}{\numberline {3.1.4}Communication Interfaces}{19}
-\contentsline {subsection}{\numberline {3.2}Functional Requirements}{20}
-\contentsline {subsubsection}{\numberline {3.2.1}Use Case Diagrams}{20}
-\contentsline {subsubsection}{\numberline {3.2.2}Scenarios}{21}
-\contentsline {subsubsection}{\numberline {3.2.3}Use Cases}{22}
-\contentsline {subsubsection}{\numberline {3.2.4}Sequence Diagrams}{29}
-\contentsline {paragraph}{Login}{29}
-\contentsline {paragraph}{Register Citizen}{30}
-\contentsline {paragraph}{Register Authority}{31}
-\contentsline {paragraph}{Retrieve Violation}{32}
-\contentsline {paragraph}{Retrieve statistics}{34}
-\contentsline {subsubsection}{\numberline {3.2.5}Goal Mapping on Requirements}{34}
-\contentsline {subsection}{\numberline {3.3}Performance Requirements}{36}
-\contentsline {subsection}{\numberline {3.4}Design Constraints}{36}
-\contentsline {subsubsection}{\numberline {3.4.1}Standards compliance}{36}
-\contentsline {subsubsection}{\numberline {3.4.2}Hardware limitations}{36}
-\contentsline {subsection}{\numberline {3.5}Software System Attributes}{37}
-\contentsline {subsubsection}{\numberline {3.5.1}Reliability}{37}
-\contentsline {subsubsection}{\numberline {3.5.2}Availability}{37}
-\contentsline {subsubsection}{\numberline {3.5.3}Security}{37}
-\contentsline {subsubsection}{\numberline {3.5.4}Maintainability}{37}
-\contentsline {subsubsection}{\numberline {3.5.5}Portability}{37}
-\contentsline {section}{\numberline {4}Formal Analysis with Alloy}{37}
-\contentsline {section}{\numberline {5}Efforts}{37}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Purpose}{2}
+\contentsline {subsection}{\numberline {1.2}Scope}{3}
+\contentsline {subsubsection}{\numberline {1.2.1}World Phenomena}{3}
+\contentsline {subsubsection}{\numberline {1.2.2}Shared Phenomena}{3}
+\contentsline {subsubsection}{\numberline {1.2.3}Machine Phenomena}{3}
+\contentsline {subsection}{\numberline {1.3}Definitions, acronyms, abbreviations}{4}
+\contentsline {subsubsection}{\numberline {1.3.1}Definitions}{4}
+\contentsline {subsubsection}{\numberline {1.3.2}Acronyms}{4}
+\contentsline {subsubsection}{\numberline {1.3.3}Abbreviations}{4}
+\contentsline {subsection}{\numberline {1.4}Revision History}{4}
+\contentsline {subsection}{\numberline {1.5}Reference documents}{4}
+\contentsline {subsection}{\numberline {1.6}Document Structure}{5}
+\contentsline {section}{\numberline {2}Overall Description}{5}
+\contentsline {subsection}{\numberline {2.1}Product perspective}{5}
+\contentsline {subsubsection}{\numberline {2.1.1}World Phenomena}{5}
+\contentsline {subsubsection}{\numberline {2.1.2}Machine Phenomena}{5}
+\contentsline {subsubsection}{\numberline {2.1.3}Shared Phenomena}{6}
+\contentsline {subsubsection}{\numberline {2.1.4}Class Diagram}{6}
+\contentsline {subsubsection}{\numberline {2.1.5}State Charts}{8}
+\contentsline {subsection}{\numberline {2.2}Product functions}{8}
+\contentsline {subsection}{\numberline {2.3}User characteristics}{9}
+\contentsline {subsection}{\numberline {2.4}Assumption and Dependencies Constraints}{9}
+\contentsline {subsubsection}{\numberline {2.4.1}Domain Assumption}{9}
+\contentsline {subsubsection}{\numberline {2.4.2}Dependencies}{10}
+\contentsline {subsubsection}{\numberline {2.4.3}Constraints}{10}
+\contentsline {section}{\numberline {3}Specific Requirements}{11}
+\contentsline {subsection}{\numberline {3.1}External Interface Requirements}{11}
+\contentsline {subsubsection}{\numberline {3.1.1}User Interfaces}{11}
+\contentsline {paragraph}{Login or register page}{11}
+\contentsline {paragraph}{Registration page}{12}
+\contentsline {paragraph}{Home pages}{13}
+\contentsline {paragraph}{Settings}{14}
+\contentsline {paragraph}{Statistics for Citizens}{15}
+\contentsline {paragraph}{Statistics for Authorities}{16}
+\contentsline {paragraph}{Violation's report Citizen}{17}
+\contentsline {paragraph}{Violation's check page for Authority}{18}
+\contentsline {subsubsection}{\numberline {3.1.2}Hardware Interfaces}{18}
+\contentsline {subsubsection}{\numberline {3.1.3}Software Interfaces}{18}
+\contentsline {subsubsection}{\numberline {3.1.4}Communication Interfaces}{18}
+\contentsline {subsection}{\numberline {3.2}Functional Requirements}{19}
+\contentsline {subsubsection}{\numberline {3.2.1}Use Case Diagrams}{19}
+\contentsline {subsubsection}{\numberline {3.2.2}Scenarios}{20}
+\contentsline {subsubsection}{\numberline {3.2.3}Use Cases}{21}
+\contentsline {subsubsection}{\numberline {3.2.4}Sequence Diagrams}{28}
+\contentsline {paragraph}{Login}{28}
+\contentsline {paragraph}{Register Citizen}{29}
+\contentsline {paragraph}{Register Authority}{30}
+\contentsline {paragraph}{Retrieve Violation}{31}
+\contentsline {paragraph}{Retrieve statistics}{33}
+\contentsline {subsubsection}{\numberline {3.2.5}Goal Mapping on Requirements}{33}
+\contentsline {subsection}{\numberline {3.3}Performance Requirements}{35}
+\contentsline {subsection}{\numberline {3.4}Design Constraints}{35}
+\contentsline {subsubsection}{\numberline {3.4.1}Standards compliance}{35}
+\contentsline {subsubsection}{\numberline {3.4.2}Hardware limitations}{35}
+\contentsline {subsection}{\numberline {3.5}Software System Attributes}{36}
+\contentsline {subsubsection}{\numberline {3.5.1}Reliability}{36}
+\contentsline {subsubsection}{\numberline {3.5.2}Availability}{36}
+\contentsline {subsubsection}{\numberline {3.5.3}Security}{36}
+\contentsline {subsubsection}{\numberline {3.5.4}Maintainability}{36}
+\contentsline {subsubsection}{\numberline {3.5.5}Portability}{36}
+\contentsline {section}{\numberline {4}Formal Analysis with Alloy}{36}
+\contentsline {section}{\numberline {5}Efforts}{38}
