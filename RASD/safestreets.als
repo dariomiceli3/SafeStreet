@@ -1,5 +1,4 @@
 
-
 sig FiscalCode {}
 sig Matricola {}
 sig Email {}
@@ -15,18 +14,42 @@ abstract sig User {
 }
 
 sig Citizen extends User {
-    fiscalCode: one FiscalCode
+    fiscalCode: one FiscalCode,
+    reportSended: set Report
+}
+
+--All Citizen have to be associated to a report 
+fact ReportsToCitizen {
+    all c: Citizen | some r: Report | r in c.reportSended 
+}
+
+--Every Citzen has different report sended set
+fact NoSameSender {
+    no disj c1, c2 :Citizen | c1.reportSended = c2.reportSended
 }
 
 sig Authority extends User {
-    matricola: one Matricola
+    matricola: one Matricola,
+    reportChecked: set Report
+}
+
+--All Authorities have to be associated to a report 
+fact ReportsToAuthority {
+    all a: Authority | some r: Report | r in a.reportChecked 
+}
+
+--Every Report has different report checked set
+fact NoSameChecker {
+    no disj a1, a2 :Authority | a1.reportChecked = a2.reportChecked
 }
 
 sig Location {
-  latitude: one Int, 
+    latitude: one Int, 
     longitude: one Int
-}
+} {latitude >= -3 and latitude <= 3 and longitude >= -6 and longitude <= 6 }
+
 --{latitude >= -90 and latitude <= 90 and longitude >= -180 and longitude <= 180 }
+
 
 sig Date {}
 sig Time {}
@@ -39,7 +62,6 @@ sig Violation {
     time: one Time,
     license: one License,
     type: one Type
-
 }
 
 --All fiscalcode have to be associated to Citizen 
@@ -108,46 +130,85 @@ fact TypeViolation {
     all t: Type | some v: Violation | t in v.type
 }
 
---All latitude have to be associated to a Position
---fact 
-
-
--- indicate the report status, 
--- Pending: if no Authority checks this report 
--- Yes: if it's evaluated as an effective violation
--- No: if it isn't evaluated as an effective violation  
+--indicate the report status, 
 abstract sig Status {}
-sig Pending extends Status {}
-sig Yes extends Status {}
-sig No extends Status {}
+sig Pending extends Status {} --if no Authority checks this report 
+sig Yes extends Status {} --if it's evaluated as an effective violation
+sig No extends Status {} --if it isn't evaluated as an effective violation  
 
 abstract sig Report {
     violation: one Violation,
-    status: one Status
-}
-
--- Citizen that sends the violation
-sig SendedReport extends Report {
+    status: one Status,
     sender: one Citizen
 }
 
--- receiver is the Authority that confirms the violation
-sig RetrievedReport extends Report {
-    receiver: one Authority
+--All violations have to be associated to a Report 
+fact ViolationToReport {
+    all v: Violation | some r: Report | v in r.violation 
 }
 
--- a report can't be evaluated by two different authorities
+--Every Report has different violation
+fact NoSameViolation {
+    no disj r1, r2 :Report | r1.violation = r2.violation
+}
+
+--All Citizen have to be associated to a report 
+fact CitizenToReport {
+    all c: Citizen | some r: Report | c in r.sender 
+}
+
+--Every Report has different sender
+fact NoSameSender {
+    no disj r1, r2 :Report | r1.sender = r2.sender
+}
+
+--All Status have to be associated to a report 
+fact StatusToReport {
+    all s: Status | some r: Report | s in r.status 
+}
+
+--cannot exists report checked by an authority with a pending status
+fact NoPendingReportChecked {
+    all a: Authority, r: Report | r in a.reportChecked implies r.status != Pending 
+}
+
+--a report can't be evaluated by two different authorities
 fact NoTwoRetriviedReportsCheckedByOneAuthority {
-    no disj rr1, rr2: RetrievedReport | (rr1.receiver != rr2.receiver) &&
-                                        (rr1.violation = rr2.violation)
+    all r: Report, a1, a2: Authority | 
+        (r in a1.reportChecked implies r not in a2.reportChecked)
 }
-
 
 -- cannot exists two reports made by the same Citizen with the same violation
 fact NoSameReport {
-    no disj r1, r2: SendedReport | (r1.sender = r2.sender) && (r1.violation = r2.violation)
+    no disj r1,r2: Report | (r1.sender = r2.sender) && (r1.violation = r2.violation) 
 }
 
-pred show {}
+pred sendReport [c, c1: Citizen, r: Report, v: Violation] {
+    r.violation = v
+    r.status = Pending
+    r.sender = c
+    c1.reportSended = c.reportSended + r
+}
+
+pred confirmReport [r, r1: Report, a, a1: Authority] {
+    r1.violation = r.violation
+    r1.sender = r.sender
+    r1.status = Yes
+    a1.reportChecked = a.reportChecked + r1
+}
+
+pred discardReport [r, r1: Report, a, a1: Authority] {
+    r1.violation = r.violation
+    r1.sender = r.sender
+    r1.status = No
+    a1.reportChecked = a.reportChecked + r1
+}
+
+
+pred show {
+    --#Citizen > 2
+    --#Authority > 1
+    --#Report > 4
+}
 
 run show for 5
