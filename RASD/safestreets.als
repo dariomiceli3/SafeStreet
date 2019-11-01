@@ -19,14 +19,14 @@ sig Citizen extends User {
 }
 
 --All Citizen have to be associated to a report 
-fact ReportsToCitizen {
-    all c: Citizen | some r: Report | r in c.reportSended 
-}
+--fact ReportsToCitizen {
+  --  all c: Citizen | some r: Report | r in c.reportSended 
+--}
 
 --Every Citzen has different report sended set
-fact NoSameSender {
-    no disj c1, c2 :Citizen | c1.reportSended = c2.reportSended
-}
+--fact NoSameSender {
+--    no disj c1, c2 :Citizen | c1.reportSended = c2.reportSended
+--}
 
 sig Authority extends User {
     matricola: one Matricola,
@@ -34,14 +34,14 @@ sig Authority extends User {
 }
 
 --All Authorities have to be associated to a report 
-fact ReportsToAuthority {
-    all a: Authority | some r: Report | r in a.reportChecked 
-}
+--fact ReportsToAuthority {
+--    all a: Authority | some r: Report | r in a.reportChecked 
+--}
 
 --Every Report has different report checked set
-fact NoSameChecker {
-    no disj a1, a2 :Authority | a1.reportChecked = a2.reportChecked
-}
+--fact NoSameChecker {
+ --   no disj a1, a2 :Authority | a1.reportChecked = a2.reportChecked
+--}
 
 sig Location {
     latitude: one Int, 
@@ -143,9 +143,9 @@ abstract sig Report {
 }
 
 --All violations have to be associated to a Report 
-fact ViolationToReport {
-    all v: Violation | some r: Report | v in r.violation 
-}
+--fact ViolationToReport {
+ --   all v: Violation | some r: Report | v in r.violation 
+--}
 
 --Every Report has different violation
 fact NoSameViolation {
@@ -153,36 +153,44 @@ fact NoSameViolation {
 }
 
 --All Citizen have to be associated to a report 
-fact CitizenToReport {
-    all c: Citizen | some r: Report | c in r.sender 
-}
+--fact CitizenToReport {
+  --  all c: Citizen | some r: Report | c in r.sender 
+--}
 
 --Every Report has different sender
-fact NoSameSender {
-    no disj r1, r2 :Report | r1.sender = r2.sender
-}
+--fact NoSameSender {
+  --  no disj r1, r2 :Report | r1.sender = r2.sender
+--}
 
 --All Status have to be associated to a report 
-fact StatusToReport {
-    all s: Status | some r: Report | s in r.status 
-}
+--fact StatusToReport {
+ --   all s: Status | some r: Report | s in r.status 
+--}
 
 --cannot exists report checked by an authority with a pending status
-fact NoPendingReportChecked {
-    all a: Authority, r: Report | r in a.reportChecked implies r.status != Pending 
-}
+--fact NoPendingReportChecked {
+  --  all a: Authority, r: Report | r in a.reportChecked implies r.status != Pending 
+--}
 
 --a report can't be evaluated by two different authorities
-fact NoTwoRetriviedReportsCheckedByOneAuthority {
-    all r: Report, a1, a2: Authority | 
-        (r in a1.reportChecked implies r not in a2.reportChecked)
-}
+--fact NoTwoRetriviedReportsCheckedByOneAuthority {
+  --  all r: Report, a1, a2: Authority | 
+     --   ( r in a1.reportChecked implies r not in a2.reportChecked)
+--}
 
 -- cannot exists two reports made by the same Citizen with the same violation
 fact NoSameReport {
     no disj r1,r2: Report | (r1.sender = r2.sender) && (r1.violation = r2.violation) 
+
 }
 
+fact EualityCitizen {
+    all r: Report, c: Citizen| r.sender = c iff r in c.reportSended
+}
+
+--fact NoYesOrNoReportToCitizen {
+  --  all c: Citizen, r: Report | r in c.reportSended implies r.status = Pending
+--}
 pred sendReport [c, c1: Citizen, r: Report, v: Violation] {
     r.violation = v
     r.status = Pending
@@ -206,9 +214,10 @@ pred discardReport [r, r1: Report, a, a1: Authority] {
 
 
 pred show {
-    --#Citizen > 2
-    --#Authority > 1
-    --#Report > 4
+    #Citizen > 2
+    #Authority > 1
+    #Report > 4
 }
 
+--run discardReport
 run show for 5
