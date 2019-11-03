@@ -66,7 +66,7 @@ fact ReportCanOnlyBeEvaluatedByAuthority {
 }
 
 fact NoMultipleReportChecker {
-    no disj a1,a2: Authority, r: Report | 
+    no disj a1,a2: Authority| some r: Report | 
                 (r in a1.reportsChecked) &&
                 (r in a2.reportsChecked)  
 }
@@ -208,6 +208,11 @@ fact NoSameReport {
 fact EualityCitizen {
     all r: Report, c: Citizen| r.sender = c iff r in c.reportsSended
 }
+
+--fact EualityAurhority {
+  --  all r: Report, a, a2: Authority| r in a.reportsChecked implies r not in a2.reportsChecked
+--}
+
 
 --fact NoYesOrNoReportToCitizen {
   --  all c: Citizen, r: Report | r in c.reportSended implies r.status = Pending
