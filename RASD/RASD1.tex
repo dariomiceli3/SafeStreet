@@ -40,23 +40,23 @@
 %%%%%%%%%% CHAPTER 1 %%%%%%%%%%
 \section{Introduction}
 This is the RASD document for \textit{SafeStreets}, that provides a general view about key aspects of the project. 
-The purpose of this document is to formalize a description of the system's requirements both functional and non-funcional. 
+The purpose of this document is to formalize a description of the system's requirements both functional and non-functional. 
 In the following pages will be covered goals of the application with respect to phenomena. This document is addressed to 
 developers as a guideline to implement the requirements that follows and as an overview for stakeholders.
 
 \subsection{Purpose}
-\textit{SafeStreets} is a service that aims to provide \textit{Users} with the possibility to notify authorities when traffic 
-violations occur, and in particular parking violations. The application's goal is achieved by allowing users 
+\textit{SafeStreets} is a service that aims to provide \textit{Users} with the possibility to notify \textit{Authorities} when traffic 
+violations occur, and in particular parking violations. The application's goal is achieved by allowing \textit{Users} 
 to share photo, position, date, time and type of violation and by enabling \textit{Authorities} to request them.
 \\
 \\
 Safestreets requires the \textit{Users} to create an account to access its services, the functionalities unlocked after 
 registration depend on the type of account created.
 \\
-If a user creates an account as \textit{Citizen}, he/she must provide a fiscal code in order to prove 
+If a \textit{User} creates an account as \textit{Citizen}, he/she must provide name, surname and a fiscal code in order to prove 
 that he/she is a real person. Furthermore, he must provide an email with which he will be uniquely identified 
-and a password. Once the account has been activated, user can finally start to report parking violations and can also see 
-a statistics of the streets with the highest frequency of violations.
+and a password. Once the account has been activated, \textit{User} can finally start to report parking violations and can also see 
+statistics of the streets or the areas with the highest frequency of violations.
 \\
 \\
 On the other hand, an officer will create an account as \textit{Authority} and he will need to provide his name, surname, 
@@ -141,13 +141,13 @@ Table with all acronyms used in document.
     \hline
     RASD & Requirements Analysis and Specification Document \\
     \hline
-    GPS & global positioning systems \\
+    GPS & Global Positioning Systems \\
     \hline
-    S2B & Software to be \\
+    S2B & Software To Be \\
     \hline
     GDPR & General Data Protection Regulation \\
     \hline 
-    FC & Fiscal code \\
+    FC & Fiscal Code \\
     \hline
     UC & Use Case \\
     \hline
@@ -180,7 +180,7 @@ Table with all acronyms used in document.
     \item \textbf{Chapter 2}: Presents an overall description of the system explaining in more datailed 
     way Phenomena described in chapter 1. Provides some diagrams usefull to understand key aspects and 
     general behavior of the system and possible type of \textit{Users} with respective functions that they are allowed to do. 
-    This chapter is also focused on defininng functional requirements such
+    This chapter is also focused on defining functional requirements such
     as constraints, domain assumption and dependencies that will be covered later.    
     \item \textbf{Chapter 3}: This chapter is intended for developers, dives deeper on the aspects of chapter 2 using 
     use cases and sequence diagrams in order to clarify process and interaction between \textit{Users} and \textit{System}. 
@@ -188,6 +188,8 @@ Table with all acronyms used in document.
     \item \textbf{Chapter 4}: Uses Alloy to generate a Formal Model for the application.
 \end{itemize}
 %%%%%%%%%% !CHAPTER 1 %%%%%%%%%%
+
+\clearpage
 
 %%%%%%%%%% CHAPTER 2 %%%%%%%%%%
 \section{Overall Description}
@@ -212,17 +214,18 @@ previous Chapter.
 \begin{itemize}
     \item \textbf{Storing permanently collected data}:
     The \textit{System} needs to store, in a secure way, all the data submitted.
-    In order to achive this purpose and guarantee the best service
+    In order to achieve this purpose and guarantee the best service
     the \textit{System} needs to use a DBMS.
     \item \textbf{Encryption of sensitive data}:
-    Personal user's data and all the data relative to the violations
-    that can only be seen by authorities need to be encrypted in order
+    Personal \textit{User's} data and all the data relative to the violations
+    that can only be seen by \textit{Authorities} need to be encrypted in order
     to proctect it from non-allowed third parties. 
     \item \textbf{Retrieving data for a request}:
     \textit{System} has to fullfill the data request from the \textit{Users}. Data 
     requests can be of two types, a \textit{Citizen} request to see
     statistics of a certain city area or data request by \textit{Authorities}
-    who want to receive the violation reports collected by \textit{SafeStreets}
+    who want to receive the violation reports collected by \textit{SafeStreets} or 
+    statistics about unsafe city areas and vehicles.
 \end{itemize}
 
 \subsubsection{Shared Phenomena}
@@ -230,7 +233,7 @@ Controlled by the World observed by the Machine
 \begin{itemize}
     \item \textbf{A Citizen reports a violation}:
     Situation in which a \textit{Citizen} spots a generic violation and wants
-    to report it through the application. Using the phone camera he
+    to report it through the application. Using \textit{SafeStreets} he
     can take the photo of the violation.
     \item \textbf{User can enter data for registration/login}:
     A \textit{User} decide to use the application and provides his personal data
@@ -247,7 +250,7 @@ Controlled by the Machine observed by the World
     \item \textbf{Track position of the violation}:
     The \textit{System} can retrieve the position where the violation occurred by fetching it from GPS service.
     \item \textbf{Mark areas with an high rate of violations}:
-    Once some violations have occured, the \textit{System} mines the information that it has in 
+    Once some violations have been occured, the \textit{System} mines the information that it has in 
     order to highlight the areas with the highest frequency of violations.
     \item\textbf{System can fullfill data requests}:
     After processing a request, the \textit{System} will show to the \textit{User} the result of the 
@@ -267,17 +270,17 @@ Controlled by the Machine observed by the World
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{img/state_charts/authority_request.png}
-    \caption{Authority requests for violations state chart}
+    \caption{\textit{Authority} requests for violations state chart}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{img/state_charts/citizen_request.png}
-    \caption{Users request statistics state chart}
+    \caption{\textit{Users} request statistics state chart}
 \end{figure}
 
 \subsection{Product functions}
-In this section are explained the functions associated to User.
+In this section are explained the functions associated to \textit{User}.
 \begin{itemize}
     \item \textbf{Citizen functions}:
     \\
@@ -310,7 +313,7 @@ In this section are explained the functions associated to User.
     \\
     \\
     \textbf{Request violations data for traffic tickets}
-    \\\textit{SafeStreets} enables Authority to retrieve all the parking violations sent by \textit{Citizens}. For each 
+    \\\textit{SafeStreets} enables \textit{Authority} to retrieve all the parking violations sent by \textit{Citizens}. For each 
     parking violation \textit{Authority} can accepts it or declines it. In the first case he can generates traffic ticket, 
     in the second case he discards the informations about the parking violations. In both cases \textit{SafeStreets} records 
     response in order to build statistics.
@@ -321,14 +324,14 @@ In this section are explained the functions associated to User.
 Below we describe the convention used to identify the \textit{Users} of the application and the function that those 
 \textit{Users} are allow to perform.
 \begin{itemize}
-    \item \textbf{Guest}: A user that have donwload the application but is not 
-    registered yet. This type of user is not allowed to access 
+    \item \textbf{Guest}: A \textit{User} that have donwloaded the application but is not 
+    registered yet. This type of \textit{User} is not allowed to access 
     the application functionalities.
-    \item \textbf{Citizen}: is a generic user app not related to authorities, a 
+    \item \textbf{Citizen}: is a generic \textit{User} app not related to \textit{Authorities}, a 
     common \textit{Citizen} that wants to use the application. After the registration process, he can 
     log in the application and use the functionalities such as report a violation or request 
     informations about the statistics of a certain area.
-    \item \textbf{Authority}: This user is associated to the local municipal
+    \item \textbf{Authority}: This \textit{User} is associated to the local municipal
     police district, any traffic warden, once registered with 
     is matricola number and logged in have full access to statistics, both violations and vehicles, and 
     can request all the violations reported from \textit{Citizens} in order to generate traffic tickets. 
@@ -355,14 +358,14 @@ The following list present all the domain assumption made.
 This list below represent all the dependencies that S2B need in order to work properly.
 \begin{itemize}
     \item Smartphone needs an internet connection.
-    \item Smartphone needs an a Photocamera.
+    \item Smartphone needs a Photocamera.
     \item Smartphone needs a GPS system.
-    \item SafeStreet needs a trusted external storage for violations data and personal data.
+    \item \textit{SafeStreets} needs a trusted external storage for violations data and personal data.
 \end{itemize}
 
 \subsubsection{Constraints}
 \begin{itemize}
-    \item The S2B must guarantee the European data protection GDPR for user's sensitive data.
+    \item The S2B must guarantee the European data protection GDPR for \textit{User's} sensitive data.
     \item The S2B will be used only in Italy due to personal data type like (fiscal code and police matricola).
     \item The S2B will be developed as a smartphone application.
     \item The \textit{Citizen} can only take photos from the application. 
@@ -398,8 +401,8 @@ show the default register for \textit{Citizen}.
 Registration pages ask \textit{Guests} to input name, surname, email and a password. If the \textit{Guest} is a \textit{Citizen}
 he must also input his Fiscal Code otherwise if he is a \textit{Authority} he must input his Matricola. The default page that the 
 \textit{System} shows when the register button is clicked is the \textit{Citizen} registration page. If the \textit{Guest} wants
-to register him as \textit{Authority} he must click the "Register as Authority" button. From this page it is possible
-to return in the \textit{Citizen} registration page by clicking the "Register as Citizen" button.   
+to register him as \textit{Authority} he must click the "Register as \textit{Authority}" button. From this page it is possible
+to return in the \textit{Citizen} registration page by clicking the "Register as \textit{Citizen}" button.   
 \\
 \\
 \\
@@ -466,12 +469,12 @@ grey color.
 \begin{figure}[H]
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=0.9\linewidth]{img/mockups/settings_authority.png} 
-        \caption{Settings for Authorities}
+        \caption{Settings for \textit{Authorities}}
         \label{fig:subim1}
     \end{subfigure}
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=0.9\linewidth]{img/mockups/settings_citizen.png}
-        \caption{Settings for Citizens}
+        \caption{Settings for \textit{Citizens}}
         \label{fig:subim2}
     \end{subfigure}
     \caption{Settings Pages}
@@ -496,7 +499,7 @@ the violations reported by \textit{Citizen} during a certain year that can be ch
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/mockups/statistics_citizen.png}
-    \caption{statistics citizen}
+    \caption{statistics \textit{Citizen}}
 \end{figure}
 
 \clearpage
@@ -546,7 +549,7 @@ occurs, will send the data collected to the \textit{System}.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/mockups/page_citizen.png}
-    \caption{Page citizen}
+    \caption{Page \textit{Citizen}}
 \end{figure}
 
 \clearpage
@@ -562,7 +565,7 @@ The \textit{Authority} can also receive thi data by clicking on the button in th
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/mockups/page_authority.png}
-    \caption{Page authority}
+    \caption{Page \textit{Authority}}
 \end{figure}
 
 \subsubsection{Hardware Interfaces}
@@ -582,13 +585,13 @@ As mobile applications, the main software interfaces are:
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{img/use_case_diagrams/citizen.png}
-    \caption{Citizen Use Case Diagram}
+    \caption{\textit{Citizen} Use Case Diagram}
 \end{figure}
 \clearpage
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{img/use_case_diagrams/authority.png}
-    \caption{Authority Use Case Diagram}
+    \caption{\textit{Authority} Use Case Diagram}
 \end{figure}
 
 \subsubsection{Scenarios}
@@ -596,7 +599,7 @@ As mobile applications, the main software interfaces are:
     \item \textbf{Scenario 1}:
     Luca is walking towards work when outside, in the street of his house, he sees that many cars are parked badly. 
     Some of these are parked near the strips, obstructing the view of the pedestrian who must cross the strips. 
-    Luca tired of the situation, that endangers him and many other citizens, decides to report the incident. 
+    Luca tired of the situation, that endangers him and many other \textit{Citizens}, decides to report the incident. 
     With his smartphone he opens the SafeStreets application and after logging in, click on the report button to report the fact. 
     He take the photo by click on the report button in the application's home, then he receives the data retrieved, the plate is correctly 
     recognized and, after inserted the type of violation, Luca clicks on confirm button.
@@ -606,7 +609,7 @@ As mobile applications, the main software interfaces are:
     The area in which he works is very busy and it is very rare to find parking nearby, fortunately there are parking 
     spaces reserved for disabled people near the entrance of the building. One morning he finds the place occupied and looking 
     better the machine parked he notece that lack of the certificate necessary for parking in the places reserved for the disabled. 
-    Thanks to \textit{SafeStreets} after logging in as a citizen, Andrea can report this violation directly to the authorities. 
+    Thanks to \textit{SafeStreets} after logging in as a \textit{Citizen}, Andrea can report this violation directly to the \textit{Authorities}. 
     Andrea can now take a photo directly from the application's home by click on report button. Safestreest retrieves information such as 
     location and a timestamp with date and time. The application tries to recognize the plaque from the photos and shows the result to Luca, 
     who after confirming the correctness can click on confirm button and officially send the violation.
@@ -615,17 +618,17 @@ As mobile applications, the main software interfaces are:
     The command of the municipal of the municipality of Milan wants to optimize his patrols, aiming at the most problematic areas of the city.
     This targeted surveillance is essential and would bring significant benefits including: a potential reduction of violations in these areas
     and reduction of unnecessary patrols in areas with fewer violations. Fortunately, having joined the \textit{SafeStreets} initiative, thanks to the 
-    contribution of citizens, they can use the application to receive these statistics directly from smartphones. After having 
-    registered as an authority and logged in, they can access the violations statistics. From this page they can see not only a map with a general
+    contribution of \textit{Citizens}, they can use the application to receive these statistics directly from smartphones. After having 
+    registered as an \textit{Authority} and logged in, they can access the violations statistics. From this page they can see not only a map with a general
     perspective of the areas but also check for a specific location by moving the pointer on the map.  
 
     \item \textbf{Scenario 4}:
     Maurizio is a young policeman from the city of Milan. He loves putting a lot of passion into his work and to do so he often learns about new 
-    technologies. After downloading SafeStreets and registering as an Authority, he immediately takes an interest in the function to generate fines 
-    thanks to the reports made by users. From the home of SafeStreets Maurizio clicks on retrieve violations button, then the application 
+    technologies. After downloading SafeStreets and registering as an \textit{Authority}, he immediately takes an interest in the function to generate fines 
+    thanks to the reports made by \textit{Users}. From the home of SafeStreets Maurizio clicks on retrieve violations button, then the application 
     starts showing to him some violations, once a time with a photo and the related data. Maurizio then needs only to analyze the photo and
     check if it's a valid violations or not. Once he decided he can generate a ticket for that violation and then by confirming clik on yes/no button
-    the next violation will be showed. Every answer provided allow SafeStreets to update statistics and give more precise information to users. 
+    the next violation will be showed. Every answer provided allow SafeStreets to update statistics and give more precise information to \textit{Users}. 
 \end{itemize}
 
 \subsubsection{Use Cases}
@@ -659,11 +662,11 @@ As mobile applications, the main software interfaces are:
 \textbf{Exceptions} & \textit{Guest} inserts an email that has been used by another account \\
                     & \textit{Guest} inserts a FC that has been inserted by another account \\
                     & \textit{Guest} inserts an invalid FC \\
-                    & In these case \textit{System} shows user an error message and the flow of events  \\
+                    & In these case \textit{System} shows \textit{User} an error message and the flow of events  \\
                     & restart from point 3 \\  
 \hline
 \end{tabular}
-\caption{\textit{Guest} creates a Citizen account}
+\caption{\textit{Guest} creates a \textit{Citizen} account}
 \end{center}
 \end{table}
 
@@ -700,11 +703,11 @@ As mobile applications, the main software interfaces are:
 \textbf{Exceptions} & \textit{Guest} inserts an email that has been used by another account \\
                     & \textit{Guest} inserts a Matricola that has been inserted by another account \\
                     & \textit{Guest} inserts an invalid Matricola \\
-                    & In these case \textit{System} shows user an error message and the flow of events  \\
+                    & In these case \textit{System} shows \textit{User} an error message and the flow of events  \\
                     & restart from point 5 \\  
 \hline
 \end{tabular}
-\caption{\textit{Guest} creates a Authority account}
+\caption{\textit{Guest} creates a \textit{Authority} account}
 \end{center}
 \end{table}
 
@@ -731,7 +734,7 @@ As mobile applications, the main software interfaces are:
 \textbf{Postconditions} & \textit{User} can use properly the app   \\
 \hline
 \textbf{Exceptions} & \textit{User} inserts wrong credentials \\
-                    & In this case \textit{System} shows user an error message and the flow of events  \\
+                    & In this case \textit{System} shows \textit{User} an error message and the flow of events  \\
                     & restart from point 2\\  
 \hline
 \end{tabular}
@@ -868,7 +871,7 @@ are both \textit{Citizen} and \textit{Authority}.
 
 \paragraph{Register Citizen}
 This sequence diagram shows how registration process occur in \textit{Citizen} case, the first steps are mandatory to reach
-the register page, then until the user inserts valid credentials the \textit{System} don't allow him to go next.  
+the register page, then until the \textit{User} inserts valid credentials the \textit{System} don't allow him to go next.  
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/register_citizen.png}
@@ -1007,7 +1010,7 @@ The S2B  will use certain measures as:
     \item Standard longitude and latitude measures for the position
 \end{itemize}
 For what concerns the privacy, the S2B is subject to GDPR, a regulation in EU law on data protection 
-and privacy for all individual citizens of UE  
+and privacy for all individual \textit{Citizens} of UE  
 
 \subsubsection{Hardware limitations}
 In order to work properly the application must rely on hardwares that have certain requirements 
@@ -1033,7 +1036,7 @@ The S2B must:
  \item use HTTPS to safely communicate with the Server and DBMS    
  \item Hash the passwords so that they are not stored in clear in the DB
  \item Encrypt sensitive data before storing it
- \item digital sign the parking violation sent by Citizen and then hash it  
+ \item digital sign the parking violation sent by \textit{Citizen} and then hash it  
 \end{enumerate} 
 \subsubsection{Maintainability}
 In order to achieve maintainability some good practices must be followed to reduce coupling and avoid code duplication 
