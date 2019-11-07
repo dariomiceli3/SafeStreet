@@ -345,13 +345,11 @@ Below we describe the convention used to identify the \textit{Users} of the appl
 The following list present all the domain assumption made.
 \begin{itemize}
     \item \textbf{[D1]}: \textit{Users} can't make more than one account.
-    \item \textbf{[D2]}: The personal informations provided by \textit{User} are valid and belongs to the him. 
-    \item \textbf{[D3]}: The \textit{Citizen} assumes all responsibility for misrepresentation on a violation report.
-    \item \textbf{[D4]}: \textit{Citizen} who use the application are evenly distributed in any city area.
-    \item \textbf{[D5]}: Position data as an accuracy of 10 meters.
-    \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
-    \item \textbf{[D7]}: Permission to access GPS data is always allowed.
-    \item \textbf{[D8]}: Permission to take a photo is always allowed. 
+    \item \textbf{[D2]}: The personal informations provided by \textit{User} are valid and belongs to the him.
+    \item \textbf{[D3]}: Position data as an accuracy of 10 meters.
+    \item \textbf{[D4]}: The \textit{System} can access internet whenewer needs it.
+    \item \textbf{[D5]}: Permission to access GPS data is always allowed.
+    \item \textbf{[D6]}: Permission to take a photo is always allowed. 
 \end{itemize}
 
 \subsubsection{Dependencies}
@@ -943,77 +941,72 @@ For each goal now will be described below the requirements:
 \begin{itemize}
     \item \textbf{[G1]}: Allow \textit{Guests} to be registered as a \textit{Citizen} or as \textit{Authority};
     \begin{itemize}
-        \item \textbf{[R1]}: The Fiscal code provided by the \textit{Citizen} has to be valid.
-        \item \textbf{[R2]}: The Matricola provided by \textit{Authority} has to be valid.
-        \item \textbf{[R3]}: Account can be created if and only if \textit{User} provides unique email and password.
-        \item \textbf{[R4]}: The \textit{System} allow \textit{Guest} to create \textit{Citizen} or \textit{Authority} account.
+        \item \textbf{[R1]}: Account can be created if and only if \textit{User} provides unique email and password.
+        \item \textbf{[R2]}: The \textit{System} allow \textit{Guest} to create \textit{Citizen} or \textit{Authority} account.
         \item \textbf{[D1]}: \textit{Users} can't make more than one account.
-        \item \textbf{[D2]}: The personal informations provided by \textit{User} are valid and belongs to the him. 
+        \item \textbf{[D2]}: The personal informations provided by \textit{User} are valid and belongs to him. 
     \end{itemize}
 
     \item \textbf{[G2]}: Allow \textit{Citizens} to report parking violations;
     \begin{itemize}
-        \item \textbf{[R5]}: The \textit{Citizen} has to take the violation's photo with the application. 
-        \item \textbf{[R6]}: The \textit{System} allows \textit{Citizen} to input some violation's data.
-        \item \textbf{[R7]}: The photo taken must be recognizable by the \textit{System}.  
-        \item \textbf{[R8]}: The \textit{Citizen} has to be able to discard the photo taken.
-        \item \textbf{[R9]}: The \textit{System} has to be able to attach the correct date, time and position to the report.
-        \item \textbf{[R10]}: The \textit{Citizen} can't change date, time and position in the report.
-        \item \textbf{[R11]}: The violation reported must be a legitimate violation.
-        \item \textbf{[D3]}: The \textit{Citizen} assumes all responsibility for misrepresentation on a violation report.
-        \item \textbf{[D4]}: \textit{Citizen} who use the application are evenly distributed in any city area.
-        \item \textbf{[D5]}: Position data has an accuracy of 10 meters.
-        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
-        \item \textbf{[D7]}: Permission to access GPS data is always allowed.
-        \item \textbf{[D8]}: Permission to take a photo is always allowed. 
+        \item \textbf{[R3]}: The \textit{Citizen} has to take the violation's photo with the application. 
+        \item \textbf{[R4]}: The \textit{System} allows \textit{Citizen} to input some violation's data.
+        \item \textbf{[R5]}: The photo taken must be recognizable by the \textit{System}.  
+        \item \textbf{[R6]}: The \textit{Citizen} has to be able to discard the photo taken.
+        \item \textbf{[R7]}: The \textit{System} has to be able to attach the correct date, time and position to the report.
+        \item \textbf{[R8]}: The \textit{Citizen} can't change date, time and position in the report.
+        \item \textbf{[D3]}: Position data has an accuracy of 10 meters.
+        \item \textbf{[D4]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[D5]}: Permission to access GPS data is always allowed.
+        \item \textbf{[D6]}: Permission to take a photo is always allowed. 
     \end{itemize}
 
     \item \textbf{[G3]}: \textit{Citizen} has to be able to input information about the violation that he has reported;
     \begin{itemize}
-        \item \textbf{[R12]}: \textit{Citizen} can change the license plate if it isn't recognised properly.
-        \item \textbf{[R13]}: \textit{Citizen} has to be able to choose the correct type of violation.
-        \item \textbf{[D3]}: The \textit{Citizen} assumes all responsibility for misrepresentation on a violation report.
+        \item \textbf{[R9]}: \textit{Citizen} can change the license plate if it isn't recognised properly.
+        \item \textbf{[R10]}: \textit{Citizen} has to be able to choose the correct type of violation.
     \end{itemize}
 
     \item \textbf{[G4]}: Must provide a visualization of the areas with high frequency of violations to \textit{Users};
     \begin{itemize}
-        \item \textbf{[R14]}: \textit{Users} can change the area of visualization.
-        \item \textbf{[D5]}: Position data as an accuracy of 10 meters.
-        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
-        \item \textbf{[D7]}: Permission to access GPS data is always allowed.
+        \item \textbf{[R11]}: \textit{Users} can change the area of visualization.
+        \item \textbf{[R12]}: \textit{Users} can change the date of visualization. 
+        \item \textbf{[D3]}: Position data as an accuracy of 10 meters.
+        \item \textbf{[D4]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[D5]}: Permission to access GPS data is always allowed.
     \end{itemize}
 
     \item \textbf{[G5]}: Must provide a visualization of vehicles that commit the most violations to \textit{Authorities}; 
     \begin{itemize}
-        \item \textbf{[R15]}: \textit{User} has to be registere as \textit{Authority} to visualize those statistics. 
-        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
-        \item \textbf{[D7]}: Permission to access GPS data is always allowed.
+        \item \textbf{[R13]}: \textit{Authority} can search for a specific license plate.
+        \item \textbf{[R14]}: \textit{Users} can change the date of visualization.
+        \item \textbf{[D4]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[D5]}: Permission to access GPS data is always allowed.
     \end{itemize}
 
     \item \textbf{[G6]}: Must ensure the chain of custody of the information sent by \textit{Citizens};
     \begin{itemize}
-        \item \textbf{[R16]}: Violations sent must be digitally signed and hashed.
-        \item \textbf{[R17]}: The \textit{System} must use HTTPS to safely communicate.
-        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[R15]}: Violations sent must be digitally signed and hashed.
+        \item \textbf{[R16]}: The \textit{System} must use HTTPS to safely communicate.
+        \item \textbf{[D4]}: The \textit{System} can access internet whenewer needs it.
     \end{itemize}
 
     \item \textbf{[G7]}: \textit{Authorities} can retrieve traffic violations in order to generate traffic tickets;
     \begin{itemize}
-        \item \textbf{[R18]}: The violation retrieved can only be seen by the \textit{Authority} that retrieves it.
-        \item \textbf{[D6]}: The \textit{System} can access internet whenewer needs it.
+        \item \textbf{[R17]}: The violation retrieved can only be seen by the \textit{Authority} that retrieves it.
+        \item \textbf{[D4]}: The \textit{System} can access internet whenewer needs it.
     \end{itemize}
 
     \item \textbf{[G8]}: \textit{System} must build statistics with the informations about issued tickets;
     \begin{itemize}
-        \item \textbf{[R19]}: The \textit{System} must update the statistics with the most recent data.
-        \item \textbf{[D4]}: \textit{Citizen} who use the application are evenly distributed in any city area.
+        \item \textbf{[R18]}: The \textit{System} must update the statistics with the most recent data.
     \end{itemize}
 \end{itemize}
 
 \subsection{Performance Requirements}
 In this section we discuss requirements for what regards performance. The \textit{System} must be able to support up to
-5 million of registered users. This limitation is not posed by the front-end of the \textit{System}, but rather by the 
-back-end part, specifically the DB. For the same reasons it must be able to handle up to 5 million of parking violations 
+5 million of registered \textit{Users}. This limitation is not posed by the front-end of the \textit{System}, but rather by the 
+back-end part, specifically the DB. For the same reasons it must be able to handle up to 10 million of parking violations 
 sent by the \textit{Citizen}. In order to avoid any kind of saturation, every parking violation that has not been taken into account
 by any \textit{Authority} for 30 days, must be automatically discarded. This operation does not update the information about 
 statistics.
@@ -1024,10 +1017,10 @@ statistics.
 \subsubsection{Standards compliance}
 The S2B  will use certain measures as:
 \begin{itemize}
-    \item Standard longitude and latitude measures for the position
+    \item Standard longitude and latitude measures for the position.
 \end{itemize}
 For what concerns the privacy, the S2B is subject to GDPR, a regulation in EU law on data protection 
-and privacy for all individual \textit{Citizens} of UE  
+and privacy for all individual \textit{Citizens} of UE.  
 
 \subsubsection{Hardware limitations}
 In order to work properly the application must rely on hardwares that have certain requirements 
@@ -1039,35 +1032,61 @@ such as:
 \end{itemize}   
 
 \subsection{Software System Attributes}
+
 \subsubsection{Reliability}
 The \textit{System} must be able to run continuously without any interruptions. In order to do that, it must be ensured 
 that the \textit{System} is fault tolerant. To prevent downtime, one of the main goals of architecture design must be 
-ensuring graceful degradation of the \textit{System}
+ensuring graceful degradation of the \textit{System}.
+
 \subsubsection{Availability}
 \textit{SafeStreets} does not present any critical functions so 99\% availability with 3.65 days/year
 as downtime should be good.  
+
 \subsubsection{Security}
 Security is a key aspect of \textit{SafeStreets} because it is very important that the informations are never altered.
 The S2B must:
 \begin{enumerate}
- \item use HTTPS to safely communicate with the Server and DBMS    
- \item Hash the passwords so that they are not stored in clear in the DB
- \item Encrypt sensitive data before storing it
- \item digital sign the parking violation sent by \textit{Citizen} and then hash it  
+ \item use HTTPS to safely communicate with the Server and DBMS.    
+ \item Hash the passwords so that they are not stored in clear in the DB.
+ \item Encrypt sensitive data before storing it.
+ \item digital sign the parking violations sent by \textit{Citizens} and then hash them.  
 \end{enumerate} 
+
 \subsubsection{Maintainability}
-In order to achieve maintainability some good practices must be followed to reduce coupling and avoid code duplication 
+In order to achieve maintainability some good practices must be followed to reduce coupling and avoid code duplication.
+Modularity is also necessary in order to make the code more robust and to make easier adding new functionalities.
+
 \subsubsection{Portability}
 S2B, as it stated previously, will work both in Andorid and iOS and this ensures itself portability. For 
-the back-end part, it should be OS independent
+the back-end part, it should be OS independent.
 
-
+\clearpage
 
 %%%%%%%%%% !CHAPTER 3 %%%%%%%%%%
 
-
 \section{Formal Analysis with Alloy}
 
+\subsection{A description of The Alloy Model}
+In this section we will focus on the relevant part of the application described
+using alloy model language. We decided to
+focus the model on the interaction between three main objects of 
+\textit{SafeStreets} that are: \textit{Citizen}, \textit{Authority} and Reports. 
+Those interactions are foundamental in order to reach the application's goals. 
+The model will presents an analysis of the main functions such as:
+\begin{itemize}
+    \item A \textit{Citizen} sends a report. 
+    \item An \textit{Authority} confirms a report. 
+    \item An \textit{Authority} discards a report.
+\end{itemize}
+Those functions are expressed by using different predicates. In 
+the description of the model we made some semplification in order to
+make the model cleaner and more readable. First we have reduced the range
+of the position's attributes (i.e. latitude and longitude) by scaling them and 
+some non-relevant attributes of objects are omited. 
+
+\clearpage
+
+\subsection{Alloy Model}
 \lstinputlisting[language=alloy]{safestreets.als}
 
 
