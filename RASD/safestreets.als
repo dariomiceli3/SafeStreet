@@ -28,7 +28,7 @@ sig Location {
 } {latitude >= -3 and latitude <= 3 and longitude >= -6 and longitude <= 6 }
 
 abstract sig Status {}
-one sig Pending extends Status {}{} --if no Authority checks this report 
+one sig Pending extends Status {} --if no Authority checks this report 
 one sig Yes extends Status {} --if it's evaluated as an effective violation
 one sig No extends Status {} --if it isn't evaluated as an effective violation  
 
@@ -48,24 +48,20 @@ abstract sig Report {
     checker: one Authority
 }
 
--- a report send from a citizen must be in is report sended set
+-------------------- FACTS --------------------
+
+--A report send from a citizen must be in is report sended set
 fact EqualityCitizen {
     all r: Report, c: Citizen| r.sender = c iff r in c.reportsSended
 }
 
--- a report checked by an authority must be in is report checked set
+--A report checked by an authority must be in is report checked set
 fact EqualityAuthority {
     all r: Report, a: Authority | r.checker = a iff r in a.reportsChecked
 }
 
--- if a report state is pending then it can't be in some authorities checked set
-fact ReportCanOnlyBeEvaluatedByAuthority {
-    all r: Report, a: Authority |   (r.status = Pending) 
-                                        implies
-                                    (r not in a.reportsChecked)
-}
 
---All fiscalcode have to be associated to Citizen 
+--All fiscal code have to be associated to Citizen 
 fact FiscalCodeCitizen {
     all fc: FiscalCode | some c: Citizen | fc in c.fiscalCode 
 }
@@ -75,7 +71,7 @@ fact MatricolaAuthority {
     all m: Matricola | some a: Authority | m in a.matricola 
 }
 
--- All registration have to be associated to User
+--All registration have to be associated to User
 fact RegistrationUser {
   all r: Registration | some u: User | r in u.registration
 }
@@ -105,6 +101,34 @@ fact NoSameAuthority {
     no disj a1, a2 : Authority | a1.matricola = a2.matricola
 }
 
+--If a report is evaluated than the status isn't pending
+fact ReportInAuthoritySetsMustBeChecked {
+    some r: Report | one a: Authority | r in a.reportsChecked 
+                                and ((r.status = Yes)
+                                        or
+                                    (r.status = No)) 
+}
+
+--All the citizens can't have some equal report in their sets
+fact OnlyDisjointedReportsSet {
+    no r: Report | all c1,c2: Citizen |
+    (r in c1.reportsSended) and (r in c2.reportsSended) 
+}
+
+-------------------- ASSERTS --------------------
+
+--If a report state is pending then it can't be in some authorities checked set
+assert ReportCanOnlyBeEvaluatedByAuthority {
+    some r: Report | one a: Authority | (r.status = Pending) 
+                                        implies 
+                                    (r not in a.reportsChecked)
+}
+
+-------------------- CHECKS --------------------
+check ReportCanOnlyBeEvaluatedByAuthority
+
+-------------------- PREDICATES --------------------
+
 pred sendReport [c, c1: Citizen, r: Report] {
     r.status = Pending
     r.sender = c
@@ -123,15 +147,15 @@ pred discardReport [r, r1: Report, a, a1: Authority] {
     a1.reportsChecked = a.reportsChecked + r1
 }
 
-
-
 pred show {
     #Citizen > 1
     #Authority > 1
     #Report > 2
 }
 
+-------------------- RUNS --------------------
+
 run predicate sendReport for 4
---run predicate confirmReport for 5
---run predicate discardReport for 3
---run show for 5
+run predicate confirmReport for 5
+run predicate discardReport for 3
+run show for 5
