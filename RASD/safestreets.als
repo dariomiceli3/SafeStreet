@@ -52,14 +52,30 @@ abstract sig Report {
 
 --A report send from a citizen must be in is report sended set
 fact EqualityCitizen {
-    all r: Report, c: Citizen| r.sender = c iff r in c.reportsSended
+    all r: Report | some c: Citizen| r.sender = c iff r in c.reportsSended
 }
 
 --A report checked by an authority must be in is report checked set
 fact EqualityAuthority {
-    all r: Report, a: Authority | r.checker = a iff r in a.reportsChecked
+    all r: Report | some a: Authority | r.checker = a iff r in a.reportsChecked
 }
 
+--No reports with state pending in some authority's checked set
+fact NoAuthorityWithPendingReportsInChecked {
+    no r: Report | some a: Authority |
+        r in a.reportsChecked and r.status = Pending and r.checker = a
+}
+
+--If a report is checked must be in one authority checked set 
+fact ReportInCheckedSet {
+    all r: Report | some a: Authority | 
+        r.status != Pending implies (r in a.reportsChecked and r.checker = a)
+}
+
+--If a report exists must be sended by a citizen
+fact ReportInSendedSet {
+    all r: Report | some c: Citizen | r.sender = c and r in c.reportsSended
+}
 
 --All fiscal code have to be associated to Citizen 
 fact FiscalCodeCitizen {
@@ -130,32 +146,45 @@ check ReportCanOnlyBeEvaluatedByAuthority
 -------------------- PREDICATES --------------------
 
 pred sendReport [c, c1: Citizen, r: Report] {
+    c.registration = c1.registration
+    c.fiscalCode = c1.fiscalCode
     r.status = Pending
     r.sender = c
     c1.reportsSended = c.reportsSended + r
 }
 
 pred confirmReport [r, r1: Report, a, a1: Authority] {
+    a.matricola = a1.matricola
+    r.status = Pending
     r1.sender = r.sender
     r1.status = Yes
     a1.reportsChecked = a.reportsChecked + r1
 }
 
 pred discardReport [r, r1: Report, a, a1: Authority] {
+    a.matricola = a1.matricola
+    r.status = Pending
     r1.sender = r.sender
     r1.status = No
     a1.reportsChecked = a.reportsChecked + r1
 }
 
-pred show {
+pred world1 {
     #Citizen > 1
     #Authority > 1
     #Report > 2
 }
 
+pred world2 {
+    #Citizen = 3
+    #Authority = 3
+    #Report = 3
+}
+
 -------------------- RUNS --------------------
 
-run predicate sendReport for 4
-run predicate confirmReport for 5
-run predicate discardReport for 3
-run show for 5
+run sendReport for 4
+run confirmReport for 5
+run discardReport for 5
+run world1 for 5
+run world2 for 7
