@@ -1,0 +1,120 @@
+\documentclass{article}
+
+\usepackage[export]{adjustbox}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{alloy-style}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, top=4cm, bottom=4cm, left=4cm, right=4cm]{geometry}
+
+\title{
+    \textbf{\textit{SafeStreets}} \\
+    \textbf{DD document}}
+
+\date{Academic year: 2019 - 2020}
+\author{
+    Dario Miceli Pranio \\
+    Pierriccardo Olivieri
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\maketitle
+
+%%%%%%%%%% LOGO POLIMI %%%%%%%%%%
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/logo.png}
+\end{figure}
+
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+
+\newpage
+%%%%%%%%%% CHAPTER 1 %%%%%%%%%%
+\section{Introduction}
+
+\subsection{Purpose}
+\textit{SafeStreets} is a service that aims to provide \textit{Users} with the possibility to notify \textit{Authorities} when traffic 
+violations occur, and in particular parking violations. The application's goal is achieved by allowing \textit{Users} 
+to share photo, position, date, time and type of violation and by enabling \textit{Authorities} to request them.
+\\
+\\
+\textit{SafeStreets} requires the \textit{Users} to create an account to access its services, the functionalities unlocked after 
+registration depend on the type of account created.
+\\
+If a \textit{User} creates an account as \textit{Citizen}, he/she must provide name, surname and a fiscal code in order to prove 
+that he/she is a real person. Furthermore, he must provide an email with which he will be uniquely identified 
+and a password. Once the account has been activated, \textit{User} can finally start to report parking violations and can also see 
+statistics of the streets or the areas with the highest frequency of violations.
+\\
+\\
+On the other hand, an officer will create an account as \textit{Authority} and he will need to provide his name, surname, 
+work's Matricola, a password and as for \textit{Citizen}, will be uniquely identified by an email. Once the Matricola 
+has been verified and the account has been activated, the officer can retrieve the potential parking violations 
+sent by \textit{Citizen} that have not been taken into account yet by other officers, analyze them and, if it is the 
+right case, generates traffic tickets. \textit{Authorities}, can see the same statistics of the \textit{Citizen} and can also see
+statistics about vehicles' license plate that commit the most violations.
+
+
+\subsection{Scope}
+
+\subsection{Definitions, acronyms, abbreviations}
+
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textit{Users}: can be either \textit{Citizen} or \textit{Authority}
+    \item \textit{traffic violation}: generic violation that can occur in a street
+    \item \textit{parking violation}: a violation caused by a bad parking
+    \item \textit{violation}: general violation, identity both traffic or parking violation
+    \item \textit{unsafe areas}: areas with an high rate of violations
+\end{itemize}
+
+\subsubsection{Acronyms}
+Table with all acronyms used in document.
+\begin{center}
+\begin{tabular}{ | l | l |}
+    \hline
+    ACRONYM & COMPLETE NAME \\
+    \hline
+    DD & Design Document \\
+    \hline
+    GPS & Global Positioning Systems \\
+    \hline
+    S2B & Software To Be \\
+    \hline
+    GDPR & General Data Protection Regulation \\
+    \hline 
+    FC & Fiscal Code \\
+    \hline
+    UC & Use Case \\
+    \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Abbreviations}
+\begin{itemize}
+    \item \textbf{Rn}: n-th Requirement 
+\end{itemize}
+
+\subsection{Revision History}
+
+\subsection{Reference documents}
+\begin{itemize}
+    \item ISO/IEC/IEEE 29148: https://www.iso.org/standard/45171.html
+    \item Specification Document: "SafeStreets Mandatory Project Assignement"
+\end{itemize}
+
+\subsection{Document Structure}
+\begin{itemize}
+\end{itemize}
+%%%%%%%%%% !CHAPTER 1 %%%%%%%%%%
+
+\clearpage
+\end{document}
