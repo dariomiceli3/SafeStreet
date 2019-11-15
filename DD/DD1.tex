@@ -5,7 +5,6 @@
 \usepackage{subcaption}
 \usepackage{wrapfig}
 \usepackage[dvipsnames]{xcolor}
-\usepackage{alloy-style}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -113,15 +112,26 @@ Table with all acronyms used in document.
 \end{itemize}
 
 \subsection{Document Structure}
-\begin{itemize}
-\end{itemize}
 %%%%%%%%%% !CHAPTER 1 %%%%%%%%%%
 
 \clearpage
 
 %%%%%%%%%% CHAPTER 2 %%%%%%%%%%
 \section{Architectural Design}
-\subsection{Overview}
+
+\subsection{Overview: High level components and their interaction}
+In this graphical representation of \textit{SafeStreets} we describe at an high level the main interaction
+between the components that are involved. Focusing on client side \textit{SafeStreets} provides a Client 
+application, in this view case we don't make a distinciton between the \textit{Users} type, this is 
+primarily devoted to the fact that the requests are similar. We identify then a 3-tier architecture, 
+composed by the client, a proxy in the middle to manage properly all the requests and finally a back 
+end part in which the \textit{System} store the information (in a DBMS) and generate statistics thanks
+to the data submitted by the \textit{Citizen} and confirmed by \textit{Authorities}. In order to do this
+we need an application server. Since we will authenticate the \textit{Users} through a confirmation email, 
+and we give the possibility to the \textit{Authority} to receive data via mail, the \textit{System} needs
+also a Mailing System. For notify the \textit{Users} with some relevant informations \textit{System} will 
+use a notification System. Finally we also need some service in the client like GPS Service and Maps Service.
+
 
 \subsection{Component view}
 
@@ -141,7 +151,7 @@ that lies between the Client application and the central Database. Now we will d
     The Authentication Manager exposes all methods related to the access to the platform. It handles the
     phase of \textit{User} registration and login and in order to do this it has to continuosly interact with 
     the database through the Data Storage Interface. It also checks all the costraints in order to garantee 
-    creation of correct account. Furthermore it sends email to all the \text{Users} that have been registered 
+    creation of correct account. Furthermore it sends email to all the \textit{Users} that have been registered 
     by accessing the Mailing \textit{System}'s Interface. 
     \item \textbf{Citizen Manager} \\
     The \textit{Citizen} manager handles all functionalities related to a \textit{Citizen} Account. In order to
@@ -153,7 +163,7 @@ that lies between the Client application and the central Database. Now we will d
     \textit{Authority} to update his setting.
     \item \textbf{Data Manager} \\
     This component is the main gateway between the Client Applications and the central Database. It handles the import of 
-    new data associated to a \text{User}'s account and its retrieval.
+    new data associated to a \textit{User}'s account and its retrieval.
     \item \textbf{Send Report Manager}\\
     The Send Report Manager handles the creation and the management of a Send Report performed by \textit{Citizen} and
     directed to \textit{System}. Inserting is possible thanks to Data Storage Manager. Furthermore, in order to avoid 
@@ -162,7 +172,7 @@ that lies between the Client application and the central Database. Now we will d
     The Retrieve Report Manager handles the management of a Retrieve Report performed by \textit{Authority}. Retrieving 
     is possible by querying the central Database through the Data Storage Interface.
     \item \textbf{Statistics Manager} \\
-    The Statistics Manager handles the management of a Retrieve Statistics performed by \text{User}. Retrieving 
+    The Statistics Manager handles the management of a Retrieve Statistics performed by \textit{User}. Retrieving 
     is possible by querying the central Database through the Data Storage Interface.     
     \item \textbf{Privacy Manager} \\
     The Privacy Manager exposes methods to encrypt sensitive data. This operation is important in order to avoid data leaks
@@ -176,5 +186,38 @@ that lies between the Client application and the central Database. Now we will d
 \textbf{External interfaces} \\
 Some of the described components in our \textit{System} are also dedicated to communicating with external services through 
 specific interfaces. It is essential that the communication works properly in order to fulfill application's functionalities.  
+
+\subsection{Deployement view}  
+The architecture choosed for \textit{SafeStreets} is a multi-tier architecture. Below all the nodes 
+involved will be described.
+\\
+\\
+\textbf{Smarthphone}\\
+Represents the \textit{User's} smarthphone in which the client will run. This is the client machine
+that will run \textit{SafeStreets} application.
+\\
+\\
+\textbf{Firewall}\\
+(senti dario per parti inerenti alla sicurezza)Necessary to provide protection between local network 
+and world network, so not-allowed third parties will not be able to access data.
+\\
+\\
+\textbf{Application Server}
+Is the central unit of \textit{SafeStreet} all the other components refer to this. It contains all
+the logic and provide bidirectional access to Database i.e. manages data acquisition and requests.
+Since for \textit{SafeStreet} we need to focus on security, is a though decision to have only one main
+unit.
+\\
+\\
+\textbf{Proxy}
+\textit{System} will use a proxy to receive requests. This solution is more scalable for the eventuality
+of further improvements and guarantee a better stability of the \textit{System}.  
+\\
+\\
+\textbf{Database}\\
+A Database is necessary in order to store all the informations about personal data, registration and 
+data submitted by \textit{Citizen} and retrieve information in order, for instance, to build statistics.
+
+ 
 
 \end{document}
