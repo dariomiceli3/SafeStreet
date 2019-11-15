@@ -41,6 +41,9 @@
 \section{Introduction}
 
 \subsection{Purpose}
+The purpose of this document is to provide a functional description of \textit{SafeStreets} application.
+
+\subsection{Scope}
 \textit{SafeStreets} is a service that aims to provide \textit{Users} with the possibility to notify \textit{Authorities} when traffic 
 violations occur, and in particular parking violations. The application's goal is achieved by allowing \textit{Users} 
 to share photo, position, date, time and type of violation and by enabling \textit{Authorities} to request them.
@@ -62,8 +65,6 @@ sent by \textit{Citizen} that have not been taken into account yet by other offi
 right case, generates traffic tickets. \textit{Authorities}, can see the same statistics of the \textit{Citizen} and can also see
 statistics about vehicles' license plate that commit the most violations.
 
-
-\subsection{Scope}
 
 \subsection{Definitions, acronyms, abbreviations}
 
@@ -117,4 +118,63 @@ Table with all acronyms used in document.
 %%%%%%%%%% !CHAPTER 1 %%%%%%%%%%
 
 \clearpage
+
+%%%%%%%%%% CHAPTER 2 %%%%%%%%%%
+\section{Architectural Design}
+\subsection{Overview}
+
+\subsection{Component view}
+
+\textbf{\textit{SafeStreets} Client Application} \\
+
+
+\textbf{\textit{SafeStreets} Business Logic} \\
+This component describes core logic of \textit{SafeStreets} application. It is a stateless module 
+that lies between the Client application and the central Database. Now we will describe each component:
+\begin{itemize}
+    \item \textbf{Network Manager} \\
+    It handles all incoming messages exchanged between Clients and Server. It does two foundamental
+    things; it sends all incoming messages from client application to the correct handler in Business
+    Logic and on the contrary it collects all the outgoing messages and sends to the corresponding Client
+    Application.
+    \item \textbf{Authentication Manager} \\
+    The Authentication Manager exposes all methods related to the access to the platform. It handles the
+    phase of \textit{User} registration and login and in order to do this it has to continuosly interact with 
+    the database through the Data Storage Interface. It also checks all the costraints in order to garantee 
+    creation of correct account. Furthermore it sends email to all the \text{Users} that have been registered 
+    by accessing the Mailing \textit{System}'s Interface. 
+    \item \textbf{Citizen Manager} \\
+    The \textit{Citizen} manager handles all functionalities related to a \textit{Citizen} Account. In order to
+    do this it has to continuosly interact with database through the Data Storage Interface. It also allows
+    \textit{Citizen} to update his setting. 
+    \item \textbf{Authority Manager} \\
+    The \textit{Authority} manager handles all functionalities related to an \textit{Authority} Account. In order to
+    do this it has to continuosly interact with database through the Data Storage Interface. It also allows
+    \textit{Authority} to update his setting.
+    \item \textbf{Data Manager} \\
+    This component is the main gateway between the Client Applications and the central Database. It handles the import of 
+    new data associated to a \text{User}'s account and its retrieval.
+    \item \textbf{Send Report Manager}\\
+    The Send Report Manager handles the creation and the management of a Send Report performed by \textit{Citizen} and
+    directed to \textit{System}. Inserting is possible thanks to Data Storage Manager. Furthermore, in order to avoid 
+    alteration, the Report is encrypted by using Privacy Manager.
+    \item \textbf{Retrieve Report Manager}\\
+    The Retrieve Report Manager handles the management of a Retrieve Report performed by \textit{Authority}. Retrieving 
+    is possible by querying the central Database through the Data Storage Interface.
+    \item \textbf{Statistics Manager} \\
+    The Statistics Manager handles the management of a Retrieve Statistics performed by \text{User}. Retrieving 
+    is possible by querying the central Database through the Data Storage Interface.     
+    \item \textbf{Privacy Manager} \\
+    The Privacy Manager exposes methods to encrypt sensitive data. This operation is important in order to avoid data leaks
+    and data alteration.
+    \item \textbf{Data Storage Manager} \\
+    The Data Storage Manager provides all methods to interact with the central Database such as data retrieval, 
+    storage and update.
+    
+\end{itemize}
+
+\textbf{External interfaces} \\
+Some of the described components in our \textit{System} are also dedicated to communicating with external services through 
+specific interfaces. It is essential that the communication works properly in order to fulfill application's functionalities.  
+
 \end{document}
