@@ -150,7 +150,7 @@ Below we will describe each component.
 
 \textbf{\textit{SafeStreets} Client Application} \\
 This component is located on the \textit{User}'s device. Its modules are the Network Manager, the Presentation 
-Component and the Data Manager(mi sa che non va inserito, chiedere a Pier). The role of the first component is 
+Component and the Data Manager(mi sa che non va inserito, chiedere a Pier), security Manager(firma digitale). The role of the first component is 
 to dispatch all incoming and outgoing communications with the application server. The Presentation Component, 
 instead, corresponds to the “View” in the MVCS Pattern.
 
@@ -180,13 +180,13 @@ that lies between the Client application and the central Database. Now we will d
     %%\item \textbf{Data Manager} \\
     %%This component is the main gateway between the Client Applications and the central Database. It handles the import of 
     %%new data associated to a \textit{User}'s account and its retrieval.
-    \item \textbf{Send Report Manager}\\
-    The Send Report Manager handles the creation and the management of a Send Report performed by \textit{Citizen} and
-    directed to \textit{System}. Inserting is possible thanks to Data Storage Manager. Furthermore, in order to avoid 
-    alteration, the Report is encrypted by using Privacy Manager.
-    \item \textbf{Retrieve Report Manager}\\
-    The Retrieve Report Manager handles the management of a Retrieve Report performed by \textit{Authority}. Retrieving 
-    is possible by querying the central Database through the Data Storage Interface.
+    %\item \textbf{Send Report Manager}\\
+    %The Send Report Manager handles the creation and the management of a Send Report performed by \textit{Citizen} and
+    %directed to \textit{System}. Inserting is possible thanks to Data Storage Manager. Furthermore, in order to avoid 
+    %alteration, the Report is encrypted by using Privacy Manager.
+    %\item \textbf{Retrieve Report Manager}\\
+    %The Retrieve Report Manager handles the management of a Retrieve Report performed by \textit{Authority}. Retrieving 
+    %is possible by querying the central Database through the Data Storage Interface.
     \item \textbf{Statistics Manager} \\
     The Statistics Manager handles the management of a Retrieve Statistics performed by \textit{User}. Retrieving 
     is possible by querying the central Database through the Data Storage Interface.     
@@ -215,7 +215,12 @@ This external services are:
     It's used to show unsafe areas in statistics.  
 \end{itemize}  
 
-\subsection{Deployement view}  
+\subsection{Deployement view}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/Deployement_component.png}
+    \caption{Deployment view}
+\end{figure}  
 The architecture choosed for \textit{SafeStreets} is a multi-tier architecture. Below all the nodes 
 involved will be described.
 \\
@@ -226,8 +231,9 @@ that will run \textit{SafeStreets} application.
 \\
 \\
 \textbf{Firewall}\\
-(senti dario per parti inerenti alla sicurezza)Necessary to provide protection between local network 
-and world network, so not-allowed third parties will not be able to access data.
+Necessary to provide protection between local network and world network, so not-allowed third parties will not be 
+able to access data. In particular we decided to use two firewalls to create a DMZ. The first firewall must be configured 
+to allow traffic destined to the DMZ only. The second firewall only allows traffic to the DMZ from the internal network.
 \\
 \\
 \textbf{Application Server}
@@ -237,8 +243,8 @@ Since for \textit{SafeStreet} we need to focus on security, is a though decision
 unit.
 \\
 \\
-\textbf{Proxy}
-\textit{System} will use a proxy to receive requests. This solution is more scalable for the eventuality
+\textbf{Web Server}
+\textit{System} will use a web server to receive requests. This solution is more scalable for the eventuality
 of further improvements and guarantee a better stability of the \textit{System}.  
 \\
 \\
