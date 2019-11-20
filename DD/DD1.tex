@@ -150,7 +150,7 @@ Below we will describe each component.
 
 \textbf{\textit{SafeStreets} Client Application} \\
 This component is located on the \textit{User}'s device. Its modules are the Network Manager, the Presentation 
-Component and the Data Manager(mi sa che non va inserito, chiedere a Pier), security Manager(firma digitale). The role of the first component is 
+Component and Security Manager. The role of the first component is 
 to dispatch all incoming and outgoing communications with the application server. The Presentation Component, 
 instead, corresponds to the “View” in the MVCS Pattern.
 
@@ -243,7 +243,7 @@ Since for \textit{SafeStreet} we need to focus on security, is a though decision
 unit.
 \\
 \\
-\textbf{Web Server}
+\textbf{Proxy}
 \textit{System} will use a web server to receive requests. This solution is more scalable for the eventuality
 of further improvements and guarantee a better stability of the \textit{System}.  
 \\
@@ -252,6 +252,45 @@ of further improvements and guarantee a better stability of the \textit{System}.
 A Database is necessary in order to store all the informations about personal data, registration and 
 data submitted by \textit{Citizen} and retrieve information in order, for instance, to build statistics.
 
- 
+\section{User Interface Design} 
+\section{Requirements Traceability}
+\begin{center}
+    \begin{tabular}{ | l | l |}
+        \hline
+        COMPONENT(DD) & REQUIREMENTS(RASD) \\
+        \hline
+        Authentication Manager & [R1]: Account can be created if and only if User provides unique email and password \\
+                               & [R2]: The System allow Guest to create Citizen or Authority account \\
+        \hline
+        Citizen Manager & [R3]: The Citizen has to take the violation’s photo with the application \\
+                        & [R4]: The System allows Citizen to input some violation’s data \\
+                        & [R5]: The photo taken must be recognizable by the System \\
+                        & [R6]: The Citizen has to be able to discard the photo taken \\
+                        & [R7]: The System has to be able to attach the correct date, time and position to the report \\
+                        & [R8]: The Citizen can’t change date, time and position in the report \\ 
+                        & [R9]: Citizen can change the license plate if it isn’t recognised properly \\
+                        & [R10]: Citizen has to be able to choose the correct type of violation \\ 
+        \hline
+        %%vanno messi R11, 12, 14???
+        Authority Manager & [R17]: The violation retrieved can only be seen by the Authority that retrieves it \\
+                          & [R13]: Authority can search for a specific license plate \\
+        \hline
+        Statistics Manager & [R11]: Users can change the area of visualization \\
+                           & [R12]: Users can change the date of visualization \\
+                           & [R13]: Authority can search for a specific license plate \\
+                           & [R14]: Users can change the date of visualization \\
+                           & [R18]: The System must update the statistics with the most recent data \\
+        \hline
+        Privacy Manager & [R16]: The System must use HTTPS to safely communicate \\
+        %%come il network manager probabilmente si può evitare
+        %%\hline 
+        %%Data Storage Manager &  \\
+        \hline
+        Security Manager & [R15]: Violations sent must be digitally signed and hashed \\
+                         & [R16]: The System must use HTTPS to safely communicate \\
+        \hline
+    \end{tabular}
+    \end{center}
+
 
 \end{document}
