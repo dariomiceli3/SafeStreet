@@ -193,8 +193,8 @@ that lies between the Client application and the central Database. Now we will d
     \item \textbf{Privacy Manager} \\
     The Privacy Manager exposes methods to encrypt sensitive data. This operation is important in order to avoid data leaks
     and data alteration.
-    \item \textbf{Data Storage Manager} \\
-    The Data Storage Manager provides all methods to interact with the central Database such as data retrieval, 
+    \item \textbf{DataBase Manager} \\
+    The DataBase Manager provides all methods to interact with the central Database such as data retrieval, 
     storage and update.
     
 \end{itemize}
@@ -262,18 +262,16 @@ data submitted by \textit{Citizen} and retrieve information in order, for instan
         Authentication Manager & [R1]: Account can be created if and only if User provides unique email and password \\
                                & [R2]: The System allow Guest to create Citizen or Authority account \\
         \hline
-        Citizen Manager & [R3]: The Citizen has to take the violation’s photo with the application \\
+        Report Manager  & [R3]: The Citizen has to take the violation’s photo with the application \\
                         & [R4]: The System allows Citizen to input some violation’s data \\
                         & [R5]: The photo taken must be recognizable by the System \\
                         & [R6]: The Citizen has to be able to discard the photo taken \\
                         & [R7]: The System has to be able to attach the correct date, time and position to the report \\
                         & [R8]: The Citizen can’t change date, time and position in the report \\ 
                         & [R9]: Citizen can change the license plate if it isn’t recognised properly \\
-                        & [R10]: Citizen has to be able to choose the correct type of violation \\ 
-        \hline
-        %%vanno messi R11, 12, 14???
-        Authority Manager & [R17]: The violation retrieved can only be seen by the Authority that retrieves it \\
-                          & [R13]: Authority can search for a specific license plate \\
+                        & [R10]: Citizen has to be able to choose the correct type of violation \\
+                        & [R17]: The violation retrieved can only be seen by the Authority that retrieves it \\
+                        & [R13]: Authority can search for a specific license plate \\ 
         \hline
         Statistics Manager & [R11]: Users can change the area of visualization \\
                            & [R12]: Users can change the date of visualization \\
@@ -284,7 +282,8 @@ data submitted by \textit{Citizen} and retrieve information in order, for instan
         Privacy Manager & [R16]: The System must use HTTPS to safely communicate \\
         %%come il network manager probabilmente si può evitare
         %%\hline 
-        %%Data Storage Manager &  \\
+        %%DataBase Manager & Settings Manager  \\
+
         \hline
         Security Manager & [R15]: Violations sent must be digitally signed and hashed \\
                          & [R16]: The System must use HTTPS to safely communicate \\
