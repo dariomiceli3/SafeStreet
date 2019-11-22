@@ -125,7 +125,7 @@ Table with all acronyms used in document.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{img/Overview.png}
+    \includegraphics[scale=0.4]{img/Overview.png}
     \caption{\textit{System}'s Overview}
 \end{figure}
 
@@ -148,8 +148,8 @@ The purpose of this UML diagram is to show the internal architecture of the Syst
 three component: \textit{SafeStreets} Client Application, SafeStreets} Business Logic, External interfaces.
 Below we will describe each component. 
 
-\textbf{\textit{SafeStreets} Client Application} \\
-This component is located on the \textit{User}'s device. Its modules are the Network Manager, the Presentation 
+\textbf{ \textit{SafeStreets} Client Application} \\
+This component is located on the \textit{User's} device. Its modules are the Network Manager, the Presentation 
 Component and Security Manager. The role of the first component is 
 to dispatch all incoming and outgoing communications with the application server. The Presentation Component, 
 instead, corresponds to the “View” in the MVCS Pattern.
@@ -218,7 +218,7 @@ This external services are:
 \subsection{Deployement view}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{img/Deployement_component.png}
+    \includegraphics[scale=0.5]{img/Deployment_component.png}
     \caption{Deployment view}
 \end{figure}  
 The architecture choosed for \textit{SafeStreets} is a multi-tier architecture. Below all the nodes 
@@ -260,7 +260,7 @@ data submitted by \textit{Citizen} and retrieve information in order, for instan
         COMPONENT(DD) & REQUIREMENTS(RASD) \\
         \hline
         Authentication Manager & [R1]: Account can be created if and only if User provides unique email and password \\
-                               & [R2]: The System allow Guest to create Citizen or Authority account \\
+                               & [R2]: The System allows Guest to create Citizen or Authority account \\
         \hline
         Report Manager  & [R3]: The Citizen has to take the violation’s photo with the application \\
                         & [R4]: The System allows Citizen to input some violation’s data \\
@@ -271,12 +271,10 @@ data submitted by \textit{Citizen} and retrieve information in order, for instan
                         & [R9]: Citizen can change the license plate if it isn’t recognised properly \\
                         & [R10]: Citizen has to be able to choose the correct type of violation \\
                         & [R17]: The violation retrieved can only be seen by the Authority that retrieves it \\
-                        & [R13]: Authority can search for a specific license plate \\ 
         \hline
         Statistics Manager & [R11]: Users can change the area of visualization \\
                            & [R12]: Users can change the date of visualization \\
                            & [R13]: Authority can search for a specific license plate \\
-                           & [R14]: Users can change the date of visualization \\
                            & [R18]: The System must update the statistics with the most recent data \\
         \hline
         Privacy Manager & [R16]: The System must use HTTPS to safely communicate \\
