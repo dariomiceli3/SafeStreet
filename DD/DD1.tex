@@ -139,9 +139,11 @@ to the data submitted by the \textit{Citizen} and confirmed by \textit{Authoriti
 we need an application server. Since we will authenticate the \textit{Users} through a confirmation email, 
 and we give the possibility to the \textit{Authority} to receive data via mail, the \textit{System} needs
 also a Mailing System. For notify the \textit{Users} with some relevant informations \textit{System} will 
-use a notification System. Finally we also need some service in the client like GPS Service and Maps Service.
+use a notification System. Finally we also need some service in the client like GPS Service, Maps Service,
+SMTP Service and License Plate Recognition Service. These services are essential to create a proper violation
+and to send it correctly.
 
-
+\clearpage
 \subsection{Component view}
 
 The purpose of this UML diagram is to show the internal architecture of the System's software. It's divided in 
@@ -213,12 +215,14 @@ This external services are:
     It used by Authentication Manager to inform an \textit{User} that his account has been correctly created. 
     \item Maps Service \\ 
     It's used to show unsafe areas in statistics.  
-\end{itemize}  
+\end{itemize} 
+
+\clearpage
 
 \subsection{Deployement view}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{img/Deployment_component.png}
+    \includegraphics[scale=0.4]{img/Deployment_component.png}
     \caption{Deployment view}
 \end{figure}  
 The architecture choosed for \textit{SafeStreets} is a multi-tier architecture. Below all the nodes 
@@ -239,18 +243,108 @@ to allow traffic destined to the DMZ only. The second firewall only allows traff
 \textbf{Application Server}
 Is the central unit of \textit{SafeStreet} all the other components refer to this. It contains all
 the logic and provide bidirectional access to Database i.e. manages data acquisition and requests.
-Since for \textit{SafeStreet} we need to focus on security, is a though decision to have only one main
-unit.
+%%Since for \textit{SafeStreet} we need to focus on security, is a though decision to have only one main
+%%unit.
+We decided to fully replicate Application Servers in order to balance the workload 
 \\
 \\
 \textbf{Proxy}
-\textit{System} will use a web server to receive requests. This solution is more scalable for the eventuality
-of further improvements and guarantee a better stability of the \textit{System}.  
+\textit{System} will use a proxy to receive requests. This solution is more scalable for the eventuality
+of further improvements and guarantee a better stability of the \textit{System}. Furthermore Proxy acts as
+additional shield against security attacks.  
 \\
 \\
 \textbf{Database}\\
 A Database is necessary in order to store all the informations about personal data, registration and 
 data submitted by \textit{Citizen} and retrieve information in order, for instance, to build statistics.
+
+\clearpage
+
+\subsection{Runtime View}
+
+\textbf{Login Runtime View}
+The following diagram describes the sequence of events when a \textit{User} tries to login in 
+\textit{SafeStreets} application. The actors involved are the Presentation and the Network Manager on the
+client and the Network Manager, Authentication Manager and the Database Manager on the Server.
+When a \textit{User} wants to login in his account, an HTTP request is sent to the application Server
+containing his credentials. Database Manager checks the validity of credentials by quering DB. If the query
+success then \textit{User} can correctly be authenticated. The two errors that can occur are HTTP ERROR 400:
+Malformed Request and HTTP ERROR 401 Wrong Credentials. The first one occurs when request's format is invalid,
+such as having empty parameters. The second one occurs when credentials are wrong.   
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/sequence_diagrams/Login_Sequence.png}
+    \caption{Login Runtime View}
+\end{figure}  
+
+\textbf{Retrieve Report Runtime View}
+The following diagram describes the sequence of events when an \textit{Authority} tries to retrieve a violation in
+\textit{SafeStreets} application. The actors involved are the Presentation, Security Manager and the Network 
+Manager on the client and the Network Manager, Report Manager and the Database Manager on the Server.
+When an \textit{Authority} clicks the retrive button an HTTP request is sent to the Application Server in order to
+query the DB and retrive the violation. Once the violation has been retrieved, Securith Manager checks violation's 
+validity by computing the hash and matching it with the one from the digitally sign. If the two hash are the same then
+Security Manager sends the violation to \textit{Authority}. When \textit{Authority} clicks the "YES" or "NO" button a final
+HTTP request is sent to Application Server containing the response. It is important because in this way \textit{System} can
+build Statistics. If, instead, the two hash are not the same then a malicious attacker is trying to alterate information so
+Security Manager discards the violation and waits for the timeout. In this way Report Manager can sends the violation again.     
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/sequence_diagrams/Retrieve_Report.png}
+    \caption{Retrieve Report Runtime View}
+\end{figure}  
+
+
+\textbf{Retrieve Statistics Runtime View}
+The following diagram describes the sequence of events when a \textit{User} tries to retrieve statistics in
+\textit{SafeStreets} application. The actors involved are the Presentation, GPS, Google Maps and the Network 
+Manager on the client and the Network Manager, Statistics Manager and the Database Manager on the Server.
+When a \textit{User} clicks the retrieve button two HTTP requests are sent, one to GPS Service and the other
+one to Google Maps Service, in order to know the exact position of the \textit{User} and the area in which he is
+using the app. After that an other HTTP request is sent to Application Server in order to retrieve statistics by 
+quering DB. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/sequence_diagrams/Retrieve_Statistics.png}
+    \caption{Retrieve Statistics Runtime View}
+\end{figure}  
+
+\subsection{}
+\subsection{Selected architectural styles and patterns}
+
+\textbf{REST}
+Our \textit{System} uses the Representational state transfer (REST) architectural style in order to achieve 
+performance in component interactions, scalability, modifiability of components to meet changing needs, portability 
+of components by moving program code with the data and reliability in the resistance to failure at the system level
+in the presence of failures within components, connectors, or data. HTTP is the communication protocol used underneath, 
+so CRUD operations are implemented through GET, POST, DELETE and PUT primitives.
+
+
+\textbf{MVC}
+Our \textit{System} follows the MVC paradigm. As shown in the picture The acronyms stands for Model View Controller
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/mvc-architecture.png}
+    \caption{MVC Architecture}
+\end{figure}
+
+\begin{itemize}
+    \item The Model corresponds to the component containing all the application's data and integrity constraints. 
+    In our case the Model is described in the external database.
+    \item The View corresponds to the presentation layer, the client's only interface with the \textit{System}.
+    \item The Controller is responsible for the logic of the application and in our case corresponds to \textit{SafeStreets}
+    Business Logic.
+\end{itemize}
+\clearpage
+
+\subsection{Other design decision}
+\textbf{Firewall}
+
+
 
 \section{User Interface Design} 
 \section{Requirements Traceability}
