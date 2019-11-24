@@ -7,6 +7,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage[export]{adjustbox}
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper, top=4cm, bottom=4cm, left=4cm, right=4cm]{geometry}
 
@@ -125,8 +126,8 @@ Table with all acronyms used in document.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/Overview.png}
-    \caption{\textit{System}'s Overview}
+    \includegraphics[scale=0.3]{img/overview.png}
+    \caption{\textit{System's} Overview}
 \end{figure}
 
 In this graphical representation of \textit{SafeStreets} we describe at an high level the main interaction
@@ -146,11 +147,50 @@ and to send it correctly.
 \clearpage
 \subsection{Component view}
 
+\paragraph{Component High Level View}
+The following 3 images showing at an high level how the \textit{System} is organized, as we can see the
+choice we made is simple, it's a basic client-server architecture. The client presents various components 
+each one covers a different role: the Presentation Manager is the medium between the application and the
+\textit{User}, Logic Manager is the component designed to catch all the application Logic, it orchestrate
+the send report action for \textit{Citizens} and the retrieve report action for \textit{Authorities}, 
+Logic Manager is also connected to a cache storage in order to save momentaneously some data. The
+Security Manager is crucial for the application, is the component used to ensure the message security 
+during the trasmission to server, his main job is to apply a digital firm. The Network Manager handle the
+connection and is the component that communicates with server. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/component_diagrams/component_diagram.png}
+    \caption{Component Diagram High Level View}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/component_diagrams/client_component.png}
+    \caption{Client view}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/component_diagrams/server_component.png}
+    \caption{Server view}
+\end{figure}
+
+\paragraph{Component High Level View}
+Here we go deeper in the Component Diagram, are decribed all the interactions between the component
+described above and all the external services like the Maps service, license plate Recognition Service and 
+STNP service for the client and Mailing System with Push notification System for the server.s 
+
+\begin{figure}[H]
+    \includegraphics[width=1.2\textwidth, left]{img/component_diagrams/component_diagram_complete.png}
+    \caption{Component Diagram Detailed view}
+\end{figure}
+
 The purpose of this UML diagram is to show the internal architecture of the System's software. It's divided in 
-three component: \textit{SafeStreets} Client Application, SafeStreets} Business Logic, External interfaces.
+three component: \textit{SafeStreets} Client Application, SafeStreets Business Logic, External interfaces.
 Below we will describe each component. 
 
-\textbf{ \textit{SafeStreets} Client Application} \\
+\textbf{ \textit{SafeStreets} Client Application }
 This component is located on the \textit{User's} device. Its modules are the Network Manager, the Presentation 
 Component and Security Manager. The role of the first component is 
 to dispatch all incoming and outgoing communications with the application server. The Presentation Component, 
@@ -274,9 +314,61 @@ such as having empty parameters. The second one occurs when credentials are wron
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/Login_Sequence.png}
+    \includegraphics[scale=0.4]{img/sequence_diagrams/login_sequence.png}
     \caption{Login Runtime View}
 \end{figure}  
+
+\textbf{Registration Runtime View}  the registration sequence shows the step followed for the 
+registration of a new \textit{User}. The two registration procedures for \textit{Citizen} and  
+\textit{Authority} are similar, the only thing that change is the code used, for the first is 
+needed the fiscal code for the second the Matricola number, to avoid a duplicate we show here 
+the general procedure. After filling the form data are sended through the proxy at the main server, 
+here data will be secured and stored in the database. Here 2 situations may occur, the \textit{User} 
+data aren't already present in the database so \textit{User's} data will be stored and \textit{System} 
+can continue with the process sending client a success message or data inserted have been already used 
+by another \textit{User} and the client will receive an error message. This process will be repeated 
+until success message. When \textit{User's} data are correctly stored the \textit{System} will send a 
+confirmation email with a token in order to activate the account. Then \textit{System} wait until the 
+\textit{User} clicks the confirm link in the mail received, clicking the link will send the token to 
+server, again two situation may occur, the token is valid and the procedure terminate with the account 
+activation or the token isn't valid and the \textit{User} need to request another confirmation email.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/sequence_diagrams/registration_sequence.png}
+    \caption{Registration Runtime View}
+\end{figure}  
+
+\textbf{Send Report Runtime View}
+The following diagram represents the sequence of actions executed on the \textit{Citizen's} send report, 
+first all the necessary data is gathered, the nex sequence will describe in a more detailed way how it's 
+done, here is simplified for a better readability. Then data collected is passed at the Logic Manager, 
+it will secure the data applying a digital firm through the Security Manager, then the violation is 
+saved momentaneously in the cache and sent at the server. As described in the picture, Logic Manager 
+save the violation in the cacheto avoid loss, if there is a malicious attack in the way to the server 
+in order to modify the violation then the digital firm will be compromised, in this case the server 
+will reject the violation and it will be lost, to avoid this inconvenience the client saves the report 
+in the cache and will send it at every timetout until it recevies from the server the success message. 
+In the other hand the server will save the report and send the success message if only if the digital 
+firm is correct. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/sequence_diagrams/send_report_sequence.png}
+    \caption{Send Report Runtime View}
+\end{figure}  
+
+\textbf{Collect External Data Runtime View}  
+This is a "zoom" on the self call "retrieve gps, license, date time" that Presentation does in the 
+previuos sequence, it's only a graphical semplification in aim to better understanding the process, 
+separating this fase make more readable the previous image. This steps show how information are 
+retrieved from external services, those information will be used to create the report by the Logic Manager.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/sequence_diagrams/collect_external_data_sequence.png}
+    \caption{Collect External Data Runtime View}
+\end{figure}
 
 \textbf{Retrieve Report Runtime View}
 The following diagram describes the sequence of events when an \textit{Authority} tries to retrieve a violation in
@@ -292,7 +384,7 @@ Security Manager discards the violation and waits for the timeout. In this way R
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/Retrieve_Report.png}
+    \includegraphics[scale=0.4]{img/sequence_diagrams/retrieve_report.png}
     \caption{Retrieve Report Runtime View}
 \end{figure}  
 
@@ -308,11 +400,11 @@ quering DB.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/Retrieve_Statistics.png}
+    \includegraphics[scale=0.4]{img/sequence_diagrams/retrieve_statistics.png}
     \caption{Retrieve Statistics Runtime View}
 \end{figure}  
 
-\subsection{}
+\subsection{Component Interfaces}
 \subsection{Selected architectural styles and patterns}
 
 \textbf{REST}
@@ -344,9 +436,39 @@ Our \textit{System} follows the MVC paradigm. As shown in the picture The acrony
 \subsection{Other design decision}
 \textbf{Firewall}
 
+\textbf{ER Diagram}
+This is an oversimplified representation of the database schemas. This is only a general view 
 
+on the mandatory attributes needed the focus is on the relevant attributes and tables. We omitted 
+for simplicity other attribute less important, statistics for example may need some other attributes 
+useful to perform searches more efficiently. In the ER schema there are four main entity:  
+\textit{Citizen} and \textit{Authority} identified as \textit{Users}, the two entity Vehicle and 
+Location separated in two distinct table in order to make the process of statistics generation more 
+efficient as possible and the entity Violation that is identified by date, time, location and license 
+plate to guarantee unicity. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/ER_diagram.png}
+    \caption{ER Diagram}
+\end{figure}
+
+\clearpage
 
 \section{User Interface Design} 
+This is the application main flow either for the Citizen and Authority, they both start with login 
+or registration and then they have access to the respective pages. \textit{Citizen} will be able to 
+visualize violations statistics, settings and send report page. The \textit{Authority} can access 
+same statistics as \textit{Citizen} plus vehicles statistics and the page in which can retrieve report 
+information and also a settings page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{img/UX_flow.png}
+    \caption{UX flow}
+\end{figure}
+
+
 \section{Requirements Traceability}
 \begin{center}
     \begin{tabular}{ | l | l |}
