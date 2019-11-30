@@ -537,5 +537,63 @@ information and also a settings page.
     \end{tabular}
     \end{center}
 
+\section{Implementation, Integration and Test Plan}
+\subsection{Overview}
+For what concern the part of implementation we identify 3 macros subsystems:
+\begin{itemize}
+    \item The client subsystem, containing the presentation.
+    \item The server subsystem, containing components of Business Logic and the interaction with DB.
+    \item External Services, such as DB, Maps Service, STNP Service, License Plate Recognition Service. 
+\end{itemize}  
+Our implementation and testing will be incremental and will follow the bottom-up approach.
+
+\subsection{Implementation}
+The order of implementation we decided to follow is necessary in order to obtain consistency:
+\begin{enumerate}
+    \item creation of the Database and its costraints.
+    \item server and client implementation
+    \item integration with external services
+\end{enumerate}
+
+The implementation of the server and the client will be in parallel in order to increase the efficiency.
+The implementation of the server will follow this order:
+\begin{enumerate}
+    \item Database manger
+    \item Network manager (to receive request from a fake client)
+    \item Authentication manager (to authenticate some test users)
+    \item Privacy manager
+    \item Settings manager
+    \item Report manager
+    \item Statistics manager
+\end{enumerate}
+In particular DataBase Manager and Network Manager will be implemented first because they represents the access 
+point to the Clients and the DB \\\\
+
+For what concern the implementation of the client:
+\begin{enumerate}
+    \item User Interface implementation (we will implement the same graphic for both iOs and Android) (view dell'MVC)
+    \item Network manager
+    \item Presentation manager
+    \item Security manager
+    \item Logic manager
+\end{enumerate}
+\subsection{Unit testing}
+During the whole phase of implementation component's unit tests will be performed in order to find any possible kind of bugs.
+Unit tests will be added incrementally as new code is written. In this way is possible to fix bugs with the lowest cost of 
+repair in terms of effort and time. Using the bottom-up approach we need to simulate the components that are missing in order
+to test the component just added. To do so driver will be used to simulate calls to a certain component. Stubs, instead, will be 
+used to simulate external services such as Maps Service or SNTP service.    
+
+
+\subsection{Integration testing}
+\textbf{Integration of internal components of the Application Server}
+
+\textbf{Integration of Client}
+
+\textbf{Integration of Client-Server}
+
+\textbf{Integretion of External Services}
+
+
 
 \end{document}
