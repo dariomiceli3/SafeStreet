@@ -98,6 +98,8 @@ Table with all acronyms used in document.
     \hline
     DB & Database \\
     \hline
+    ORM & Object-Relational Mapping \\
+    \hline
 \end{tabular}
 \end{center}
 
@@ -198,64 +200,110 @@ to dispatch all incoming and outgoing communications with the application server
 instead, corresponds to the “View” in the MVCS Pattern.
 
 \textbf{\textit{SafeStreets} Business Logic} \\
-This component describes core logic of \textit{SafeStreets} application. It is a stateless module 
-that lies between the Client application and the central Database. Now we will describe each component:
+\textbf{Client}:
 \begin{itemize}
-    \item \textbf{Network Manager} \\
-    It handles all incoming messages exchanged between Clients and Server. It does two foundamental
-    things; it sends all incoming messages from client application to the correct handler in Business
-    Logic and on the contrary it collects all the outgoing messages and sends to the corresponding Client
-    Application.
-    \item \textbf{Authentication Manager} \\
-    The Authentication Manager exposes all methods related to the access to the platform. It handles the
-    phase of \textit{User} registration and login and in order to do this it has to continuosly interact with 
-    the database through the Data Storage Interface. It also checks all the costraints in order to garantee 
-    creation of correct account. Furthermore it sends email to all the \textit{Users} that have been registered 
-    by accessing the Mailing \textit{System}'s Interface. 
-    \item \textbf{Citizen Manager} \\
-    The \textit{Citizen} manager handles all functionalities related to a \textit{Citizen} Account. In order to
-    do this it has to continuosly interact with database through the Data Storage Interface. It also allows
-    \textit{Citizen} to update his setting. 
-    \item \textbf{Authority Manager} \\
-    The \textit{Authority} manager handles all functionalities related to an \textit{Authority} Account. In order to
-    do this it has to continuosly interact with database through the Data Storage Interface. It also allows
-    \textit{Authority} to update his setting.
-    %%\item \textbf{Data Manager} \\
-    %%This component is the main gateway between the Client Applications and the central Database. It handles the import of 
-    %%new data associated to a \textit{User}'s account and its retrieval.
-    %\item \textbf{Send Report Manager}\\
-    %The Send Report Manager handles the creation and the management of a Send Report performed by \textit{Citizen} and
-    %directed to \textit{System}. Inserting is possible thanks to Data Storage Manager. Furthermore, in order to avoid 
-    %alteration, the Report is encrypted by using Privacy Manager.
-    %\item \textbf{Retrieve Report Manager}\\
-    %The Retrieve Report Manager handles the management of a Retrieve Report performed by \textit{Authority}. Retrieving 
-    %is possible by querying the central Database through the Data Storage Interface.
-    \item \textbf{Statistics Manager} \\
-    The Statistics Manager handles the management of a Retrieve Statistics performed by \textit{User}. Retrieving 
-    is possible by querying the central Database through the Data Storage Interface.     
-    \item \textbf{Privacy Manager} \\
-    The Privacy Manager exposes methods to encrypt sensitive data. This operation is important in order to avoid data leaks
-    and data alteration.
-    \item \textbf{DataBase Manager} \\
-    The DataBase Manager provides all methods to interact with the central Database such as data retrieval, 
-    storage and update.
-    
+\item \textbf{Network Manager}: \\
+The network manager is the component designed to manage the sending and receiving of 
+messages exchanged between client and server, it is located both in the client and in the 
+server, this component also has the task of correctly routing the messages to the correct 
+component.
+
+
+\item \textbf{Presentation Manager}:\\
+This client side component is the main intermediary between User and Safestreets. 
+Interface management is totally entrusted to this component, in terms of scalability it 
+is advantageous to separate the interface from the rest of the application. Encapsulating 
+everything in the Presentation Manager will be helpfull to reduce problems whether in future 
+will be necessary to change part of the interface or to develope the client for a new type of 
+operating system.
+
+\item \textbf{Security Manager}:\\
+Security in report transmission is critical. Separating security techniques into a 
+separate component SafeStreets can ensure greater scalability in terms of security 
+by implementing the best methods. The component currently deals with the digital signature 
+of the report before sending and also checking the validity of the digital signature of a 
+report.
+
+\item \textbf{Logic Manager}: \\
+This is the main component of the client, it communicates with the presentation manager, 
+security manager, network manager and with all the external services, it is the central 
+unit of the Client. The purpose of this component is to perform all the operations that 
+the User requires through an interface such as report sending operations (\textit{Citizen}) 
+or request report (\textit{Authority}) but also the statistics request and the edit settings. 
+The first two send and receive report operations are very important, the Logic Manager 
+is therefore connected to a cache that has multiple uses, in the case of the {Citizen} this 
+cache is used to temporarily save the report, this step it is necessary because if the user 
+sends the report and this is subjected to a malicious attack the server will notice upon 
+arrival that the digital signature does not match, discarding that report. To avoid loosing it, 
+the Logic Manager saves it in the cache and sends it periodically until the confirmation is 
+received. The Logic manager also deals with the creation of the report, carrying out all the 
+necessary operations, collecting data from external services, executing the license plate 
+recognition algorithm and using the services of the Security Manager to apply the digital 
+signature to the report to guarantee its security in the way to server, in the same 
+way for the report retrieval function, with the help of the Security Manager, the validity of 
+the digital signature will be checked. 
 \end{itemize}
 
+\textbf{Server}
+\begin{itemize}
+
+\item \textbf{Database Manager}: \\
+The database access intermediary resides in this component, every access to the database in fact passes through the Database Manager, this brings advantages in scalability and flexibility since it makes the server independent from the database. Among the various operations it deals with the authentication of the user, therefore the operations of login and registration, of statistics recovery and report insertion or recovery. This component will use an ORM in order to abstract the implementation details of the Database.
+
+\item \textbf{Authentication Manager}: \\
+This component is of fundamental importance on the server side, not only does it take care of all the login and user registration procedures, it is also the access port for which all the other components must pass in order to execute their procedures, in fact no component can perform an operation coming from a request from an unauthenticated user.
+
+\item \textbf{Privacy Manager}: \\
+This component deals with the security of users' sensitive data, especially passwords 
+and personal data must be encrypted before being inserted into the database, for greater 
+flexibility and any changes it was preferred to separate that component. 
+It communicates exclusively with the Authentication Manager and has the task 
+of check the hash of the password stored in the DB with the hash of the 
+password sent by the client.
+
+\item \textbf{Settings Manager}: \\
+The user may want to change his data, update the email or name and surname. To do this, these requests, on the server side, are forwarded to the Settings Manager which communicates directly with Authentication Manager and Database Manager to ensure the success of the action. 
+
+\item \textbf{Statistics Manager}: \\
+The statistics of the application are generated at time intervals, in fact being 
+updateable only when other data have been evaluated by the competent authority does 
+not make sense to constantly update them. This component then takes care of the creation 
+of the statistics and saves them in the appropriate cache where they are updated periodically. 
+The Statistics Manager generates all types of statistics for both Violations and Vehicle and 
+forwards the most updated from the cache to the Client when requested.
+
+\item \textbf{Report Manager}: \\
+The Report Manager takes care of the two key functions of safestreets. The send report and 
+the retrieve report, in fact by communicating with the database through the Database Manager 
+it can save the incoming reports or manage the sending of those that should be evaluated. 
+It also deals with the security logic, in fact if the report received does not correspond 
+with the digital signature this will be immediately discarded. When a report is evaluated 
+by an Authority, this component will take care of updating the respective report and 
+notifying the statistics manager.
+\end{itemize}
 \textbf{External interfaces} \\
 Some of the described components in our \textit{System} are also dedicated to communicating with external services through 
 specific interfaces. It is essential that the communication works properly in order to fulfill application's functionalities.
 This external services are:
 \begin{itemize}
     \item Database \\
-    The component devoted to interacting with the central database on cloud is the Data Storage Manager.
+    The component devoted to interacting with the central database on 
+    cloud is the Database Manager.
     \item GPS \\
-    On the Client side of the application, \textit{SafeStreets} access data from the \textit{User}'s device's GPS through
-    the Data Manager Interface. GPS information are important because are used in report to locate a position. 
+    On the Client side of the application, \textit{SafeStreets} access data from 
+    the \textit{User}'s device's GPS through
+    the Data Manager Interface. GPS information are important because are used in 
+    report to locate a position. 
     \item Mailing System \\
-    It used by Authentication Manager to inform an \textit{User} that his account has been correctly created. 
+    It used by Authentication Manager to inform an \textit{User} that his account 
+    has been correctly created. 
     \item Maps Service \\ 
     It's used to show unsafe areas in statistics.  
+    \item SNTP service \\
+    To retrieve the correct Time and Date to attach at report.
+    \item License Plate Recognition Service \\
+    This service taking in input the violantion's photo will recognize if possibile 
+    the license plate.
 \end{itemize} 
 
 \clearpage
@@ -281,28 +329,28 @@ able to access data. In particular we decided to use two firewalls to create a D
 to allow traffic destined to the DMZ only. The second firewall only allows traffic to the DMZ from the internal network.
 \\
 \\
-\textbf{Application Server}
-Is the central unit of \textit{SafeStreet} all the other components refer to this. It contains all
-the logic and provide bidirectional access to Database i.e. manages data acquisition and requests.
-%%Since for \textit{SafeStreet} we need to focus on security, is a though decision to have only one main
-%%unit.
-We decided to fully replicate Application Servers in order to balance the workload 
+\textbf{Application Server}\\
+Is the central unit of \textit{SafeStreet} all the other components refer to this. It 
+contains all the logic and provide bidirectional access to Database i.e. manages data 
+acquisition and requests. We decided to fully replicate Application Servers in order 
+to balance the workload 
 \\
 \\
-\textbf{Proxy}
-\textit{System} will use a proxy to receive requests. This solution is more scalable for the eventuality
-of further improvements and guarantee a better stability of the \textit{System}. Furthermore Proxy acts as
-additional shield against security attacks.  
+\textbf{Proxy}\\
+\textit{System} will use a proxy to receive requests. This solution is more scalable 
+for the eventuality of further improvements and guarantee a better stability of 
+the \textit{System}. Furthermore Proxy acts as additional shield against security attacks.  
 \\
 \\
 \textbf{Database}\\
-A Database is necessary in order to store all the informations about personal data, registration and 
-data submitted by \textit{Citizen} and retrieve information in order, for instance, to build statistics.
+A Database is necessary in order to store all the informations about personal data, 
+registration and data submitted by \textit{Citizen} and retrieve information in order, 
+for instance, to build statistics.
 
 \clearpage
 
 \subsection{Runtime View}
-\textbf{Proxy Runtime View}
+\textbf{Proxy Runtime View}\\
 The following sequence diagram describes how the Proxy interacts with the Client and the Application 
 Server. When an \textit{User} send a request, checks whether such request conforms to its defined schema and, 
 in case the \textit{User} has to be logged in, checks if the provided authToken is associated to an actual 
@@ -315,9 +363,8 @@ Application Server, because if a \textit{User} logs in with a particular Server 
     \includegraphics[scale=0.4]{img/sequence_diagrams/Proxy_sequence.png}
     \caption{Proxy Runtime View}
 \end{figure}  
-
-
-\textbf{Login Runtime View}
+\clearpage
+\textbf{Login Runtime View}\\
 The following diagram describes the sequence of events when a \textit{User} tries to login in 
 \textit{SafeStreets} application. The actors involved are the Presentation and the Network Manager on the
 client and the Network Manager, Authentication Manager and the Database Manager on the Server.
@@ -333,7 +380,9 @@ such as having empty parameters. The second one occurs when credentials are wron
     \caption{Login Runtime View}
 \end{figure}  
 
-\textbf{Registration Runtime View}  the registration sequence shows the step followed for the 
+\clearpage
+\textbf{Registration Runtime View}\\
+The registration sequence shows the step followed for the 
 registration of a new \textit{User}. The two registration procedures for \textit{Citizen} and  
 \textit{Authority} are similar, the only thing that change is the code used, for the first is 
 needed the fiscal code for the second the Matricola number, to avoid a duplicate we show here 
@@ -350,11 +399,11 @@ activation or the token isn't valid and the \textit{User} need to request anothe
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/registration_sequence.png}
+    \includegraphics[scale=0.3]{img/sequence_diagrams/registration_sequence.png}
     \caption{Registration Runtime View}
 \end{figure}  
-
-\textbf{Send Report Runtime View}
+\clearpage
+\textbf{Send Report Runtime View}\\
 The following diagram represents the sequence of actions executed on the \textit{Citizen's} send report, 
 first all the necessary data is gathered, the nex sequence will describe in a more detailed way how it's 
 done, here is simplified for a better readability. Then data collected is passed at the Logic Manager, 
@@ -369,23 +418,24 @@ firm is correct.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/send_report_sequence.png}
+    \includegraphics[scale=0.3]{img/sequence_diagrams/send_report_sequence.png}
     \caption{Send Report Runtime View}
 \end{figure}  
-
-\textbf{Collect External Data Runtime View}  
+\clearpage
+\textbf{Collect External Data Runtime View}\\  
 This is a "zoom" on the self call "retrieve gps, license, date time" that Presentation does in the 
 previuos sequence, it's only a graphical semplification in aim to better understanding the process, 
 separating this fase make more readable the previous image. This steps show how information are 
 retrieved from external services, those information will be used to create the report by the Logic Manager.
-
+\\
+\\
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/collect_external_data_sequence.png}
+    \includegraphics[scale=0.6]{img/sequence_diagrams/collect_external_data_sequence.png}
     \caption{Collect External Data Runtime View}
 \end{figure}
-
-\textbf{Retrieve Report Runtime View}
+\clearpage
+\textbf{Retrieve Report Runtime View}\\
 The following diagram describes the sequence of events when an \textit{Authority} tries to retrieve a violation in
 \textit{SafeStreets} application. The actors involved are the Presentation, Security Manager and the Network 
 Manager on the client and the Network Manager, Report Manager and the Database Manager on the Server.
@@ -399,12 +449,11 @@ Security Manager discards the violation and waits for the timeout. In this way R
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/retrieve_report.png}
+    \includegraphics[scale=0.3]{img/sequence_diagrams/retrieve_report.png}
     \caption{Retrieve Report Runtime View}
 \end{figure}  
-
-
-\textbf{Retrieve Statistics Runtime View}
+\clearpage
+\textbf{Retrieve Statistics Runtime View}\\
 The following diagram describes the sequence of events when a \textit{User} tries to retrieve statistics in
 \textit{SafeStreets} application. The actors involved are the Presentation, GPS, Google Maps and the Network 
 Manager on the client and the Network Manager, Statistics Manager and the Database Manager on the Server.
@@ -412,32 +461,59 @@ When a \textit{User} clicks the retrieve button two HTTP requests are sent, one 
 one to Google Maps Service, in order to know the exact position of the \textit{User} and the area in which he is
 using the app. After that an other HTTP request is sent to Application Server in order to retrieve statistics by 
 quering DB. 
-
+\\
+\\
+\\
+\\
+\\
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/retrieve_statistics.png}
+    \includegraphics[scale=0.3]{img/sequence_diagrams/retrieve_statistics.png}
     \caption{Retrieve Statistics Runtime View}
 \end{figure}  
-
+\clearpage
 \subsection{Component Interfaces}
 \subsection{Selected architectural styles and patterns}
 
-\textbf{REST}
+The architecture chosen for SafeStreets is multi-tier, namely a 3-tier architecture. 
+This choice is weighted based on the requirements that the system must fulfill trying 
+to optimize infrastructure costs at the same time. The tiers are divided into Client, 
+Server and Database. The Client allows Users to interact with Safestreets, takes care of 
+the presentation, the digital signature, the exchange of messages with the server and the 
+generation of the report. The logic in the client concerns only the temporary caching of 
+the report and a possible resubmission in the case of a malicious attack on the report 
+(both in the case of the Citizen to avoid loss in case of error and for the Authority 
+that must evaluate it), collecting data from various external services and securing the 
+report during trasmission to server. \\From these premises and considering that all the other 
+operations, such as the generation of the statistics or the update of these are made, 
+necessarily, on the server side, the client is to be considered a thin client. 
+The Server on the other hand will have a greater workload, the chosen architecture is 
+NginX, which has a more flexible architectural design than the Apache process-driven one. 
+Furthermore NginX is much more efficient than apache in presenting static content, 
+this is in favor of SafeStreets since the statistics, which may seems dynamic, 
+actually arrive to the user in the form of static content. This is because, as 
+the SafeStreets logic was designed, the statistics are updated only thanks to the 
+control of an Authority, this implies that the process of updating the statistics 
+is not very fast, and that these can be generated at regular time intervals saving 
+them in cache and sending them to the clients in static form. This brings great 
+advantages to the application in terms of workload and service speed.\\ In fact, 
+generating statistics at each client-side request would be unsustainable, so the 
+server-side load is drastically reduced. In order to have greater system portability and 
+scalability in case of required memory space growth, the best choice for the database is 
+entrusting to an external service. This choice not only saves on costs, maintenance and 
+the skills required but also guarantees a remarkable scalability in performance.
+\\
+\\
+\textbf{REST} \\
 Our \textit{System} uses the Representational state transfer (REST) architectural style in order to achieve 
 performance in component interactions, scalability, modifiability of components to meet changing needs, portability 
 of components by moving program code with the data and reliability in the resistance to failure at the system level
 in the presence of failures within components, connectors, or data. HTTP is the communication protocol used underneath, 
 so CRUD operations are implemented through GET, POST, DELETE and PUT primitives.
-
-
-\textbf{MVC}
-Our \textit{System} follows the MVC paradigm. As shown in the picture The acronyms stands for Model View Controller
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/mvc-architecture.png}
-    \caption{MVC Architecture}
-\end{figure}
+\\
+\\
+\textbf{MVC}\\
+Our \textit{System} follows the MVC paradigm. The acronyms stands for Model View Controller
 
 \begin{itemize}
     \item The Model corresponds to the component containing all the application's data and integrity constraints. 
@@ -449,25 +525,28 @@ Our \textit{System} follows the MVC paradigm. As shown in the picture The acrony
 \clearpage
 
 \subsection{Other design decision}
-\textbf{Firewall}
-According to Colton Fralick approch, Our \textit{System} use two firewalls to create a DMZ. The first 
+\textbf{Firewall}\\
+Our \textit{System} use two firewalls to create a DMZ. The first 
 firewall must be configured to allow traffic destined to the DMZ only. The second firewall only 
 allows traffic to the DMZ from the internal network. This setup is considered more secure since two 
 devices would need to be compromised. Network firewalls operate by filtering the packets trying to 
 pass through them.
-
-\textbf{DataBase}
+\\ 
+\\
+\textbf{DataBase}\\
 It was decided to use a relational database model for \textit{SafeStreets}, as opposed to a 
 non-relational model, because it allows to represent the intrinsic relationships present in 
 the data needed to be stored. Also, many complex operations will be made on the database, 
-including Joins and Updates, which are not well handled by a non-relational model.
-
-\textbf{ER Diagram}
-This is an oversimplified representation of the database schemas. This is only a general view 
-
-on the mandatory attributes needed the focus is on the relevant attributes and tables. We omitted 
+including Joins and Updates, which are not well handled by a non-relational model. The database will use
+an ORM to simplify the interaction with Managers. Also the Database is acquired on premise as 
+an external service.
+\\ 
+\\
+\textbf{ER Diagram}\\
+This is an oversimplified representation of the database schema. This is only a general view 
+on the mandatory attributes needed focusing on the relevant attributes and tables. We omitted 
 for simplicity other attribute less important, statistics for example may need some other attributes 
-useful to perform searches more efficiently. In the ER schema there are four main entity:  
+useful to perform searches more efficiently. In the ER schema there are four main entities:  
 \textit{Citizen} and \textit{Authority} identified as \textit{Users}, the two entity Vehicle and 
 Location separated in two distinct table in order to make the process of statistics generation more 
 efficient as possible and the entity Violation that is identified by date, time, location and license 
@@ -501,42 +580,41 @@ information and also a settings page.
         \hline
         COMPONENT(DD) & REQUIREMENTS(RASD) \\
         \hline
-        Authentication Manager & [R1]: Account can be created if and only if User provides unique \\ 
-                               & email and password \\\\
-                               & [R2]: The System allows Guest to create Citizen or Authority account \\\\
+        Authentication Manager & \textbf{[R1]}: Account can be created if and only if User provides unique \\ 
+                               & email and password \\
+                               & \textbf{[R2]}: The System allows Guest to create Citizen or Authority account \\
         \hline
-        Report Manager  & [R4]: The Citizen has to take the violation’s photo with the application \\\\
-                        & [R5]: The System allows Citizen to input some violation’s data \\\\
-                        & [R6]: The photo taken must be recognizable by the System \\\\
-                        & [R7]: The Citizen has to be able to discard the photo taken \\\\
-                        & [R8]: The System has to be able to attach the correct date, time and \\ 
-                        & position to the report \\\\
-                        & [R9]: The Citizen can’t change date, time and position in the report \\\\ 
-                        & [R10]: Citizen can change the license plate if it isn’t recognised properly \\\\
-                        & [R11]: Citizen has to be able to choose the correct type of violation \\\\
-                        & [R18]: The violation retrieved can only be seen by the Authority that \\
-                        & retrieves it \\\\
+        Report Manager  & \textbf{[R4]}: The Citizen has to take the violation’s photo with the application \\
+                        & \textbf{[R5]}: The System allows Citizen to input some violation’s data \\
+                        & \textbf{[R6]}: The photo taken must be recognizable by the System \\
+                        & \textbf{[R7]}: The Citizen has to be able to discard the photo taken \\
+                        & \textbf{[R8]}: The System has to be able to attach the correct date, time and \\ 
+                        & position to the report \\
+                        & \textbf{[R9]}: The Citizen can’t change date, time and position in the report \\ 
+                        & \textbf{[R10]}: Citizen can change the license plate if it isn’t recognised properly \\
+                        & \textbf{[R11]}: Citizen has to be able to choose the correct type of violation \\
+                        & \textbf{[R18]}: The violation retrieved can only be seen by the Authority that \\
+                        & retrieves it \\
         \hline
-        Statistics Manager & [R12]: Users can change the area of visualization \\\\
-                           & [R13]: Users can change the date of visualization \\\\
-                           & [R15]: Authority can search for a specific license plate \\\\
-                           & [R19]: The System must update the statistics with the most \\
-                           & recent data \\\\
+        Statistics Manager & \textbf{[R12]}: Users can change the area of visualization \\
+                           & \textbf{[R13]}: Users can change the date of visualization \\
+                           & \textbf{[R15]}: Authority can search for a specific license plate \\
+                           & \textbf{[R19]}: The System must update the statistics with the most recent data \\
         \hline
-        Privacy Manager & [R17]: The System must use HTTPS to safely communicate \\\\
+        Privacy Manager & \textbf{[R17]}: The System must use HTTPS to safely communicate \\
         \hline 
-        Settings Manager & [R3]: The \textit{System} allow \textit{User} to modify \\
-                         &  his settings. \\\\
+        Settings Manager & \textbf{[R3]}: The \textit{System} allow \textit{User} to modify his settings. \\
         \hline
-        DataBase Manager & [R14]: The \textit{System} has to save the confirmed \\
-                         & violation in the DB. \\\\ 
+        DataBase Manager & \textbf{[R14]}: The \textit{System} has to save the confirmed violation in the DB. \\
         \hline
-        Security Manager & [R16]: Violations sent must be digitally signed \\\\
-                         & [R17]: The System must use HTTPS to safely communicate \\\\
+        Security Manager & \textbf{[R16]}: Violations sent must be digitally signed \\
+                         & \textbf{[R17]}: The System must use HTTPS to safely communicate \\
         \hline
     \end{tabular}
     \end{center}
-
+%%%%%%%%%% !CAHPTER 4 %%%%%%%%%%
+\clearpage
+%%%%%%%%%% CHAPTER 5 %%%%%%%%%%
 \section{Implementation, Integration and Test Plan}
 \subsection{Overview}
 For what concern the part of implementation we identify 3 macros subsystems:
