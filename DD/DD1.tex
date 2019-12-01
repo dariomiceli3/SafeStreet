@@ -185,14 +185,13 @@ to the data submitted by the \textit{Citizen} and confirmed by \textit{Authoriti
 we need an application server. Since we will authenticate the \textit{Users} through a confirmation email, 
 and we give the possibility to the \textit{Authority} to receive data via mail, the \textit{System} needs
 also a Mailing System. Finally we also need some service in the client like GPS Service, Maps Service,
-SMTP Service and License Plate Recognition Service. These services are essential to create a proper violation
+STNP Service and License Plate Recognition Service. These services are essential to create a proper violation
 and to send it correctly.
 
 \clearpage
 \subsection{Component view}
-
-\paragraph{Component High Level View}
-The following 3 images showing at an high level how the \textit{System} is organized, as we can see the
+\textbf{Component High Level View} \\
+The following 3 images will show at an high level how the \textit{System} is organized, as we can see the
 choice we made is a classic client-server architecture. 
 
 \begin{figure}[H]
@@ -200,39 +199,36 @@ choice we made is a classic client-server architecture.
     \includegraphics[scale=0.4]{img/component_diagrams/component_diagram.png}
     \caption{Component Diagram High Level View}
 \end{figure}
-
 The client presents various components 
-each one covers a different role: the Presentation Manager that corresponds to the “View” in the MVCS Pattern 
+each one covering a different role: the Presentation Manager that corresponds to the “View” in the MVC Pattern 
 is the medium between the application and the \textit{User}, Logic Manager is the component designed to catch 
-all the application Logic, it orchestrate the send report action for \textit{Citizens} and the retrieve report 
+all the application Logic, it orchestrates the send report action for \textit{Citizens} and the retrieve report 
 action for \textit{Authorities}, Logic Manager is also connected to a cache storage in order to save momentaneously 
-some data. The Security Manager is crucial for the application, is the component used to ensure the message security 
-during the trasmission to server, his main job is to apply a digital firm. The Network Manager handle the
+data. The Security Manager, crucial for the application, is the component used to ensure the message security 
+during the trasmission to server, his main job is to apply a digital signature. The Network Manager handles the
 connection and is the component that communicates with server.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/component_diagrams/client_component.png}
+    \includegraphics[scale=0.6]{img/component_diagrams/client_component.png}
     \caption{Client view}
 \end{figure}
 
-The server presents the Network Manager for communicate, and various components for \textit{SafeStreets}'s main actions
+The server presents the Network Manager for communication, and various components for \textit{SafeStreets}'s main actions
 like report, statistics and settings that are embedded in the Report Manager, Statistics Manager and Settings
 Manager respectively. To handle all the auth operations we will use the Authentication Manager, that with the 
 help of Privacy Manager will authenticate an user in order to give access to actions. All this components needs 
 to communicate with database in order to store permanently or modify data, and this is possible thanks to 
 the Database Manager, infact database is system-independent, and all the communications pass through this 
-component. The Statistics Manager have also a cache in which can store the generated statistics to send at the
-requestor, this is a way to reduce database access and to fulfill the request in a fatser way.  
-
+component. The Statistics Manager has also a cache in which can store the generated statistics to send to the
+requestor, this is a way to reduce database access and to fulfill the request in a rapid way.  
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/component_diagrams/server_component.png}
+    \includegraphics[scale=0.6]{img/component_diagrams/server_component.png}
     \caption{Server view}
 \end{figure}
-
-\paragraph{Component High Level View}
-Here we go deeper in the Component Diagram, are decribed all the interactions between the component
+\textbf{Component View}\\
+Here we go deeper in the Component Diagram, are described all the interactions between the component
 described above and all the external services like the Maps service, license plate Recognition Service and 
 STNP service for the client and Mailing System for the server.
 
@@ -243,17 +239,19 @@ STNP service for the client and Mailing System for the server.
 
 The purpose of this UML diagram is to show the internal architecture of the \textit{System}'s software. It's divided in 
 three component: \textit{SafeStreets} Client Application, \textit{SafeStreets}'s Server, External interfaces.
-Below we will describe each component. 
-
-\textbf{Client}:
-
-\begin{itemize}
-\item \textbf{Network Manager}: \\
+Below we will describe each component.
+\\
+\\
+\textbf{Network Manager}: \\
 The network manager is the component designed to manage the sending and receiving of 
 messages exchanged between client and server, it is located both in the client and in the 
 server, this component also has the task of correctly routing the messages to the correct 
 component.
+\\
+\\
+\textbf{Client}:
 
+\begin{itemize}
 
 \item \textbf{Presentation Manager}:\\
 This client side component is the main intermediary between User and \textit{SafeStreets}. 
@@ -276,9 +274,9 @@ security manager, network manager and with all the external services, it is the 
 unit of the Client. The purpose of this component is to perform all the operations that 
 the User requires through an interface such as report sending operations (\textit{Citizen}) 
 or request report (\textit{Authority}) but also the statistics request and the edit settings. 
-The first two send and receive report operations are very important, the Logic Manager 
+The first two (send and receive report) operations are very important, the Logic Manager 
 is therefore connected to a cache that has multiple uses, in the case of the {Citizen} this 
-cache is used to temporarily save the report, this step it is necessary because if the user 
+cache is used to temporarily save the report, this step is necessary because if the user 
 sends the report and this is subjected to a malicious attack the server will notice upon 
 arrival that the digital signature does not match, discarding that report. To avoid loosing it, 
 the Logic Manager saves it in the cache and sends it periodically until the confirmation is 
