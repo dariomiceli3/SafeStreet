@@ -424,7 +424,7 @@ the function "sendRequest(req)" is a generic call that represents one of the pos
 \clearpage
 \textbf{Login Runtime View}\\
 The following diagram describes the sequence of events when a \textit{User} tries to login in 
-\textit{SafeStreets} application. The actors involved are the Presentation and the Network Manager on the
+\textit{SafeStreets} application. The actors involved are the Presentation, Logic and the Network Manager on the
 client and the Network Manager, Authentication Manager and the Database Manager on the Server.
 When a \textit{User} wants to login in his account, an HTTP request is sent to the application Server
 containing his credentials. Database Manager checks the validity of credentials by quering DB. If the query
@@ -434,7 +434,7 @@ such as having empty parameters. The second one occurs when credentials are wron
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{img/sequence_diagrams/login_sequence.png}
+    \includegraphics[scale=0.3]{img/sequence_diagrams/login_sequence.png}
     \caption{Login Runtime View}
 \end{figure}  
 
