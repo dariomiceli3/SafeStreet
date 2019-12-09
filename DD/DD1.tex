@@ -586,11 +586,12 @@ the skills required but also guarantees a remarkable scalability in performance.
 \\
 \\
 \textbf{REST} \\
-Our \textit{System} uses the REpresentational State Transfer (REST) architectural style in order to achieve 
-performance in component interactions, scalability, modifiability of components to meet changing needs, portability 
-of components by moving program code with the data and reliability in the resistance to failure at the \textit{System} level
-in the presence of failures within components, connectors, or data. HTTP is the communication protocol used underneath, 
-so CRUD operations are implemented through GET, POST, DELETE and PUT primitives.
+Our \textit{System} uses the REpresentational State Transfer (REST) architectural style. This 
+approach brings great advantages in terms of scalability and more, future changes to the software 
+or additional features will not be a problem as thanks to the API it will be easy to add features 
+without creating problems to existing ones. Furthermore, this approach also brings great improvements 
+in tolerance to changes and failures. HTTP is the communication protocol used underneath, 
+so CRUD operations are implemented through GET, POST, DELETE and PUT primitives. 
 \\
 \\
 \textbf{Patterns}\\
@@ -719,6 +720,10 @@ information and also a settings page.
 \clearpage
 %%%%%%%%%% CHAPTER 5 %%%%%%%%%%
 \section{Implementation, Integration and Test Plan}
+Regarding the implementation and testing, the approach chosen is Agile, much more flexible 
+than the old Waterfall approach, in order to allow us to bring to the user a working software 
+and above all a software that is durable and flexible to changes.
+
 \subsection{Overview}
 For what concern the part of implementation we identify 3 macros subsystems:
 \begin{itemize}
