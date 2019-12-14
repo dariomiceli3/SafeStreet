@@ -128,6 +128,18 @@ Table with all acronyms used in document.
 \end{itemize}
 
 \subsection{Revision History}
+\begin{center}
+    \begin{tabular}{ | l | l |}
+        \hline
+        VERSION & CHANGES \\
+        \hline
+        1 & First release \\
+        \hline
+        1.1 & Minor change on image \\
+            & Error correction \\
+        \hline
+    \end{tabular}
+    \end{center}
 
 \subsection{Reference documents}
 \begin{itemize}
@@ -656,7 +668,12 @@ plate to guarantee unicity.
 
 \clearpage
 
-\section{User Interface Design} 
+%%%%%%%%CHAPTER 3%%%%%%%%%%%%
+
+\section{User Interface Design}
+Since the mockups are described in the RASD, in this section the focus is only on the UI flow i.e. on how
+those mockups are linked, and how \textit{Users} can navigate through them.
+\\
 This is the application main flow either for the \textit{Citizen} and \textit{Authority}, they both start with login 
 or registration and then they have access to the respective pages. \textit{Citizen} will be able to 
 visualize violations statistics, settings and send report page. The \textit{Authority} can access 
@@ -669,6 +686,7 @@ information and also a settings page.
     \caption{UI flow}
 \end{figure}
 
+%%%%%%%%!CHAPTER 3%%%%%%%%%%%%
 
 \section{Requirements Traceability}
 \begin{center}
@@ -757,7 +775,7 @@ point to the Clients and the DB.
 \\
 For what concern the implementation of the client:
 \begin{enumerate}
-    \item \textit{User} Interface implementation (we will implement the same graphic for both iOs and Android)
+    \item \textit{User} Interface implementation
     \item Network manager
     \item Presentation manager
     \item Security manager

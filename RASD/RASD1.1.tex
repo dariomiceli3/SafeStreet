@@ -80,7 +80,7 @@ From this brief description of the functionalities we may extract the following 
 \begin{itemize}
     \item \textbf{[G6]}: Must ensure the chain of custody of the information sent by \textit{Citizens};
     \item \textbf{[G7]}: \textit{Authorities} can retrieve traffic violations' in order to generate traffic tickets;
-    \item \textbf{[G8]}: \textit{System} must build statistics with the informations about issued tickets;
+    \item \textbf{[G8]}: \textit{Users} must be able to see statistics built from issued tickets;
 \end{itemize}
 
 \subsection{Scope}
@@ -173,6 +173,7 @@ Table with all acronyms used in document.
         \hline
         1.1 & Two requirements have been added \\
             & Some minor fixes have been done \\
+            & Goal 8 modified \\
         \hline
     \end{tabular}
     \end{center}
@@ -516,7 +517,7 @@ the violations reported by \textit{Citizen} during a certain year that can be ch
 
 \paragraph{Statistics for Authorities}
 \begin{itemize}
-    \item \textbf{Violations statistics}: The first two graph have the same function and are equale as the 
+    \item \textbf{Violations statistics}: The first two graph have the same function and are equals as the 
     two for \textit{Citizen}. The violations reported graph isn't present because \textit{Authority} can't 
     report a violation. In the bottom page there is a button for receive violation's statistics via mail.
     \item \textbf{Vehicles statistics}: In that page, that can only be seen by \textit{Authority} are showed 
@@ -885,7 +886,7 @@ are both \textit{Citizen} and \textit{Authority}.
 
 \paragraph{Register Citizen}
 This sequence diagram shows how registration process occur in \textit{Citizen} case, the first steps are mandatory to reach
-the register page, then until the \textit{User} inserts valid credentials the \textit{System} don't allow him to go next.  
+the register page, then until the \textit{User} inserts valid credentials the \textit{System} doesn't allow him to go next.  
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{img/sequence_diagrams/register_citizen.png}
@@ -895,8 +896,8 @@ the register page, then until the \textit{User} inserts valid credentials the \t
 \clearpage
 
 \paragraph{Register Authority}
-Thi sequence diagram represents the same case as above but referred to \textit{Authorities}, so is necessary another
-step in order to reach the regster form. Then like in the previous case it's possible to complete correctly the registration
+This sequence diagram represents the same case as above but referred to \textit{Authorities}, so is necessary another
+step in order to reach the register form. Then like in the previous case it's possible to complete correctly the registration
 only by inserting valid credentials.
 
 \begin{figure}[H]
@@ -1013,7 +1014,7 @@ For each goal now will be described below the requirements:
         \item \textbf{[D4]}: The \textit{System} can access internet whenewer needs it.
     \end{itemize}
 
-    \item \textbf{[G8]}: \textit{System} must build statistics with the informations about issued tickets;
+    \item \textbf{[G8]}: \textit{Users} must be able to see statistics built from issued tickets;
     \begin{itemize}
         \item \textbf{[R14]}: The \textit{System} has to save the confirmed violation in the DB.
         \item \textbf{[R19]}: The \textit{System} must update the statistics with the most recent data.
@@ -1051,7 +1052,7 @@ such as:
 \subsection{Software System Attributes}
 
 \subsubsection{Reliability}
-The \textit{System} must be able to run continuously without any interruptions. In order to do that, it must be ensured 
+The \textit{System} should be able to run continuously without any interruptions. In order to do that, it must be ensured 
 that the \textit{System} is fault tolerant. To prevent downtime, one of the main goals of architecture design must be 
 ensuring graceful degradation of the \textit{System}.
 
