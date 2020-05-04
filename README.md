@@ -4,7 +4,7 @@ This project is done as an assignment of the course Software Engineering 2 held 
 
 ## Guidelines
 
-Specifications about the problem to solve are available[here]
+Specifications about the project are available [here]
 (https://github.com/dariomiceli3/SafeStreet/blob/master/SafeStreets%20Mandatory%20Project%20Assignment.pdf)
 
 ## Authors
